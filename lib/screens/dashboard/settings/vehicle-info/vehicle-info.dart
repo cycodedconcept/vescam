@@ -14,11 +14,10 @@ class VehicleInfoScreen extends StatelessWidget {
         centerTitle: true,
         title: const Text(
           "Vehicle Information",
-          style: TextStyle(fontSize: 16, fontFamily: "OpenMed"),
+          style: TextStyle(fontSize: 16, fontFamily: "OpenBold"),
         ),
         actions: [
-          IconButton(
-              onPressed: () {}, icon: const Icon(Iconsax.notification)),
+          IconButton(onPressed: () {}, icon: const Icon(Iconsax.notification)),
           const SizedBox(
             width: 10,
           )

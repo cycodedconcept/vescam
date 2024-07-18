@@ -17,18 +17,15 @@ class SupportAndHelpScreen extends StatelessWidget {
           onTap: () {
             Get.back();
           },
-          child: const Icon(
-            Icons.arrow_back_ios,
-            color: Colors.black,
-          ),
+          child:
+              const Icon(Icons.arrow_back_ios, color: Colors.black, size: 24),
         ),
         title: const Text(
           "Support",
-          style: TextStyle(fontSize: 16, fontFamily: "OpenMed"),
+          style: TextStyle(fontSize: 16, fontFamily: "OpenBold"),
         ),
         actions: [
-          IconButton(
-              onPressed: () {}, icon: const Icon(Iconsax.search_normal_1)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
           const SizedBox(
             width: 10,
           )
@@ -138,7 +135,7 @@ class SupportAndHelpScreen extends StatelessWidget {
                           _quickLinks(
                               title: "Make a report",
                               action: () {},
-                              icon: Icons.file_copy_outlined),
+                              icon: Iconsax.document_text_1),
                           const Divider(
                             color: Color(0xffF1F1F1),
                           ),
@@ -186,9 +183,16 @@ class SupportAndHelpScreen extends StatelessWidget {
                       child: Column(
                         children: [
                           _recommendedTile(
-                              title: "I have a problem with updating my app",
-                              action: () {},
-                              ),
+                            title: "I have a problem with updating my app",
+                            action: () {},
+                          ),
+                          const Divider(
+                            color: Color(0xffF1F1F1),
+                          ),
+                          _recommendedTile(
+                            title: "I have a problem with updating my app",
+                            action: () {},
+                          ),
                           const Divider(
                             color: Color(0xffF1F1F1),
                           ),
@@ -215,7 +219,8 @@ class SupportAndHelpScreen extends StatelessWidget {
       ),
       title: Text(
         title,
-        style: const TextStyle(color: Color(0xff2B2A2B), fontFamily: "OpenMed"),
+        style: const TextStyle(
+            color: Color(0xff2B2A2B), fontFamily: "OpenMed", fontSize: 14),
       ),
       trailing: const Icon(
         Iconsax.arrow_right_3,
@@ -230,13 +235,13 @@ class SupportAndHelpScreen extends StatelessWidget {
       onTap: action,
       title: Text(
         title,
-        style: const TextStyle(color: Color(0xff2B2A2B), fontFamily: "OpenMed"),
+        style: const TextStyle(
+            color: Color(0xff2B2A2B), fontFamily: "OpenMed", fontSize: 14),
       ),
       trailing: const Icon(
         Iconsax.arrow_right_3,
-        color: const Color(0xffADADAD),
+        color: Color(0xffADADAD),
       ),
     );
   }
-
 }

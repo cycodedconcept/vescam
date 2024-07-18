@@ -17,11 +17,10 @@ class SettingsView extends StatelessWidget {
         centerTitle: true,
         title: const Text(
           "Settings",
-          style: TextStyle(fontSize: 16, fontFamily: "OpenMed"),
+          style: TextStyle(fontSize: 16, fontFamily: "OpenBold"),
         ),
         actions: [
-          IconButton(
-              onPressed: () {}, icon: const Icon(Iconsax.search_normal_1)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
           const SizedBox(
             width: 10,
           )
