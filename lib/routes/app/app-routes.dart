@@ -10,6 +10,14 @@ import 'package:vescan/screens/auth/signup/signup.dart';
 import 'package:vescan/screens/auth/verification/forgot-password-verify.dart';
 import 'package:vescan/screens/auth/verification/signup-verify.dart';
 import 'package:vescan/screens/dashboard/dashboard.dart';
+import 'package:vescan/screens/dashboard/settings/account/account-settings.dart';
+import 'package:vescan/screens/dashboard/settings/account/change-password-success.dart';
+import 'package:vescan/screens/dashboard/settings/account/change-password.dart';
+import 'package:vescan/screens/dashboard/settings/account/changePasswordLoadingScreen.dart';
+import 'package:vescan/screens/dashboard/settings/account/edit-success-screen.dart';
+import 'package:vescan/screens/dashboard/settings/account/editLoadingScreen.dart';
+import 'package:vescan/screens/dashboard/settings/account/linked-accounts.dart';
+import 'package:vescan/screens/dashboard/settings/account/profile-information.dart';
 import 'package:vescan/screens/dashboard/settings/notification/notification-settings.dart';
 import 'package:vescan/screens/dashboard/settings/other-settings/about/about.dart';
 import 'package:vescan/screens/dashboard/settings/other-settings/about/app-version.dart';
@@ -176,6 +184,47 @@ List<GetPage> getPage = [
   GetPage(
     name: appPreferenceScreen, 
     page: ()=> AppPreferenceScreen(),
+    transition: Transition.cupertino
+  ),
+
+  GetPage(
+    name: profileInformationScreen, 
+    page: ()=> ProfileInformationScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: linkedAccountScreen, 
+    page: ()=> LinkedAccountScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: changePasswordScreen, 
+    page: ()=> ChangePasswordScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: accountSettingsScreen, 
+    page: ()=> AccountSettingsScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: passwordChangedSuccessScreen, 
+    page: ()=> ChangePasswordSuccessScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: editSuccessfulScreen, 
+    page: ()=> EditSuccessScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: changePasswordLoaderScreen, 
+    page: ()=> ChangePasswordLoadingScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: editLoaderScreen, 
+    page: ()=> EditLoadingScreen(),
     transition: Transition.cupertino
   ),
 

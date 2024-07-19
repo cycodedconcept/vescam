@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 
-class LinkedAccountScreen extends StatelessWidget {
-  const LinkedAccountScreen({super.key});
+class EditSuccessScreen extends StatelessWidget {
+  const EditSuccessScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

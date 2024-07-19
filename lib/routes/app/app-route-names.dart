@@ -37,10 +37,10 @@ String addLanguageScreen = "/addLanguageScreen";
 String setPidThresholdsScreen = "/setPidThresholdsScreen";
 
 String accountSettingsScreen = "/accountSettingsScreen";
-String profileInformationScreen = "/accountSettingsScreen";
-String changePasswordScreen = "/accountSettingsScreen";
-String linkedAccountScreen = "/accountSettingsScreen";
-String editSuccessfulScreen = "/accountSettingsScreen";
+String profileInformationScreen = "/profileInformationScreen";
+String changePasswordScreen = "/changePasswordScreen";
+String linkedAccountScreen = "/linkedAccountScreen";
+String editSuccessfulScreen = "/editSuccessfulScreen";
 String editLoaderScreen = "/editLoaderScreen";
-String changePasswordLoaderScreen = "/editLoaderScreen";
+String changePasswordLoaderScreen = "/changePasswordLoaderScreen";
 String passwordChangedSuccessScreen = "/passwordChangedSuccessScreen";

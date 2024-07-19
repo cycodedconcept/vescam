@@ -43,7 +43,9 @@ class OtherSettingsScreen extends StatelessWidget {
               ),
               _settingsList(
                   title: "Account Settings",
-                  action: () {},
+                  action: () {
+                    Get.toNamed(accountSettingsScreen);
+                  },
                   icon: Icons.person_outlined),
               _settingsList(
                   title: "App Preferences",
