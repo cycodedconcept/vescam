@@ -16,6 +16,7 @@ import 'package:vescan/screens/dashboard/settings/othe-settings/about/app-versio
 import 'package:vescan/screens/dashboard/settings/othe-settings/about/developer-information.dart';
 import 'package:vescan/screens/dashboard/settings/othe-settings/about/release-version.dart';
 import 'package:vescan/screens/dashboard/settings/othe-settings/app-preference/theme-settings.dart';
+import 'package:vescan/screens/dashboard/settings/othe-settings/legal/legal.dart';
 import 'package:vescan/screens/dashboard/settings/othe-settings/other-settings.dart';
 import 'package:vescan/screens/dashboard/settings/othe-settings/privacy-security/privacy-security.dart';
 import 'package:vescan/screens/dashboard/settings/othe-settings/privacy-security/privacy-settings.dart';
@@ -136,7 +137,7 @@ List<GetPage> getPage = [
   ),
   GetPage(
     name: legalScreen, 
-    page: ()=> AppVersionScreen(),
+    page: ()=> LegalScreen(),
     transition: Transition.cupertino
   ),
   GetPage(

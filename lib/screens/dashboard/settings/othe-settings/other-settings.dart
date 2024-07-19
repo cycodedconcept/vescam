@@ -74,7 +74,7 @@ class OtherSettingsScreen extends StatelessWidget {
 
   Container _settingsList({title, action, icon}) {
     return Container(
-      margin: EdgeInsets.only(bottom: 15),
+      margin: const EdgeInsets.only(bottom: 15),
       decoration: BoxDecoration(
           color: const Color(0xffF8FAFB),
           borderRadius: BorderRadius.circular(5)),
@@ -85,7 +85,7 @@ class OtherSettingsScreen extends StatelessWidget {
           height: 39,
           width: 39,
           decoration:
-              BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+              const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
           child: Icon(
             icon,
             color: Colors.black,
