@@ -15,6 +15,7 @@ import 'package:vescan/screens/dashboard/settings/othe-settings/about/about.dart
 import 'package:vescan/screens/dashboard/settings/othe-settings/about/app-version.dart';
 import 'package:vescan/screens/dashboard/settings/othe-settings/about/developer-information.dart';
 import 'package:vescan/screens/dashboard/settings/othe-settings/about/release-version.dart';
+import 'package:vescan/screens/dashboard/settings/othe-settings/app-preference/app-preference.dart';
 import 'package:vescan/screens/dashboard/settings/othe-settings/app-preference/theme-settings.dart';
 import 'package:vescan/screens/dashboard/settings/othe-settings/legal/legal.dart';
 import 'package:vescan/screens/dashboard/settings/othe-settings/other-settings.dart';
@@ -158,6 +159,11 @@ List<GetPage> getPage = [
   GetPage(
     name: themeSettingsScreen, 
     page: ()=> ThemeSettingsScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: appPreferenceScreen, 
+    page: ()=> AppPreferenceScreen(),
     transition: Transition.cupertino
   ),
 
