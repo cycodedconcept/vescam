@@ -11,7 +11,15 @@ import 'package:vescan/screens/auth/verification/forgot-password-verify.dart';
 import 'package:vescan/screens/auth/verification/signup-verify.dart';
 import 'package:vescan/screens/dashboard/dashboard.dart';
 import 'package:vescan/screens/dashboard/settings/notification/notification-settings.dart';
+import 'package:vescan/screens/dashboard/settings/othe-settings/about/about.dart';
+import 'package:vescan/screens/dashboard/settings/othe-settings/about/app-version.dart';
+import 'package:vescan/screens/dashboard/settings/othe-settings/about/developer-information.dart';
+import 'package:vescan/screens/dashboard/settings/othe-settings/about/release-version.dart';
+import 'package:vescan/screens/dashboard/settings/othe-settings/app-preference/theme-settings.dart';
 import 'package:vescan/screens/dashboard/settings/othe-settings/other-settings.dart';
+import 'package:vescan/screens/dashboard/settings/othe-settings/privacy-security/privacy-security.dart';
+import 'package:vescan/screens/dashboard/settings/othe-settings/privacy-security/privacy-settings.dart';
+import 'package:vescan/screens/dashboard/settings/othe-settings/privacy-security/two-factor-auth.dart';
 import 'package:vescan/screens/dashboard/settings/support/support-help.dart';
 import 'package:vescan/screens/dashboard/settings/vehicle-info/vehicle-info.dart';
 import 'package:vescan/screens/onboarding/onboarding-screen.dart';
@@ -103,6 +111,52 @@ List<GetPage> getPage = [
   GetPage(
     name: supportScreen, 
     page: ()=> SupportAndHelpScreen(),
+    transition: Transition.cupertino
+  ),
+
+  GetPage(
+    name: aboutScreen, 
+    page: ()=> AboutScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: appVersionScreen, 
+    page: ()=> AppVersionScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: releaseNotesScreen, 
+    page: ()=> ReleaseVersionScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: developerInfoScreen, 
+    page: ()=> DeveloperInformationScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: legalScreen, 
+    page: ()=> AppVersionScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: privacySecuityScreen, 
+    page: ()=> PrivacyAndSecurityScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: privacySettings, 
+    page: ()=> PrivacySettingScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: twoFactorAuthScreen, 
+    page: ()=> TwoFactorAuthScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: themeSettingsScreen, 
+    page: ()=> ThemeSettingsScreen(),
     transition: Transition.cupertino
   ),
 

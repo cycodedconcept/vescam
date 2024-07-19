@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:vescan/routes/app/app-route-names.dart';
 
 class OtherSettingsScreen extends StatelessWidget {
   const OtherSettingsScreen({super.key});
@@ -46,16 +47,24 @@ class OtherSettingsScreen extends StatelessWidget {
                   icon: Icons.person_outlined),
               _settingsList(
                   title: "App Preferences",
-                  action: () {},
+                  action: () {
+                    Get.toNamed(appPreferenceScreen);
+                  },
                   icon: Icons.help_outline),
               _settingsList(
                   title: "Privacy and Security",
-                  action: () {},
+                  action: () {
+                    Get.toNamed(privacySecuityScreen);
+                  },
                   icon: Iconsax.shield_tick),
               _settingsList(
-                  title: "Legal", action: () {}, icon: Iconsax.document_text_1),
+                  title: "Legal", action: () {
+                    Get.toNamed(legalScreen);
+                  }, icon: Iconsax.document_text_1),
               _settingsList(
-                  title: "About", action: () {}, icon: Icons.info_outline),
+                  title: "About", action: () {
+                    Get.toNamed(aboutScreen);
+                  }, icon: Icons.info_outline),
             ],
           ),
         ),
