@@ -34,3 +34,13 @@ String appPreferenceScreen = "/appPreferenceScreen";
 String themeSettingsScreen = "/themeSettingsScreen";
 String languageSettingsScreen = "/languageSettingsScreen";
 String addLanguageScreen = "/addLanguageScreen";
+String setPidThresholdsScreen = "/setPidThresholdsScreen";
+
+String accountSettingsScreen = "/accountSettingsScreen";
+String profileInformationScreen = "/accountSettingsScreen";
+String changePasswordScreen = "/accountSettingsScreen";
+String linkedAccountScreen = "/accountSettingsScreen";
+String editSuccessfulScreen = "/accountSettingsScreen";
+String editLoaderScreen = "/editLoaderScreen";
+String changePasswordLoaderScreen = "/editLoaderScreen";
+String passwordChangedSuccessScreen = "/passwordChangedSuccessScreen";
