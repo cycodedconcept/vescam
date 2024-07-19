@@ -5,6 +5,7 @@ import 'package:vescan/routes/app/app-route-names.dart';
 
 class AccountSettingsScreen extends StatelessWidget {
   const AccountSettingsScreen({super.key});
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
