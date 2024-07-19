@@ -20,15 +20,10 @@ class AccountSettingsScreen extends StatelessWidget {
               const Icon(Icons.arrow_back_ios, color: Colors.black, size: 24),
         ),
         title: const Text(
-          "About",
+          "Account Settings",
           style: TextStyle(fontSize: 16, fontFamily: "OpenBold"),
         ),
-        actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
-          const SizedBox(
-            width: 10,
-          )
-        ],
+
       ),
       body: Container(
         height: double.infinity,
@@ -45,19 +40,19 @@ class AccountSettingsScreen extends StatelessWidget {
                   action: () {
                     Get.toNamed(profileInformationScreen);
                   },
-                  icon: Iconsax.document),
+                  icon: Iconsax.user),
               _settingsList(
                   title: "Change Password",
                   action: () {
                     Get.toNamed(changePasswordScreen);
                   },
-                  icon: Iconsax.note_1),
+                  icon: Iconsax.lock_1),
               _settingsList(
                   title: "Linked Accounts",
                   action: () {
                     Get.toNamed(linkedAccountScreen);
                   },
-                  icon: Iconsax.info_circle),
+                  icon: Iconsax.link),
             ],
           ),
         ),

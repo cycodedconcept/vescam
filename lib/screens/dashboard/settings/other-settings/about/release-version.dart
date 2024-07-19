@@ -24,12 +24,6 @@ class ReleaseVersionScreen extends StatelessWidget {
           "Release Notes",
           style: TextStyle(fontSize: 16, fontFamily: "OpenBold"),
         ),
-        actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
-          const SizedBox(
-            width: 10,
-          )
-        ],
       ),
       body: Container(
         height: double.infinity,
@@ -76,25 +70,30 @@ class ReleaseVersionScreen extends StatelessWidget {
                         ),
                         Text(
                           "Introduced real-time vehicle diagnostics for quicker and more accurate fault detection.",
-                          style: TextStyle(fontSize: 14, color: Color(0xff030206)),
+                          style:
+                              TextStyle(fontSize: 14, color: Color(0xff030206)),
                         ),
                         SizedBox(
                           height: 10,
                         ),
                         Text(
                           "Enhanced user interface for a smoother and more intuitive experience.",
-                          style: TextStyle(fontSize: 14, color: Color(0xff030206)),
+                          style:
+                              TextStyle(fontSize: 14, color: Color(0xff030206)),
                         ),
                         SizedBox(
                           height: 10,
                         ),
                         Text(
                           "Added a new section for purchasing automobile spare parts directly from the app.",
-                          style: TextStyle(fontSize: 14, color: Color(0xff030206)),
+                          style:
+                              TextStyle(fontSize: 14, color: Color(0xff030206)),
                         ),
                       ],
                     ),
-                    SizedBox(height: 20,),
+                    SizedBox(
+                      height: 20,
+                    ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -110,25 +109,30 @@ class ReleaseVersionScreen extends StatelessWidget {
                         ),
                         Text(
                           "Optimized app performance for faster load times and smoother transitions.",
-                          style: TextStyle(fontSize: 14, color: Color(0xff030206)),
+                          style:
+                              TextStyle(fontSize: 14, color: Color(0xff030206)),
                         ),
                         SizedBox(
                           height: 10,
                         ),
                         Text(
                           "Improved accuracy of location services for better mechanic and towing service recommendations.",
-                          style: TextStyle(fontSize: 14, color: Color(0xff030206)),
+                          style:
+                              TextStyle(fontSize: 14, color: Color(0xff030206)),
                         ),
                         SizedBox(
                           height: 10,
                         ),
                         Text(
                           "Various bug fixes and security enhancements to protect your data.",
-                          style: TextStyle(fontSize: 14, color: Color(0xff030206)),
+                          style:
+                              TextStyle(fontSize: 14, color: Color(0xff030206)),
                         ),
                       ],
                     ),
-                    SizedBox(height: 20,),
+                    SizedBox(
+                      height: 20,
+                    ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -144,19 +148,22 @@ class ReleaseVersionScreen extends StatelessWidget {
                         ),
                         Text(
                           "Integration with third-party services for more extensive repair options.",
-                          style: TextStyle(fontSize: 14, color: Color(0xff030206)),
+                          style:
+                              TextStyle(fontSize: 14, color: Color(0xff030206)),
                         ),
                         SizedBox(
                           height: 10,
                         ),
                         Text(
                           "Customizable notifications to keep you informed about your vehicle's health and maintenance needs.",
-                          style: TextStyle(fontSize: 14, color: Color(0xff030206)),
+                          style:
+                              TextStyle(fontSize: 14, color: Color(0xff030206)),
                         ),
                       ],
                     ),
-                    SizedBox(height: 20,),
-
+                    SizedBox(
+                      height: 20,
+                    ),
                   ],
                 ),
               )
@@ -198,5 +205,4 @@ class ReleaseVersionScreen extends StatelessWidget {
       ),
     );
   }
-
 }

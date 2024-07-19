@@ -24,12 +24,6 @@ class OtherSettingsScreen extends StatelessWidget {
           "Other Settings",
           style: TextStyle(fontSize: 16, fontFamily: "OpenBold"),
         ),
-        actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
-          const SizedBox(
-            width: 10,
-          )
-        ],
       ),
       body: Container(
         height: double.infinity,
@@ -60,13 +54,17 @@ class OtherSettingsScreen extends StatelessWidget {
                   },
                   icon: Iconsax.shield_tick),
               _settingsList(
-                  title: "Legal", action: () {
+                  title: "Legal",
+                  action: () {
                     Get.toNamed(legalScreen);
-                  }, icon: Iconsax.document_text_1),
+                  },
+                  icon: Iconsax.document_text_1),
               _settingsList(
-                  title: "About", action: () {
+                  title: "About",
+                  action: () {
                     Get.toNamed(aboutScreen);
-                  }, icon: Icons.info_outline),
+                  },
+                  icon: Icons.info_outline),
             ],
           ),
         ),

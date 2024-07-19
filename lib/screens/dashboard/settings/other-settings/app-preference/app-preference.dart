@@ -24,12 +24,6 @@ class AppPreferenceScreen extends StatelessWidget {
           "App Preferences",
           style: TextStyle(fontSize: 16, fontFamily: "OpenBold"),
         ),
-        actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
-          const SizedBox(
-            width: 10,
-          )
-        ],
       ),
       body: Container(
         height: double.infinity,
