@@ -45,6 +45,7 @@ dependencies:
   pinput: ^5.0.0
   iconsax: ^0.0.8
   iconly: ^1.0.1
+  syncfusion_flutter_gauges: ^26.1.42
 
 dev_dependencies:
   flutter_test:

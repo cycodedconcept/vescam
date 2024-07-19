@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 class VehicleInfoScreen extends StatelessWidget {
   const VehicleInfoScreen({super.key});
@@ -11,17 +13,18 @@ class VehicleInfoScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
+        leading: InkWell(
+          onTap: () {
+            Get.back();
+          },
+          child:
+              const Icon(Icons.arrow_back_ios, color: Colors.black, size: 24),
+        ),
         centerTitle: true,
         title: const Text(
           "Vehicle Information",
           style: TextStyle(fontSize: 16, fontFamily: "OpenBold"),
         ),
-        actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Iconsax.notification)),
-          const SizedBox(
-            width: 10,
-          )
-        ],
       ),
       body: Container(
         height: double.infinity,
@@ -38,19 +41,103 @@ class VehicleInfoScreen extends StatelessWidget {
                   color: Colors.white,
                   boxShadow: [
                     BoxShadow(
-                        offset: Offset(3.88, 3.88),
+                        offset: const Offset(3.88, 3.88),
                         blurRadius: 14.55,
-                        color: Color(0xff333333).withOpacity(0.04))
+                        color: const Color(0xff333333).withOpacity(0.04))
                   ],
                   borderRadius: BorderRadius.circular(15)),
               child: Column(
                 children: [
-                  Align(
+                  const Align(
                     alignment: Alignment.centerRight,
                     child: Icon(
                       Icons.more_vert,
                       color: Color(0xff7C797A),
                     ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Center(
+                    child: SizedBox(
+                      height: 250,
+                      width: 250,
+                      child: Center(
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            SfRadialGauge(
+                              axes: <RadialAxis>[
+                                RadialAxis(
+                                  minimum: 0,
+                                  maximum: 100,
+                                  showLabels: false,
+                                  showTicks: false,
+                                  showAxisLine: false,
+                                  ranges: <GaugeRange>[
+                                    GaugeRange(
+                                      startValue: 0,
+                                      endValue: 50,
+                                      startWidth: 10,
+                                      endWidth: 10,
+                                      gradient: const SweepGradient(
+                                        colors: [Colors.red, Colors.yellow],
+                                        stops: [0.0, 1.0],
+                                      ),
+                                    ),
+                                    GaugeRange(
+                                      startValue: 50,
+                                      endValue: 75,
+                                      startWidth: 10,
+                                      endWidth: 10,
+                                      gradient: const SweepGradient(
+                                        colors: [Colors.yellow, Colors.green],
+                                        stops: [0.0, 1.0],
+                                      ),
+                                    ),
+                                    GaugeRange(
+                                      startValue: 75,
+                                      endValue: 100,
+                                      startWidth: 10,
+                                      endWidth: 10,
+                                      gradient: const SweepGradient(
+                                        colors: [Colors.green, Colors.green],
+                                        stops: [0.0, 1.0],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            Image.asset(
+                              'assets/images/3dcar.png',
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Iconsax.edit,
+                        color: Color(0xff00BFFF),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        "Volvo XC40",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontFamily: "OpenBold",
+                            color: Colors.black),
+                      ),
+                    ],
                   )
                 ],
               ),
