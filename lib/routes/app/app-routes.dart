@@ -32,6 +32,7 @@ import 'package:vescan/screens/dashboard/settings/other-settings/other-settings.
 import 'package:vescan/screens/dashboard/settings/other-settings/privacy-security/privacy-security.dart';
 import 'package:vescan/screens/dashboard/settings/other-settings/privacy-security/privacy-settings.dart';
 import 'package:vescan/screens/dashboard/settings/other-settings/privacy-security/two-factor-auth.dart';
+import 'package:vescan/screens/dashboard/settings/other-settings/set-pid-threshold/set-pid-threshold-screen.dart';
 import 'package:vescan/screens/dashboard/settings/support/support-help.dart';
 import 'package:vescan/screens/dashboard/settings/vehicle-info/vehicle-info.dart';
 import 'package:vescan/screens/onboarding/onboarding-screen.dart';
@@ -184,6 +185,11 @@ List<GetPage> getPage = [
   GetPage(
     name: appPreferenceScreen, 
     page: ()=> AppPreferenceScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: setPidThresholdsScreen, 
+    page: ()=> SetPidThresholdScreen(),
     transition: Transition.cupertino
   ),
 

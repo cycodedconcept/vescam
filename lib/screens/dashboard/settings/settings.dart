@@ -42,7 +42,7 @@ class SettingsView extends StatelessWidget {
                   )),
               child: Column(
                 children: [
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(
@@ -61,7 +61,7 @@ class SettingsView extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(
+                 const SizedBox(
                     height: 30,
                   ),
                   Row(
@@ -134,7 +134,9 @@ class SettingsView extends StatelessWidget {
                         icon: Icons.phone_android_outlined),
                     _settingTile(
                         title: "Set PIDs Threshold",
-                        action: () {},
+                        action: () {
+                          Get.toNamed(setPidThresholdsScreen);
+                        },
                         icon: Icons.history),
                     _settingTile(
                         title: "Favorite Mechanics/Towing Vehicles",
