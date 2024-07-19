@@ -21,3 +21,16 @@ String otherSettingsScreen = "/otherSettingsScreen";
 String notificationSettingsScreen = "/notificationSettingsScreen";
 String vehicleInfoScreen = "/vehicleInfoScreen";
 String favoriteScreen = "/favoriteScreen";
+
+String aboutScreen = "/aboutScreen";
+String appVersionScreen = "/appVersionScreen";
+String releaseNotesScreen = "/releaseNotesScreen";
+String developerInfoScreen = "/developerInfoScreen";
+String legalScreen = "/legalScreen";
+String privacySecuityScreen = "/privacySecuityScreen";
+String privacySettings = "/privacySettings";
+String twoFactorAuthScreen = "/twoFactorAuthScreen";
+String appPreferenceScreen = "/appPreferenceScreen";
+String themeSettingsScreen = "/themeSettingsScreen";
+String languageSettingsScreen = "/languageSettingsScreen";
+String addLanguageScreen = "/addLanguageScreen";

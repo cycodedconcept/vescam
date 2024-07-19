@@ -190,8 +190,8 @@ class SettingsView extends StatelessWidget {
         ),
         title: Text(
           title,
-          style:
-              const TextStyle(color: Color(0xff2B2A2B), fontFamily: "OpenMed"),
+          style: const TextStyle(
+              color: Color(0xff2B2A2B), fontFamily: "OpenMed", fontSize: 14),
         ),
         trailing: const Icon(
           Iconsax.arrow_right_3,
