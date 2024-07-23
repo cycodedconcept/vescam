@@ -44,3 +44,8 @@ String editSuccessfulScreen = "/editSuccessfulScreen";
 String editLoaderScreen = "/editLoaderScreen";
 String changePasswordLoaderScreen = "/changePasswordLoaderScreen";
 String passwordChangedSuccessScreen = "/passwordChangedSuccessScreen";
+
+String fundWalletScreen = "/fundWalletScreen";
+String bankUssdScreen = "/bankUssdScreen";
+String dialUssdCodeScreen = "/dialUssdCodeScreen";
+String bankTransferScreen = "/bankTransferScreen";

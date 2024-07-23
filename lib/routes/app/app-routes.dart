@@ -35,6 +35,10 @@ import 'package:vescan/screens/dashboard/settings/other-settings/privacy-securit
 import 'package:vescan/screens/dashboard/settings/other-settings/set-pid-threshold/set-pid-threshold-screen.dart';
 import 'package:vescan/screens/dashboard/settings/support/support-help.dart';
 import 'package:vescan/screens/dashboard/settings/vehicle-info/vehicle-info.dart';
+import 'package:vescan/screens/dashboard/wallet/bank-transfer.dart';
+import 'package:vescan/screens/dashboard/wallet/bank-ussd.dart';
+import 'package:vescan/screens/dashboard/wallet/dial-ussd.dart';
+import 'package:vescan/screens/dashboard/wallet/fund-wallet.dart';
 import 'package:vescan/screens/onboarding/onboarding-screen.dart';
 import 'package:vescan/screens/splash/splash-screen.dart';
 
@@ -231,6 +235,27 @@ List<GetPage> getPage = [
   GetPage(
     name: editLoaderScreen, 
     page: ()=> EditLoadingScreen(),
+    transition: Transition.cupertino
+  ),
+
+  GetPage(
+    name: fundWalletScreen, 
+    page: ()=> FundWalletScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: bankUssdScreen, 
+    page: ()=> BankUssdScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: dialUssdCodeScreen, 
+    page: ()=> DialUssdCodeScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: bankTransferScreen, 
+    page: ()=> BankTransferScreen(),
     transition: Transition.cupertino
   ),
 
