@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/route_manager.dart';
 import 'package:iconly/iconly.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:vescan/routes/app/app-route-names.dart';
-import 'package:vescan/widgets/buttons/buttons.dart';
 
 class BankTransferScreen extends StatelessWidget {
   const BankTransferScreen({super.key});

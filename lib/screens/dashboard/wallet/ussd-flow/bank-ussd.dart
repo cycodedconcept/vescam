@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/route_manager.dart';
 import 'package:iconly/iconly.dart';
 import 'package:iconsax/iconsax.dart';

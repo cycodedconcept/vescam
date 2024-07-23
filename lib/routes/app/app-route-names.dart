@@ -49,3 +49,5 @@ String fundWalletScreen = "/fundWalletScreen";
 String bankUssdScreen = "/bankUssdScreen";
 String dialUssdCodeScreen = "/dialUssdCodeScreen";
 String bankTransferScreen = "/bankTransferScreen";
+
+String transferMoneyScreen = "/transferMoneyScreen";

@@ -283,7 +283,9 @@ class WalletView extends StatelessWidget {
                           ),
                           _actionsTile(
                               title: "Transfer Money",
-                              action: () {},
+                              action: () {
+                                Get.toNamed(transferMoneyScreen);
+                              },
                               icon: IconlyLight.send),
                           _actionsTile(
                               title: "Add Account/Card",
