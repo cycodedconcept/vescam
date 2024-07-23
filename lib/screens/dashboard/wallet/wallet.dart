@@ -5,6 +5,7 @@ import 'package:get/route_manager.dart';
 import 'package:iconly/iconly.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:vescan/routes/app/app-route-names.dart';
+import 'package:vescan/widgets/bottom-sheets/fund-wallet-info.dart';
 
 class WalletView extends StatelessWidget {
   const WalletView({super.key});
@@ -213,49 +214,55 @@ class WalletView extends StatelessWidget {
                       const SizedBox(
                         height: 20,
                       ),
-                      Container(
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          color: const Color(0xff00BFFF),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Row(
-                          children: [
-                            Container(
-                              height: 58,
-                              width: 79,
-                              decoration: const BoxDecoration(
-                                  border: Border(
-                                      right: BorderSide(color: Colors.white))),
-                              child: const Center(
-                                child: Icon(
-                                  Iconsax.info_circle,
-                                  color: Colors.white,
+                      InkWell(
+                        onTap: () {
+                          FundWalletBottom().show();
+                        },
+                        child: Container(
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            color: const Color(0xff00BFFF),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Row(
+                            children: [
+                              Container(
+                                height: 58,
+                                width: 79,
+                                decoration: const BoxDecoration(
+                                    border: Border(
+                                        right:
+                                            BorderSide(color: Colors.white))),
+                                child: const Center(
+                                  child: Icon(
+                                    Iconsax.info_circle,
+                                    color: Colors.white,
+                                  ),
                                 ),
                               ),
-                            ),
-                            const Expanded(
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 10),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "How to fund your wallet",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontFamily: "OpenMed"),
-                                    ),
-                                    Icon(
-                                      Iconsax.arrow_right_3,
-                                      color: Colors.white,
-                                    ),
-                                  ],
+                              const Expanded(
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 10),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        "How to fund your wallet",
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontFamily: "OpenMed"),
+                                      ),
+                                      Icon(
+                                        Iconsax.arrow_right_3,
+                                        color: Colors.white,
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            )
-                          ],
+                              )
+                            ],
+                          ),
                         ),
                       ),
                       const SizedBox(
