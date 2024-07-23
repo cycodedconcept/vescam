@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/route_manager.dart';
 import 'package:iconly/iconly.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:vescan/routes/app/app-route-names.dart';
 
 class WalletView extends StatelessWidget {
   const WalletView({super.key});
@@ -18,7 +20,7 @@ class WalletView extends StatelessWidget {
             child: Column(
           children: [
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
               color: Colors.white,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -67,7 +69,7 @@ class WalletView extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 20,
+              height: 30,
             ),
             Expanded(
               child: Padding(
@@ -106,8 +108,13 @@ class WalletView extends StatelessWidget {
                                     ),
                                   ],
                                 ),
-                                SvgPicture.asset(
-                                    "assets/images/fund-wallet.svg")
+                                InkWell(
+                                  onTap: () {
+                                    Get.toNamed(fundWalletScreen);
+                                  },
+                                  child: SvgPicture.asset(
+                                      "assets/images/fund-wallet.svg"),
+                                )
                               ],
                             ),
                             const SizedBox(

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/route_manager.dart';
 import 'package:iconly/iconly.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:vescan/routes/app/app-route-names.dart';
 
 class FundWalletScreen extends StatelessWidget {
   const FundWalletScreen({super.key});
@@ -17,32 +19,37 @@ class FundWalletScreen extends StatelessWidget {
             child: Column(
           children: [
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
               color: Colors.white,
-              child: const Row(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Icon(
-                    Iconsax.arrow_left_3,
-                    color: Colors.black,
-                    size: 24,
+                  InkWell(
+                    onTap: () {
+                      Get.back();
+                    },
+                    child: Icon(
+                      Iconsax.arrow_left_2,
+                      color: Colors.black,
+                      size: 24,
+                    ),
                   ),
                   Text(
                     "Fund Wallet",
                     style: TextStyle(
-                      color: Colors.black,
-                      fontFamily: "16",
-                    ),
+                        color: Colors.black,
+                        fontFamily: "OpenMed",
+                        fontSize: 16),
                   ),
                   Icon(
                     IconlyLight.notification,
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 ],
               ),
             ),
             const SizedBox(
-              height: 20,
+              height: 30,
             ),
             Expanded(
               child: Padding(
@@ -53,124 +60,79 @@ class FundWalletScreen extends StatelessWidget {
                     children: [
                       Container(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 13, vertical: 20),
+                            horizontal: 15, vertical: 40),
                         decoration: BoxDecoration(
-                            color: const Color(0xff001F3F),
+                            color: Colors.white,
                             borderRadius: BorderRadius.circular(10)),
                         child: Column(
                           children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                const Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      "Wallet Balance",
-                                      style: TextStyle(
-                                          color: Color(0xffDEDEDE),
-                                          fontSize: 14,
-                                          fontFamily: "OpenMed"),
-                                    ),
-                                    Text(
-                                      "\$25,500.00",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 24,
-                                          fontFamily: "OpenMed"),
-                                    ),
-                                  ],
-                                ),
-                                SvgPicture.asset(
-                                    "assets/images/fund-wallet.svg")
-                              ],
-                            ),
+                            transferTile(
+                                title: "Bank Transfer",
+                                subtitle:
+                                    "Add money via mobile or internet banking",
+                                icon: IconlyLight.download,
+                                action: () {
+                                  Get.toNamed(bankTransferScreen);
+                                }),
                             const SizedBox(
-                              height: 20,
-                            ),
-                            const Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      "Overdraft Balance",
-                                      style: TextStyle(
-                                          color: Color(0xffDEDEDE),
-                                          fontSize: 14,
-                                          fontFamily: "OpenMed"),
-                                    ),
-                                    Text(
-                                      "\$0.00",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 24,
-                                          fontFamily: "OpenMed"),
-                                    ),
-                                  ],
-                                ),
-                                Icon(
-                                  Iconsax.eye_slash,
-                                  color: Colors.white,
-                                )
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            const Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  "Balance last updated on 18:19 PM ",
-                                  style: TextStyle(
-                                    color: Color(0xffDEDEDE),
-                                    fontSize: 14,
-                                  ),
-                                ),
-                                Icon(
-                                  Icons.history,
-                                  color: Color(0xffDEDEDE),
-                                  size: 16,
-                                )
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 20,
+                              height: 30,
                             ),
                             Container(
                               padding: const EdgeInsets.symmetric(
-                                  horizontal: 10, vertical: 10),
+                                  horizontal: 15, vertical: 12),
                               decoration: BoxDecoration(
-                                color: Colors.white,
+                                color: const Color(0xff001F3F),
                                 borderRadius: BorderRadius.circular(5),
                               ),
-                              child: const Row(
+                              child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Text(
-                                    "Account Number",
-                                    style: TextStyle(
-                                        color: Color(0xff030206),
-                                        fontSize: 14,
-                                        fontFamily: "OpenMed"),
-                                  ),
-                                  Row(
+                                  const Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        "7066114751 ",
+                                        "Vescan Account",
                                         style: TextStyle(
-                                          color: Color(0xff030206),
-                                          fontSize: 16,
+                                          color: Colors.white,
+                                          fontSize: 14,
                                         ),
                                       ),
-                                      Icon(
-                                        Iconsax.copy,
-                                        color: Color(0xff030206),
-                                      )
+                                      Text(
+                                        "Your Bank Name",
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 16,
+                                            fontFamily: "OpenBold"),
+                                      ),
                                     ],
+                                  ),
+                                  Container(
+                                    padding: const EdgeInsets.all(13),
+                                    decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                    child: const Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          "7066114751 ",
+                                          style: TextStyle(
+                                            color: Color(0xff030206),
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                        Icon(
+                                          Iconsax.copy,
+                                          color: Color(0xff030206),
+                                        )
+                                      ],
+                                    ),
                                   ),
                                 ],
                               ),
@@ -179,245 +141,40 @@ class FundWalletScreen extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(
-                        height: 20,
+                        height: 30,
                       ),
-                      Container(
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          color: const Color(0xff00BFFF),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Row(
-                          children: [
-                            Container(
-                              height: 58,
-                              width: 79,
-                              decoration: const BoxDecoration(
-                                  border: Border(
-                                      right: BorderSide(color: Colors.white))),
-                              child: const Center(
-                                child: Icon(
-                                  Iconsax.info_circle,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
-                            const Expanded(
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 10),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "How to fund your wallet",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontFamily: "OpenMed"),
-                                    ),
-                                    Icon(
-                                      Iconsax.arrow_right_3,
-                                      color: Colors.white,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            )
-                          ],
+                      const Center(
+                        child: Text(
+                          "OR",
+                          style: TextStyle(
+                              color: Color(0xff030206),
+                              fontSize: 16,
+                              fontFamily: "OpenBold"),
                         ),
                       ),
                       const SizedBox(
                         height: 30,
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            "Actions",
-                            style: TextStyle(
-                                fontSize: 16,
-                                color: Color(0xff030206),
-                                fontFamily: "OpenMed"),
-                          ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          _actionsTile(
-                              title: "Transfer Money",
-                              action: () {},
-                              icon: IconlyLight.send),
-                          _actionsTile(
-                              title: "Add Account/Card",
-                              action: () {},
-                              icon: Iconsax.direct_inbox),
-                          _actionsTile(
-                              title: "Pay Bills",
-                              action: () {},
-                              icon: Iconsax.bill),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            "Transaction History",
-                            style: TextStyle(
-                                fontSize: 16,
-                                color: Color(0xff030206),
-                                fontFamily: "OpenMed"),
-                          ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          Container(
-                            width: double.infinity,
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 17, vertical: 5),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.white,
-                              boxShadow: [
-                                BoxShadow(
-                                    offset: const Offset(0, 4),
-                                    blurRadius: 10,
-                                    spreadRadius: 0,
-                                    color: const Color(0xff1B1B1B)
-                                        .withOpacity(0.03))
-                              ],
-                            ),
-                            child: Column(
-                              children: [
-                                ListTile(
-                                  contentPadding: EdgeInsets.zero,
-                                  title: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      const Text(
-                                        "\$344,234.12",
-                                        style: TextStyle(
-                                            fontSize: 24,
-                                            color: Color(0xff001F3F),
-                                            fontFamily: "OpenBold"),
-                                      ),
-                                      Container(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 10, vertical: 5),
-                                        decoration: BoxDecoration(
-                                            color: const Color(0xffE6F9FF),
-                                            borderRadius:
-                                                BorderRadius.circular(5)),
-                                        child: const Row(
-                                          children: [
-                                            Text(
-                                              "July",
-                                              style: TextStyle(
-                                                  fontSize: 14,
-                                                  color: Color(0xff001F3F),
-                                                  fontFamily: "OpenMed"),
-                                            ),
-                                            SizedBox(
-                                              width: 3,
-                                            ),
-                                            Icon(
-                                              IconlyLight.arrow_down_2,
-                                              color: Color(0xff5D5B5C),
-                                            )
-                                          ],
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                  subtitle: Row(
-                                    children: [
-                                      Container(
-                                        height: 8,
-                                        width: 8,
-                                        decoration: const BoxDecoration(
-                                            color: Color(0xff001F3F),
-                                            shape: BoxShape.circle),
-                                      ),
-                                      const SizedBox(
-                                        width: 5,
-                                      ),
-                                      const Text(
-                                        "Cash Inflow",
-                                        style: TextStyle(
-                                          fontSize: 14,
-                                          color: Color(0xff7C797A),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                const SizedBox(
-                                  height: 20,
-                                ),
-                                ListTile(
-                                  contentPadding: EdgeInsets.zero,
-                                  title: const Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        "\$5,234.12",
-                                        style: TextStyle(
-                                            fontSize: 24,
-                                            color: Color(0xff001F3F),
-                                            fontFamily: "OpenBold"),
-                                      ),
-                                    ],
-                                  ),
-                                  subtitle: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Container(
-                                            height: 8,
-                                            width: 8,
-                                            decoration: const BoxDecoration(
-                                                color: Color(0xff001F3F),
-                                                shape: BoxShape.circle),
-                                          ),
-                                          const SizedBox(
-                                            width: 5,
-                                          ),
-                                          const Text(
-                                            "Cash Inflow",
-                                            style: TextStyle(
-                                              fontSize: 14,
-                                              color: Color(0xff7C797A),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      const Row(
-                                        children: [
-                                          Text(
-                                            "Transaction History",
-                                            style: TextStyle(
-                                                color: Color(0xff00BFFF),
-                                                fontSize: 14),
-                                          ),
-                                          Icon(
-                                            Iconsax.arrow_right_3,
-                                            color: Color(0xff00BFFF),
-                                          )
-                                        ],
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
+                      _actionsTile(
+                          title: "Top-Up with Card/Account",
+                          action: () {
+                            // Get.toNamed(bankTransferScreen);
+                          },
+                          subtitle:
+                              "Fund your account directly with your card/account",
+                          icon: Iconsax.bank),
+                      _actionsTile(
+                          title: "Bank USSD",
+                          subtitle: "With other banks’ USSD code",
+                          action: () {
+                            Get.toNamed(bankUssdScreen);
+                          },
+                          icon: Iconsax.mobile),
+                      _actionsTile(
+                          title: "Scan my QR code",
+                          subtitle: "Show QR code to any vescan user",
+                          action: () {},
+                          icon: Iconsax.scan_barcode),
                       const SizedBox(
                         height: 30,
                       ),
@@ -432,7 +189,7 @@ class FundWalletScreen extends StatelessWidget {
     );
   }
 
-  Container _actionsTile({title, action, icon}) {
+  Container _actionsTile({title, subtitle, action, icon}) {
     return Container(
       margin: const EdgeInsets.only(bottom: 15),
       decoration: BoxDecoration(
@@ -458,10 +215,57 @@ class FundWalletScreen extends StatelessWidget {
             color: Colors.black,
           ),
         ),
+        subtitle: Text(
+          subtitle,
+          style: const TextStyle(color: Color(0xff7C797A), fontSize: 11),
+        ),
         title: Text(
           title,
           style: const TextStyle(
               color: Color(0xff2B2A2B), fontFamily: "OpenMed", fontSize: 14),
+        ),
+        trailing: const Icon(
+          Iconsax.arrow_right_3,
+          color: Color(0xffADADAD),
+        ),
+      ),
+    );
+  }
+
+  Container transferTile({title, subtitle, action, icon}) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 15),
+      decoration: BoxDecoration(
+          color: const Color(0xffF8FAFB),
+          boxShadow: [
+            BoxShadow(
+                offset: const Offset(0, 4),
+                blurRadius: 10,
+                spreadRadius: 0,
+                color: const Color(0xff1B1B1B).withOpacity(0.03))
+          ],
+          borderRadius: BorderRadius.circular(10)),
+      child: ListTile(
+        contentPadding: const EdgeInsets.symmetric(horizontal: 20),
+        onTap: action,
+        leading: Container(
+          height: 39,
+          width: 39,
+          decoration:
+              const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+          child: Icon(
+            icon,
+            color: Colors.black,
+          ),
+        ),
+        title: Text(
+          title,
+          style: const TextStyle(
+              color: Color(0xff2B2A2B), fontFamily: "OpenMed", fontSize: 14),
+        ),
+        subtitle: Text(
+          subtitle,
+          style: const TextStyle(color: Color(0xff7C797A), fontSize: 11),
         ),
         trailing: const Icon(
           Iconsax.arrow_right_3,
