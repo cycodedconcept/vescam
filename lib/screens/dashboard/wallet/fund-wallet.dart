@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:iconly/iconly.dart';
 import 'package:iconsax/iconsax.dart';
 
-class WalletView extends StatelessWidget {
-  const WalletView({super.key});
+class FundWalletScreen extends StatelessWidget {
+  const FundWalletScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,48 +19,24 @@ class WalletView extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               color: Colors.white,
-              child: Row(
+              child: const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(10),
-                        decoration: const BoxDecoration(
-                            color: Color(0xffF8FAFB), shape: BoxShape.circle),
-                        child: const Icon(
-                          IconlyBold.wallet,
-                          color: Color(0xff001F3F),
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      RichText(
-                          text: const TextSpan(
-                              text: "Hi,\n",
-                              style: TextStyle(
-                                  color: Color(0xff7C797A),
-                                  fontSize: 14,
-                                  fontFamily: "Open"),
-                              children: [
-                            TextSpan(
-                                text: "Kamolideen!",
-                                style: TextStyle(
-                                    color: Color(0xff030206),
-                                    fontSize: 14,
-                                    fontFamily: "OpenMed"))
-                          ]))
-                    ],
+                  Icon(
+                    Iconsax.arrow_left_3,
+                    color: Colors.black,
+                    size: 24,
                   ),
-                  Container(
-                    padding: const EdgeInsets.all(10),
-                    decoration: const BoxDecoration(
-                        color: Color(0xff001F3F), shape: BoxShape.circle),
-                    child: const Icon(
-                      IconlyLight.notification,
-                      color: Colors.white,
+                  Text(
+                    "Fund Wallet",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontFamily: "16",
                     ),
+                  ),
+                  Icon(
+                    IconlyLight.notification,
+                    color: Colors.white,
                   ),
                 ],
               ),
