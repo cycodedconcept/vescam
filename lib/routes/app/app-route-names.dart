@@ -51,3 +51,10 @@ String dialUssdCodeScreen = "/dialUssdCodeScreen";
 String bankTransferScreen = "/bankTransferScreen";
 
 String transferMoneyScreen = "/transferMoneyScreen";
+
+String productDetailsScreen = "/productDetailsScreen";
+String productCartScreen = "/productCartScreen";
+String favoriteProductScreen = "/favoriteProductScreen";
+String addCardScreen = "/addCardScreen";
+String checkoutLoadingScreen = "/checkoutLoadingScreen";
+String checkoutSuccessScreen = "/checkoutSuccessScreen";
