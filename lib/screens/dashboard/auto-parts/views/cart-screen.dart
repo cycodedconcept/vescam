@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:vescan/screens/dashboard/auto-parts/views/cart/emptyCartView.dart';
+import 'package:vescan/screens/dashboard/auto-parts/views/cart/product-cart-view.dart';
+import 'package:vescan/widgets/buttons/buttons.dart';
 
 import '../../../../controller/ecommerce/ecommerce-state-controller.dart';
 
@@ -37,7 +40,7 @@ class ProductCartScreen extends StatelessWidget {
                       ),
                     ),
                     const Text(
-                      "Favourites",
+                      "Cart",
                       style: TextStyle(
                           color: Colors.black,
                           fontFamily: "OpenMed",
@@ -87,11 +90,10 @@ class ProductCartScreen extends StatelessWidget {
               ),
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: SingleChildScrollView(
-                    child: Column()
-                  ),
-                ),
+                    child:  ProductCartView()
+                )),
               ),
             ],
           )),

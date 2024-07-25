@@ -4,6 +4,8 @@ import 'package:iconly/iconly.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:vescan/controller/ecommerce/ecommerce-state-controller.dart';
 
+import '../../../routes/app/app-route-names.dart';
+
 class EcommerceView extends StatelessWidget {
   EcommerceView({super.key});
 
@@ -48,26 +50,32 @@ class EcommerceView extends StatelessWidget {
                     PopupMenuButton(
                       itemBuilder: (context) {
                         return [
-                          const PopupMenuItem(
-                              child: Row(
-                            children: [
-                              Icon(Iconsax.shopping_cart),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text("Cart")
-                            ],
-                          )),
-                          const PopupMenuItem(
-                              child: Row(
-                            children: [
-                              Icon(Iconsax.heart),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text("Favorite")
-                            ],
-                          )),
+                          PopupMenuItem(
+                              onTap: () {
+                                Get.toNamed(productCartScreen);
+                              },
+                              child: const Row(
+                                children: [
+                                  Icon(Iconsax.shopping_cart),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Text("Cart")
+                                ],
+                              )),
+                          PopupMenuItem(
+                              onTap: () {
+                                Get.toNamed(favoriteProductScreen);
+                              },
+                              child: const Row(
+                                children: [
+                                  Icon(Iconsax.heart),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Text("Favorite")
+                                ],
+                              )),
                           const PopupMenuItem(
                               child: Row(
                             children: [
@@ -139,137 +147,147 @@ class EcommerceView extends StatelessWidget {
                                     mainAxisExtent: 207,
                                     mainAxisSpacing: 20),
                             itemBuilder: (context, index) {
-                              return Material(
-                                elevation: 2,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(12)),
-                                child: Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 10, vertical: 8),
-                                  decoration: BoxDecoration(
-                                      color: Colors.white,
+                              return InkWell(
+                                onTap: () {
+                                  Get.toNamed(productDetailsScreen);
+                                },
+                                child: Material(
+                                  elevation: 2,
+                                  shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(12)),
-                                  child: Column(
-                                    children: [
-                                      Expanded(
-                                        flex: 7,
-                                        child: Container(
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(6),
-                                              image: DecorationImage(
-                                                  image: AssetImage(controller
-                                                      .parts[index]["image"]),
-                                                  fit: BoxFit.cover)),
+                                  child: Container(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 10, vertical: 8),
+                                    decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius:
+                                            BorderRadius.circular(12)),
+                                    child: Column(
+                                      children: [
+                                        Expanded(
+                                          flex: 7,
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(6),
+                                                image: DecorationImage(
+                                                    image: AssetImage(controller
+                                                        .parts[index]["image"]),
+                                                    fit: BoxFit.cover)),
+                                          ),
                                         ),
-                                      ),
-                                      Expanded(
-                                          flex: 4,
-                                          child: Column(
-                                            children: [
-                                              const SizedBox(
-                                                height: 10,
-                                              ),
-                                              Row(
-                                                children: [
-                                                  Expanded(
-                                                      child: Text(
-                                                    controller.parts[index]
-                                                        ["name"],
-                                                    overflow:
-                                                        TextOverflow.ellipsis,
-                                                    style: const TextStyle(
-                                                        color:
-                                                            Color(0xff030206),
-                                                        fontSize: 12,
-                                                        fontFamily: "OpenBold"),
-                                                  )),
-                                                  const SizedBox(
-                                                    width: 20,
-                                                  ),
-                                                  const Icon(
-                                                    Iconsax.heart,
-                                                    color: Color(0xffFF9900),
-                                                    size: 20,
-                                                  )
-                                                ],
-                                              ),
-                                              const SizedBox(
-                                                height: 10,
-                                              ),
-                                              Row(
-                                                children: [
-                                                  Expanded(
-                                                      child: Row(
-                                                    children: [
-                                                      Text(
-                                                        controller.parts[index]
-                                                            ["price"],
-                                                        overflow: TextOverflow
-                                                            .ellipsis,
-                                                        style: const TextStyle(
-                                                            color: Color(
-                                                                0xff030206),
-                                                            fontSize: 14,
-                                                            fontFamily:
-                                                                "OpenBold"),
-                                                      ),
-                                                      const SizedBox(
-                                                        width: 5,
-                                                      ),
-                                                      Expanded(
+                                        Expanded(
+                                            flex: 4,
+                                            child: Column(
+                                              children: [
+                                                const SizedBox(
+                                                  height: 10,
+                                                ),
+                                                Row(
+                                                  children: [
+                                                    Expanded(
                                                         child: Text(
+                                                      controller.parts[index]
+                                                          ["name"],
+                                                      overflow:
+                                                          TextOverflow.ellipsis,
+                                                      style: const TextStyle(
+                                                          color:
+                                                              Color(0xff030206),
+                                                          fontSize: 12,
+                                                          fontFamily:
+                                                              "OpenBold"),
+                                                    )),
+                                                    const SizedBox(
+                                                      width: 20,
+                                                    ),
+                                                    const Icon(
+                                                      Iconsax.heart,
+                                                      color: Color(0xffFF9900),
+                                                      size: 20,
+                                                    )
+                                                  ],
+                                                ),
+                                                const SizedBox(
+                                                  height: 10,
+                                                ),
+                                                Row(
+                                                  children: [
+                                                    Expanded(
+                                                        child: Row(
+                                                      children: [
+                                                        Text(
                                                           controller
                                                                   .parts[index]
-                                                              ["oldPrice"],
+                                                              ["price"],
                                                           overflow: TextOverflow
                                                               .ellipsis,
                                                           style: const TextStyle(
-                                                              decoration:
-                                                                  TextDecoration
-                                                                      .lineThrough,
-                                                              decorationColor:
-                                                                  Color(
-                                                                      0xff7C797A),
+                                                              color: Color(
+                                                                  0xff030206),
+                                                              fontSize: 14,
+                                                              fontFamily:
+                                                                  "OpenBold"),
+                                                        ),
+                                                        const SizedBox(
+                                                          width: 5,
+                                                        ),
+                                                        Expanded(
+                                                          child: Text(
+                                                            controller.parts[
+                                                                    index]
+                                                                ["oldPrice"],
+                                                            overflow:
+                                                                TextOverflow
+                                                                    .ellipsis,
+                                                            style: const TextStyle(
+                                                                decoration:
+                                                                    TextDecoration
+                                                                        .lineThrough,
+                                                                decorationColor:
+                                                                    Color(
+                                                                        0xff7C797A),
+                                                                color: Color(
+                                                                    0xff7C797A),
+                                                                fontSize: 10,
+                                                                fontFamily:
+                                                                    "OpenMed"),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    )),
+                                                    const SizedBox(
+                                                      width: 20,
+                                                    ),
+                                                    Row(
+                                                      children: [
+                                                        Text(
+                                                          controller
+                                                                  .parts[index]
+                                                              ["rating"],
+                                                          overflow: TextOverflow
+                                                              .ellipsis,
+                                                          style: const TextStyle(
                                                               color: Color(
                                                                   0xff7C797A),
-                                                              fontSize: 10,
+                                                              fontSize: 14,
                                                               fontFamily:
-                                                                  "OpenMed"),
+                                                                  "OpenBold"),
                                                         ),
-                                                      ),
-                                                    ],
-                                                  )),
-                                                  const SizedBox(
-                                                    width: 20,
-                                                  ),
-                                                  Row(
-                                                    children: [
-                                                      Text(
-                                                        controller.parts[index]
-                                                            ["rating"],
-                                                        overflow: TextOverflow
-                                                            .ellipsis,
-                                                        style: const TextStyle(
-                                                            color: Color(
-                                                                0xff7C797A),
-                                                            fontSize: 14,
-                                                            fontFamily:
-                                                                "OpenBold"),
-                                                      ),
-                                                      const Icon(
-                                                        Icons.star,
-                                                        color:
-                                                            Color(0xffFFD803),
-                                                        size: 20,
-                                                      ),
-                                                    ],
-                                                  )
-                                                ],
-                                              ),
-                                            ],
-                                          )),
-                                    ],
+                                                        const Icon(
+                                                          Icons.star,
+                                                          color:
+                                                              Color(0xffFFD803),
+                                                          size: 20,
+                                                        ),
+                                                      ],
+                                                    )
+                                                  ],
+                                                ),
+                                              ],
+                                            )),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               );

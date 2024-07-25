@@ -9,6 +9,9 @@ import 'package:vescan/screens/auth/signup/signup-success.dart';
 import 'package:vescan/screens/auth/signup/signup.dart';
 import 'package:vescan/screens/auth/verification/forgot-password-verify.dart';
 import 'package:vescan/screens/auth/verification/signup-verify.dart';
+import 'package:vescan/screens/dashboard/auto-parts/views/cart-screen.dart';
+import 'package:vescan/screens/dashboard/auto-parts/views/favorites-view.dart';
+import 'package:vescan/screens/dashboard/auto-parts/views/product-view.dart';
 import 'package:vescan/screens/dashboard/dashboard.dart';
 import 'package:vescan/screens/dashboard/settings/account/account-settings.dart';
 import 'package:vescan/screens/dashboard/settings/account/change-password-success.dart';
@@ -262,6 +265,22 @@ List<GetPage> getPage = [
   GetPage(
     name: transferMoneyScreen, 
     page: ()=> TransferMoneyScreen(),
+    transition: Transition.cupertino
+  ),
+
+  GetPage(
+    name: productCartScreen, 
+    page: ()=> ProductCartScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: favoriteProductScreen, 
+    page: ()=> FavoritesViewScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: productDetailsScreen, 
+    page: ()=> ProductViewScreen(),
     transition: Transition.cupertino
   ),
 
