@@ -46,6 +46,7 @@ dependencies:
   iconsax: ^0.0.8
   iconly: ^1.0.1
   syncfusion_flutter_gauges: ^26.1.42
+  convex_bottom_bar: ^3.2.0
 
 dev_dependencies:
   flutter_test:

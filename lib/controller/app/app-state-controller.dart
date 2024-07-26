@@ -12,6 +12,7 @@ class AppStateController extends GetxController {
     HomeView(),
     WalletView(),
     EcommerceView(),
+    EcommerceView(),
     SettingsView()
   ];
 
