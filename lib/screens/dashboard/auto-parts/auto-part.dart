@@ -30,16 +30,7 @@ class EcommerceView extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    InkWell(
-                      onTap: () {
-                        Get.back();
-                      },
-                      child: const Icon(
-                        Iconsax.arrow_left_2,
-                        color: Colors.black,
-                        size: 24,
-                      ),
-                    ),
+                    SizedBox(),
                     const Text(
                       "Products",
                       style: TextStyle(

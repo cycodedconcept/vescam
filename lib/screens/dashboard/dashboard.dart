@@ -33,7 +33,6 @@ class Dashboard extends StatelessWidget {
             controller.updateCurrentIndex(index);
           },
         ),
-
       );
     });
   }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vescan/screens/dashboard/auto-parts/auto-part.dart';
 import 'package:vescan/screens/dashboard/home/home.dart';
+import 'package:vescan/screens/dashboard/scan/scan.dart';
 import 'package:vescan/screens/dashboard/settings/settings.dart';
 import 'package:vescan/screens/dashboard/wallet/wallet.dart';
 
@@ -11,7 +12,7 @@ class AppStateController extends GetxController {
   List<Widget> _dashboardItems = [
     HomeView(),
     WalletView(),
-    EcommerceView(),
+    ScanView(),
     EcommerceView(),
     SettingsView()
   ];
