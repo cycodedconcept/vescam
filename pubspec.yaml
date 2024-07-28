@@ -47,6 +47,7 @@ dependencies:
   iconly: ^1.0.1
   syncfusion_flutter_gauges: ^26.1.42
   convex_bottom_bar: ^3.2.0
+  step_progress_indicator: ^1.0.2
 
 dev_dependencies:
   flutter_test:
