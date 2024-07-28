@@ -15,6 +15,10 @@ import 'package:vescan/screens/dashboard/auto-parts/views/favorites-view.dart';
 import 'package:vescan/screens/dashboard/auto-parts/views/product-view.dart';
 import 'package:vescan/screens/dashboard/dashboard.dart';
 import 'package:vescan/screens/dashboard/notifications/notification-screen.dart';
+import 'package:vescan/screens/dashboard/scan/scan-connecting/diagnostic-report.dart';
+import 'package:vescan/screens/dashboard/scan/scan-connecting/obd-scanning.dart';
+import 'package:vescan/screens/dashboard/scan/scan-connecting/scan-completed.dart';
+import 'package:vescan/screens/dashboard/scan/scan-connecting/scan-connecting.dart';
 import 'package:vescan/screens/dashboard/settings/account/account-settings.dart';
 import 'package:vescan/screens/dashboard/settings/account/change-password-success.dart';
 import 'package:vescan/screens/dashboard/settings/account/change-password.dart';
@@ -294,6 +298,27 @@ List<GetPage> getPage = [
   GetPage(
     name: activityScreen, 
     page: ()=> ActivityScreen(),
+    transition: Transition.cupertino
+  ),
+
+  GetPage(
+    name: scanConnectingScreen, 
+    page: ()=> ScanConnectingScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: scanCompletedScreen, 
+    page: ()=> ScanCompletedScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: diagnosticScreen, 
+    page: ()=> DiagnosticReportScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: obdScanningScreen, 
+    page: ()=> OBDScanningScreen(),
     transition: Transition.cupertino
   ),
 

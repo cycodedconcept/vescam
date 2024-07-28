@@ -61,3 +61,8 @@ String checkoutSuccessScreen = "/checkoutSuccessScreen";
 
 String notificationScreen = "/notificationScreen";
 String activityScreen = "/activityScreen";
+
+String scanConnectingScreen = "/scanConnectingScreen";
+String obdScanningScreen = "/obdScanningScreen";
+String scanCompletedScreen = "/scanCompletedScreen";
+String diagnosticScreen = "/diagnosticScreen";
