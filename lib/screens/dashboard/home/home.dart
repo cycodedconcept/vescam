@@ -87,15 +87,20 @@ class HomeView extends StatelessWidget {
                         const SizedBox(
                           width: 10,
                         ),
-                        Container(
-                          height: 33,
-                          width: 33,
-                          decoration: const BoxDecoration(
-                              shape: BoxShape.circle, color: Colors.white),
-                          child: const Icon(
-                            Icons.add,
-                            color: Colors.black,
-                            size: 16,
+                        InkWell(
+                          onTap: () {
+                            Get.toNamed(addNewDeviceScreen);
+                          },
+                          child: Container(
+                            height: 33,
+                            width: 33,
+                            decoration: const BoxDecoration(
+                                shape: BoxShape.circle, color: Colors.white),
+                            child: const Icon(
+                              Icons.add,
+                              color: Colors.black,
+                              size: 16,
+                            ),
                           ),
                         ),
                       ],

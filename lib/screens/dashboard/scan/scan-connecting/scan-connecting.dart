@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:iconly/iconly.dart';
-import 'package:vescan/widgets/buttons/buttons.dart';
 
-class ScanConnectingScreen extends StatelessWidget {
-  ScanConnectingScreen({super.key});
+class ScanConnectingScreen extends StatefulWidget {
+  const ScanConnectingScreen({super.key});
 
+  @override
+  State<ScanConnectingScreen> createState() => _ScanConnectingScreenState();
+}
+
+class _ScanConnectingScreenState extends State<ScanConnectingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,8 +56,24 @@ class ScanConnectingScreen extends StatelessWidget {
                   const SizedBox(
                     height: 40,
                   ),
-                  Buttons()
-                      .onboardingButtons(title: "Start Scanning", action: () {})
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      CircularProgressIndicator(
+                        color: Color(0xffD9D9D9),
+                      ),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Text(
+                        "Connecting...",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: "OpenMed",
+                            fontSize: 16),
+                      ),
+                    ],
+                  )
                 ],
               ),
             )),

@@ -53,8 +53,11 @@ class ScanView extends StatelessWidget {
                   const SizedBox(
                     height: 40,
                   ),
-                  Buttons()
-                      .onboardingButtons(title: "Start Scanning", action: () {})
+                  Buttons().onboardingButtons(
+                      title: "Start Scanning",
+                      action: () {
+                        Get.toNamed(scanConnectingScreen);
+                      })
                 ],
               ),
             )),

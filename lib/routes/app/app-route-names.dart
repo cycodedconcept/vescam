@@ -66,3 +66,12 @@ String scanConnectingScreen = "/scanConnectingScreen";
 String obdScanningScreen = "/obdScanningScreen";
 String scanCompletedScreen = "/scanCompletedScreen";
 String diagnosticScreen = "/diagnosticScreen";
+
+String addNewDeviceScreen = "/addNewDeviceScreen";
+String scanQRCodeScreen = "/scanQRCodeScreen";
+String deviceInformationScreen = "/deviceInformationScreen";
+String generatingOtherInfoScreen = "/generatingOtherInfoScreen";
+String deviceInformationScreen2 = "/deviceInformationScreen2";
+String addDeviceLoadingScreen = "/addDeviceLoadingScreen";
+String newDeviceAddedScreen = "/newDeviceAddedScreen";
+String vehicleInformationScreen = "/vehicleInformationScreen";

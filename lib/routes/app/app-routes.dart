@@ -9,6 +9,13 @@ import 'package:vescan/screens/auth/signup/signup-success.dart';
 import 'package:vescan/screens/auth/signup/signup.dart';
 import 'package:vescan/screens/auth/verification/forgot-password-verify.dart';
 import 'package:vescan/screens/auth/verification/signup-verify.dart';
+import 'package:vescan/screens/dashboard/home/add-device/add-device-info-loading.dart';
+import 'package:vescan/screens/dashboard/home/add-device/add-device-success.dart';
+import 'package:vescan/screens/dashboard/home/add-device/add-new-device.dart';
+import 'package:vescan/screens/dashboard/home/add-device/device-info.dart';
+import 'package:vescan/screens/dashboard/home/add-device/device-info2.dart';
+import 'package:vescan/screens/dashboard/home/add-device/generating-other-info.dart';
+import 'package:vescan/screens/dashboard/home/add-device/scan-qr-code.dart';
 import 'package:vescan/screens/dashboard/notifications/activity-screen.dart';
 import 'package:vescan/screens/dashboard/auto-parts/views/cart-screen.dart';
 import 'package:vescan/screens/dashboard/auto-parts/views/favorites-view.dart';
@@ -319,6 +326,42 @@ List<GetPage> getPage = [
   GetPage(
     name: obdScanningScreen, 
     page: ()=> OBDScanningScreen(),
+    transition: Transition.cupertino
+  ),
+
+  GetPage(
+    name: addNewDeviceScreen, 
+    page: ()=> AddNewDeviceScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: scanQRCodeScreen, 
+    page: ()=> ScanQRCodeScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: deviceInformationScreen, 
+    page: ()=> DeviceInfoScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: generatingOtherInfoScreen, 
+    page: ()=> GeneratingOtherInfoScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: deviceInformationScreen2, 
+    page: ()=> DeviceInfoScreen2(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: addDeviceLoadingScreen, 
+    page: ()=> AddDeviceLoadingScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: newDeviceAddedScreen, 
+    page: ()=> AddDeviceSuccessScreen(),
     transition: Transition.cupertino
   ),
 
