@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:gif/gif.dart';
 import 'package:iconly/iconly.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:vescan/routes/app/app-route-names.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -95,27 +98,37 @@ class HomeView extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Container(
-                        height: 33,
-                        width: 33,
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            border: Border.all(color: Colors.white)),
-                        child: const Icon(
-                          Icons.note_alt_outlined,
-                          color: Colors.white,
-                          size: 16,
+                      InkWell(
+                        onTap: () {
+                          Get.toNamed(activityScreen);
+                        },
+                        child: Container(
+                          height: 33,
+                          width: 33,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(color: Colors.white)),
+                          child: const Icon(
+                            Icons.note_alt_outlined,
+                            color: Colors.white,
+                            size: 16,
+                          ),
                         ),
                       ),
                       const SizedBox(
                         width: 10,
                       ),
-                      CircleAvatar(
-                        radius: 24,
-                        backgroundColor: Colors.white.withOpacity(0.2),
-                        child: const Icon(
-                          IconlyLight.notification,
-                          color: Colors.white,
+                      InkWell(
+                        onTap: () {
+                          Get.toNamed(notificationScreen);
+                        },
+                        child: CircleAvatar(
+                          radius: 24,
+                          backgroundColor: Colors.white.withOpacity(0.2),
+                          child: const Icon(
+                            IconlyLight.notification,
+                            color: Colors.white,
+                          ),
                         ),
                       )
                     ],
@@ -132,21 +145,45 @@ class HomeView extends StatelessWidget {
                       value: false,
                       activeColor: const Color(0xff00BFFF),
                       onChanged: (value) {}),
-                  // Container(
-                  //   height: 37,
-                  //   width: 37,
-                  //   padding: const EdgeInsets.all(10),
-                  //   decoration: const BoxDecoration(
-                  //     shape: BoxShape.circle,
-                  //     color: Colors.white,
-                  //   ),
-                  //   child: Gif(
-                  //       autostart: Autostart.once,
-                  //       placeholder: (context) =>
-                  //           const Center(child: CircularProgressIndicator()),
-                  //       image: const AssetImage("assets/gif/")),
-                  // )
+                  Container(
+                    height: 37,
+                    width: 37,
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.white,
+                    ),
+                    child: Gif(
+                      autostart: Autostart.loop,
+                      placeholder: (context) =>
+                          const Center(child: CircularProgressIndicator()),
+                      image:
+                          const AssetImage("assets/gif/navigation-symbol.gif"),
+                      height: 30,
+                      width: 30,
+                      fit: BoxFit.cover,
+                    ),
+                  )
                 ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Stack(
+                children: [
+                  SvgPicture.asset("assets/images/car-stand.svg"),
+                ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Container(
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.white,
+                    
+                  )
+                ),
               )
             ],
           ),

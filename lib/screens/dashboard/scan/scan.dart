@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
 import 'package:iconsax/iconsax.dart';
@@ -48,6 +49,10 @@ class ScanView extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  SvgPicture.asset("assets/images/vehicle-diagnostic.svg"),
+                  const SizedBox(
+                    height: 40,
+                  ),
                   Buttons()
                       .onboardingButtons(title: "Start Scanning", action: () {})
                 ],

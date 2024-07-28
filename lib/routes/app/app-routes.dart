@@ -9,10 +9,12 @@ import 'package:vescan/screens/auth/signup/signup-success.dart';
 import 'package:vescan/screens/auth/signup/signup.dart';
 import 'package:vescan/screens/auth/verification/forgot-password-verify.dart';
 import 'package:vescan/screens/auth/verification/signup-verify.dart';
+import 'package:vescan/screens/dashboard/notifications/activity-screen.dart';
 import 'package:vescan/screens/dashboard/auto-parts/views/cart-screen.dart';
 import 'package:vescan/screens/dashboard/auto-parts/views/favorites-view.dart';
 import 'package:vescan/screens/dashboard/auto-parts/views/product-view.dart';
 import 'package:vescan/screens/dashboard/dashboard.dart';
+import 'package:vescan/screens/dashboard/notifications/notification-screen.dart';
 import 'package:vescan/screens/dashboard/settings/account/account-settings.dart';
 import 'package:vescan/screens/dashboard/settings/account/change-password-success.dart';
 import 'package:vescan/screens/dashboard/settings/account/change-password.dart';
@@ -35,7 +37,7 @@ import 'package:vescan/screens/dashboard/settings/other-settings/other-settings.
 import 'package:vescan/screens/dashboard/settings/other-settings/privacy-security/privacy-security.dart';
 import 'package:vescan/screens/dashboard/settings/other-settings/privacy-security/privacy-settings.dart';
 import 'package:vescan/screens/dashboard/settings/other-settings/privacy-security/two-factor-auth.dart';
-import 'package:vescan/screens/dashboard/settings/other-settings/set-pid-threshold/set-pid-threshold-screen.dart';
+import 'package:vescan/screens/dashboard/settings/set-pid-threshold/set-pid-threshold-screen.dart';
 import 'package:vescan/screens/dashboard/settings/support/support-help.dart';
 import 'package:vescan/screens/dashboard/settings/vehicle-info/vehicle-info.dart';
 import 'package:vescan/screens/dashboard/wallet/transfer/bank-transfer.dart';
@@ -281,6 +283,17 @@ List<GetPage> getPage = [
   GetPage(
     name: productDetailsScreen, 
     page: ()=> ProductViewScreen(),
+    transition: Transition.cupertino
+  ),
+
+  GetPage(
+    name: notificationScreen, 
+    page: ()=> NotificationScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: activityScreen, 
+    page: ()=> ActivityScreen(),
     transition: Transition.cupertino
   ),
 

@@ -58,3 +58,6 @@ String favoriteProductScreen = "/favoriteProductScreen";
 String addCardScreen = "/addCardScreen";
 String checkoutLoadingScreen = "/checkoutLoadingScreen";
 String checkoutSuccessScreen = "/checkoutSuccessScreen";
+
+String notificationScreen = "/notificationScreen";
+String activityScreen = "/activityScreen";
