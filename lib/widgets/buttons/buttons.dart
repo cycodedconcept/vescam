@@ -62,6 +62,26 @@ class Buttons {
     );
   }
 
+  Widget alternativeButtons({title, action}) {
+    return InkWell(
+      onTap: action,
+      child: Container(
+        height: 53,
+        width: double.infinity,
+        decoration: BoxDecoration(
+            color: const Color(0xff004359),
+            borderRadius: BorderRadius.circular(12)),
+        child:const Center(
+          child: Text(
+            "Next",
+            style: TextStyle(
+                color: Colors.white, fontFamily: "OpenMed", fontSize: 16),
+          ),
+        ),
+      ),
+    );
+  }
+
   Widget socialButtons({title, action, icon}) {
     return Container(
         height: 48,
