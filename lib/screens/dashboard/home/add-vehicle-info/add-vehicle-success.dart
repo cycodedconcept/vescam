@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gif/gif.dart';
-
 import '../../../../routes/app/app-route-names.dart';
 import '../../../../widgets/buttons/buttons.dart';
 
-class AddDeviceSuccessScreen extends StatelessWidget {
-  const AddDeviceSuccessScreen({super.key});
+class AddVehicleSuccessScreen extends StatelessWidget {
+  const AddVehicleSuccessScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +45,7 @@ class AddDeviceSuccessScreen extends StatelessWidget {
               height: 10,
             ),
             const Text(
-              "New Device Added!",
+              "New Vehicle Added!",
               style: TextStyle(
                   color: Color(0xff001F3F),
                   fontSize: 28,
@@ -55,28 +54,32 @@ class AddDeviceSuccessScreen extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            const Text(
-              "You have successfully added a new device.",
+            RichText(
               textAlign: TextAlign.center,
-              style: TextStyle(
-                  color: Color(0xff7C797A), fontSize: 14, fontFamily: "Open"),
+              text: const TextSpan(
+                  text: "You have successfully added a new vehicle.\n",
+                  style: TextStyle(
+                      color: Color(0xff7C797A),
+                      fontSize: 14,
+                      fontFamily: "Open"),
+                  children: [
+                    TextSpan(
+                      text: "(Volvo XC40)",
+                      style: TextStyle(
+                          color: Color(0xff00BFFF),
+                          fontSize: 14,
+                          fontFamily: "Open"),
+                    )
+                  ]),
             ),
             const SizedBox(
               height: 40,
             ),
             Buttons().authButtons(
-                title: "Add Vehicle Information",
-                action: () {
-                  Get.toNamed(vehicleInformationScreen);
-                }),
-            const SizedBox(
-              height: 10,
-            ),
-            Buttons().authButtons(
                 title: "Go Back Home",
                 action: () {
                   Get.offAllNamed(dashboard);
-                }),
+                })
           ],
         ),
       ),

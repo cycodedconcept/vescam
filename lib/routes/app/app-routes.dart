@@ -16,6 +16,9 @@ import 'package:vescan/screens/dashboard/home/add-device/device-info.dart';
 import 'package:vescan/screens/dashboard/home/add-device/device-info2.dart';
 import 'package:vescan/screens/dashboard/home/add-device/generating-other-info.dart';
 import 'package:vescan/screens/dashboard/home/add-device/scan-qr-code.dart';
+import 'package:vescan/screens/dashboard/home/add-vehicle-info/add-vehicle-info-loading.dart';
+import 'package:vescan/screens/dashboard/home/add-vehicle-info/add-vehicle-info.dart';
+import 'package:vescan/screens/dashboard/home/add-vehicle-info/add-vehicle-success.dart';
 import 'package:vescan/screens/dashboard/notifications/activity-screen.dart';
 import 'package:vescan/screens/dashboard/auto-parts/views/cart-screen.dart';
 import 'package:vescan/screens/dashboard/auto-parts/views/favorites-view.dart';
@@ -362,6 +365,21 @@ List<GetPage> getPage = [
   GetPage(
     name: newDeviceAddedScreen, 
     page: ()=> AddDeviceSuccessScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: vehicleInformationScreen, 
+    page: ()=> AddVehicleInformationScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: addVehicleLoadingScreen, 
+    page: ()=> AddVehicleInfoLoadingScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: newVehicleAddedScreen, 
+    page: ()=> AddVehicleSuccessScreen(),
     transition: Transition.cupertino
   ),
 

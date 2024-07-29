@@ -109,7 +109,9 @@ class AddNewDeviceScreen extends StatelessWidget {
                         height: 50,
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.toNamed(deviceInformationScreen);
+                        },
                         child: const Text(
                           "Add New Device, Manually?",
                           style: TextStyle(

@@ -75,3 +75,6 @@ String deviceInformationScreen2 = "/deviceInformationScreen2";
 String addDeviceLoadingScreen = "/addDeviceLoadingScreen";
 String newDeviceAddedScreen = "/newDeviceAddedScreen";
 String vehicleInformationScreen = "/vehicleInformationScreen";
+String addVehicleLoadingScreen = "/addVehicleLoadingScreen";
+String newVehicleAddedScreen = "/newVehicleAddedScreen";
+
