@@ -474,6 +474,8 @@ class HomeView extends StatelessWidget {
                                   ),
                                   const Text(
                                     "Intake Air Temp.",
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontFamily: "OpenMed",

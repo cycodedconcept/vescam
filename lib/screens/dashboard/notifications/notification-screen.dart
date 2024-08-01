@@ -44,7 +44,7 @@ class NotificationScreen extends StatelessWidget {
                         fontSize: 16),
                   ),
                   const Icon(
-                    IconlyLight.notification,
+                    IconlyLight.more_circle,
                     color: Colors.black,
                   )
                 ],
@@ -56,48 +56,50 @@ class NotificationScreen extends StatelessWidget {
               width: double.infinity,
               padding: const EdgeInsets.symmetric(horizontal: 20),
               color: Colors.white,
-              child: Column(
-                children: [
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text(
-                        "New",
-                        style: TextStyle(
-                          fontFamily: "OpenMed",
-                          color: Color(0xff030206),
-                          fontSize: 16,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          "New",
+                          style: TextStyle(
+                            fontFamily: "OpenMed",
+                            color: Color(0xff030206),
+                            fontSize: 16,
+                          ),
                         ),
-                      ),
-                      InkWell(
-                          onTap: () {},
-                          child: const Text(
-                            "Mark all as read",
-                            style: TextStyle(
-                                color: Color(0xff00BFFF),
-                                fontSize: 12,
-                                fontWeight: FontWeight.w600),
-                          ))
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Column(
-                    children: List.generate(5, (index) {
-                      return _notificationTile(
-                          title: "Diagnostic Scan Completed",
-                          subtitle:
-                              "Your vehicle diagnostic scan is complete. No issues were detected. Drive safe!",
-                          time: "3 seconds ago",
-                          action: () {},
-                          icon: Iconsax.car);
-                    }),
-                  )
-                ],
+                        InkWell(
+                            onTap: () {},
+                            child: const Text(
+                              "Mark all as read",
+                              style: TextStyle(
+                                  color: Color(0xff00BFFF),
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w600),
+                            ))
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Column(
+                      children: List.generate(5, (index) {
+                        return _notificationTile(
+                            title: "Diagnostic Scan Completed",
+                            subtitle:
+                                "Your vehicle diagnostic scan is complete. No issues were detected. Drive safe!",
+                            time: "3 seconds ago",
+                            action: () {},
+                            icon: Iconsax.car);
+                      }),
+                    )
+                  ],
+                ),
               ),
             )),
           ],
