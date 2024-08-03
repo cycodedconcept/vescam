@@ -19,6 +19,8 @@ import 'package:vescan/screens/dashboard/home/add-device/scan-qr-code.dart';
 import 'package:vescan/screens/dashboard/home/add-vehicle-info/add-vehicle-info-loading.dart';
 import 'package:vescan/screens/dashboard/home/add-vehicle-info/add-vehicle-info.dart';
 import 'package:vescan/screens/dashboard/home/add-vehicle-info/add-vehicle-success.dart';
+import 'package:vescan/screens/dashboard/home/book-tow-machine/book-tow-machine.dart';
+import 'package:vescan/screens/dashboard/home/contact-mechanic/contact-mechanic-screen.dart';
 import 'package:vescan/screens/dashboard/notifications/activity-screen.dart';
 import 'package:vescan/screens/dashboard/auto-parts/views/cart-screen.dart';
 import 'package:vescan/screens/dashboard/auto-parts/views/favorites-view.dart';
@@ -380,6 +382,17 @@ List<GetPage> getPage = [
   GetPage(
     name: newVehicleAddedScreen, 
     page: ()=> AddVehicleSuccessScreen(),
+    transition: Transition.cupertino
+  ),
+
+  GetPage(
+    name: contactMechanicScreen, 
+    page: ()=> ContactMechanicScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: bookATowScreen, 
+    page: ()=> BookTowMachineScreen(),
     transition: Transition.cupertino
   ),
 

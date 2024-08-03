@@ -78,3 +78,7 @@ String vehicleInformationScreen = "/vehicleInformationScreen";
 String addVehicleLoadingScreen = "/addVehicleLoadingScreen";
 String newVehicleAddedScreen = "/newVehicleAddedScreen";
 
+String contactMechanicScreen = "/contactMechanicScreen";
+String bookATowScreen = "/bookATowScreen";
+String mechanicProfileScreen = "/mechanicProfileScreen";
+String towCompanyProfileScreen = "/towCompanyProfileScreen";

@@ -639,9 +639,44 @@ class HomeView extends StatelessWidget {
               const SizedBox(
                 height: 30,
               ),
+              _tile("Contact A Mechanic", "assets/images/mechanic.png", () {
+                Get.toNamed(contactMechanicScreen);
+              }),
+              const SizedBox(
+                height: 10,
+              ),
+              _tile("Book A Towing Vehicle", "assets/images/tow.png", () {
+                Get.toNamed(bookATowScreen);
+              }),
+              const SizedBox(
+                height: 50,
+              ),
             ],
           ),
         )),
+      ),
+    );
+  }
+
+  Container _tile(title, image, onTap) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+      decoration: BoxDecoration(
+          color: Colors.white, borderRadius: BorderRadius.circular(10)),
+      child: ListTile(
+        onTap: onTap,
+        contentPadding: EdgeInsets.zero,
+        leading: Image.asset(image),
+        title: Text(
+          title,
+          style: const TextStyle(
+              color: Colors.black, fontFamily: "OpenMed", fontSize: 16),
+        ),
+        trailing: const Icon(
+          Icons.arrow_forward_ios,
+          color: Colors.black,
+          size: 20,
+        ),
       ),
     );
   }
