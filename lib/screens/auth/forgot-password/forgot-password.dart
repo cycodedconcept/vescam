@@ -72,23 +72,21 @@ class ForgotPassword extends StatelessWidget {
                       ),
                       TextFormField(
                         decoration: InputDecoration(
-                          hintText: "Enter Phone Number",
+                          hintText: "Search",
+                          suffixIcon: Icon(
+                            Icons.search,
+                            color: Color(0xffADADAD),
+                          ),
                           hintStyle: TextStyle(
-                              color: Color(0xff7C797A), fontFamily: "OpenMed"),
-                          contentPadding:
-                              EdgeInsets.symmetric(horizontal: 20, vertical: 0),
+                              color: Color(0xffADADAD), fontFamily: "OpenMed"),
                           enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
                               borderSide: BorderSide(
-                                  color: Color(0xff7C797A), width: 1.5)),
+                                  color: Color(0xffF1F1F1), width: 1.5)),
                           focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
                               borderSide: BorderSide(
-                                  color: Color(0xff001F3F), width: 1.5)),
-                          errorBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              borderSide: BorderSide(
-                                  color: Color(0xffFF0022), width: 1.5)),
+                                  color: Color(0xffF1F1F1), width: 1.5)),
                         ),
                       )
                     ],
