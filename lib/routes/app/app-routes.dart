@@ -20,6 +20,10 @@ import 'package:vescan/screens/dashboard/home/add-vehicle-info/add-vehicle-info-
 import 'package:vescan/screens/dashboard/home/add-vehicle-info/add-vehicle-info.dart';
 import 'package:vescan/screens/dashboard/home/add-vehicle-info/add-vehicle-success.dart';
 import 'package:vescan/screens/dashboard/home/book-tow-machine/book-tow-machine.dart';
+import 'package:vescan/screens/dashboard/home/book-tow-machine/search-for-tow-loading.dart';
+import 'package:vescan/screens/dashboard/home/book-tow-machine/search-for-tow-machine.dart';
+import 'package:vescan/screens/dashboard/home/book-tow-machine/search-tow-input-screen.dart';
+import 'package:vescan/screens/dashboard/home/book-tow-machine/tow-company-profile.dart';
 import 'package:vescan/screens/dashboard/home/contact-mechanic/contact-mechanic-screen.dart';
 import 'package:vescan/screens/dashboard/home/contact-mechanic/mechanic-profile-screen.dart';
 import 'package:vescan/screens/dashboard/home/contact-mechanic/search-mechanic.dart';
@@ -418,6 +422,26 @@ List<GetPage> getPage = [
   GetPage(
     name: bookATowScreen, 
     page: ()=> BookTowMachineScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: searchForTowScreen, 
+    page: ()=> SearchForTowCompanyScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: searchTowInputScreen, 
+    page: ()=> SearchForTowCompanyInputScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: searchTowLoadingScreen, 
+    page: ()=> SearchForTowCompanyLoadingScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: towCompanyProfileScreen, 
+    page: ()=> TowCompanyProfileScreen(),
     transition: Transition.cupertino
   ),
 
