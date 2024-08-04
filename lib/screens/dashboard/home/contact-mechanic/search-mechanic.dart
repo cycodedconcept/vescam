@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:iconly/iconly.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:vescan/routes/app/app-route-names.dart';
 
 class SearchMechanicScreen extends StatelessWidget {
   const SearchMechanicScreen({super.key});
@@ -17,7 +18,7 @@ class SearchMechanicScreen extends StatelessWidget {
             child: Column(
           children: [
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
               color: Colors.white,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -65,48 +66,79 @@ class SearchMechanicScreen extends StatelessWidget {
             ),
             Expanded(
               child: SingleChildScrollView(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Column(
-                    children: [
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      const Text(
-                        "Do you have a mechanic name you want to search?",
+                child: Column(
+                  children: [
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: Text(
+                        "Do you have a mechanic\nname you want to search?",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             color: Color(0xff030206),
                             fontFamily: "OpenMed",
                             fontSize: 20),
                       ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      Container(
-                        width: double.infinity,
-                        color: Colors.white,
-                        child: Column(
-                          children: [
-                            
-                            Column(
-                              children: List.generate(5, (index) {
-                                return Container(
-                                  margin: EdgeInsets.only(bottom: 20),
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: 20, vertical: 15),
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(12),
-                                      border: Border.all(color: Color(0xffD6D5D6))),
-                                  child: _tiles(),
-                                );
-                              }),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      width: double.infinity,
+                      color: Colors.white,
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: Column(
+                        children: [
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          TextField(
+                            textInputAction: TextInputAction.search,
+                            onSubmitted: (value) {
+                              Get.toNamed(searchMechanicLoadingScreen);
+                            },
+                            decoration: InputDecoration(
+                              hintText: "Search",
+                              suffixIcon: const Icon(
+                                Icons.search,
+                                color: Color(0xffADADAD),
+                              ),
+                              hintStyle: const TextStyle(
+                                  color: Color(0xffADADAD),
+                                  fontFamily: "OpenMed"),
+                              enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: const BorderSide(
+                                      color: Color(0xffF1F1F1), width: 1)),
+                              focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: const BorderSide(
+                                      color: Color(0xffF1F1F1), width: 1)),
                             ),
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Column(
+                            children: List.generate(5, (index) {
+                              return Container(
+                                margin: EdgeInsets.only(bottom: 20),
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 20, vertical: 15),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(12),
+                                    border:
+                                        Border.all(color: Color(0xffD6D5D6))),
+                                child: _tiles(),
+                              );
+                            }),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
                 ),
               ),
             ),

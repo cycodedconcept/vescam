@@ -21,6 +21,10 @@ import 'package:vescan/screens/dashboard/home/add-vehicle-info/add-vehicle-info.
 import 'package:vescan/screens/dashboard/home/add-vehicle-info/add-vehicle-success.dart';
 import 'package:vescan/screens/dashboard/home/book-tow-machine/book-tow-machine.dart';
 import 'package:vescan/screens/dashboard/home/contact-mechanic/contact-mechanic-screen.dart';
+import 'package:vescan/screens/dashboard/home/contact-mechanic/mechanic-profile-screen.dart';
+import 'package:vescan/screens/dashboard/home/contact-mechanic/search-mechanic.dart';
+import 'package:vescan/screens/dashboard/home/contact-mechanic/searchMechanicInput.dart';
+import 'package:vescan/screens/dashboard/home/contact-mechanic/searchMechanicLoading.dart';
 import 'package:vescan/screens/dashboard/notifications/activity-screen.dart';
 import 'package:vescan/screens/dashboard/auto-parts/views/cart-screen.dart';
 import 'package:vescan/screens/dashboard/auto-parts/views/favorites-view.dart';
@@ -390,6 +394,27 @@ List<GetPage> getPage = [
     page: ()=> ContactMechanicScreen(),
     transition: Transition.cupertino
   ),
+  GetPage(
+    name: searchForMechanicScreen, 
+    page: ()=> SearchMechanicScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: searchMechanicLoadingScreen, 
+    page: ()=> SearchMechanicLoadingScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: searchMechanicInputScreen, 
+    page: ()=> SearchMechanicInputScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: mechanicProfileScreen, 
+    page: ()=> MechanicProfileScreen(),
+    transition: Transition.cupertino
+  ),
+
   GetPage(
     name: bookATowScreen, 
     page: ()=> BookTowMachineScreen(),

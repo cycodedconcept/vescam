@@ -61,7 +61,7 @@ class ForgotPassword extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Text(
-                        "Phone Number",
+                        "Email Address",
                         style: TextStyle(
                             color: Color(0xff030206),
                             fontSize: 14,
@@ -72,21 +72,23 @@ class ForgotPassword extends StatelessWidget {
                       ),
                       TextFormField(
                         decoration: InputDecoration(
-                          hintText: "Search",
-                          suffixIcon: const Icon(
-                            Icons.search,
-                            color: Color(0xffADADAD),
-                          ),
-                          hintStyle: const TextStyle(
-                              color: Color(0xffADADAD), fontFamily: "OpenMed"),
+                          hintText: "Enter Email Address",
+                          hintStyle: TextStyle(
+                              color: Color(0xff7C797A), fontFamily: "OpenMed"),
+                          contentPadding:
+                              EdgeInsets.symmetric(horizontal: 20, vertical: 0),
                           enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
-                              borderSide: const BorderSide(
-                                  color: Color(0xffF1F1F1), width: 1.5)),
+                              borderSide: BorderSide(
+                                  color: Color(0xff7C797A), width: 1.5)),
                           focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
-                              borderSide: const BorderSide(
-                                  color: Color(0xffF1F1F1), width: 1.5)),
+                              borderSide: BorderSide(
+                                  color: Color(0xff001F3F), width: 1.5)),
+                          errorBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              borderSide: BorderSide(
+                                  color: Color(0xffFF0022), width: 1.5)),
                         ),
                       )
                     ],

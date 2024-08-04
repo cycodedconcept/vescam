@@ -33,7 +33,7 @@ class _SearchMechanicLoadingScreenState extends State<SearchMechanicLoadingScree
               height: 10,
             ),
             Text(
-              "Mechanic Booking Loading...",
+              "Searching...",
               style: TextStyle(
                   color: Color(0xff030206),
                   fontSize: 14,

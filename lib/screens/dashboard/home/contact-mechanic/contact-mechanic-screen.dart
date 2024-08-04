@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:iconly/iconly.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:vescan/routes/app/app-route-names.dart';
 
 class ContactMechanicScreen extends StatelessWidget {
   const ContactMechanicScreen({super.key});
@@ -165,18 +166,23 @@ class ContactMechanicScreen extends StatelessWidget {
                               const SizedBox(
                                 width: 10,
                               ),
-                              Container(
-                                height: 32,
-                                width: 32,
-                                decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: const Color(0xffD9DDE2),
-                                    ),
-                                    shape: BoxShape.circle),
-                                child: const Icon(
-                                  Iconsax.search_normal_1,
-                                  size: 20,
-                                  color: Color(0xff7C797A),
+                              InkWell(
+                                onTap: () {
+                                  Get.toNamed(searchForMechanicScreen);
+                                },
+                                child: Container(
+                                  height: 32,
+                                  width: 32,
+                                  decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: const Color(0xffD9DDE2),
+                                      ),
+                                      shape: BoxShape.circle),
+                                  child: const Icon(
+                                    Iconsax.search_normal_1,
+                                    size: 20,
+                                    color: Color(0xff7C797A),
+                                  ),
                                 ),
                               ),
                             ],
