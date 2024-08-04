@@ -78,6 +78,7 @@ class SearchMechanicInputScreen extends StatelessWidget {
                                     horizontal: 20, vertical: 15),
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(12),
+                                    color: Colors.white,
                                     border: Border.all(
                                         color: const Color(0xffD6D5D6))),
                                 child: _tiles(),
@@ -93,26 +94,29 @@ class SearchMechanicInputScreen extends StatelessWidget {
             ),
             Expanded(
               flex: 2,
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                child: TextFormField(
-                  decoration: InputDecoration(
-                    filled: true,
-                    fillColor: const Color(0xffF1F1F1),
-                    hintText: "Search",
-                    suffixIcon: const Icon(
-                      Icons.search,
-                      color: Color(0xffADADAD),
+              child: Container(
+                color: Colors.white,
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: const Color(0xffF1F1F1),
+                      hintText: "Search",
+                      suffixIcon: const Icon(
+                        Icons.search,
+                        color: Color(0xffADADAD),
+                      ),
+                      hintStyle: const TextStyle(
+                          color: Color(0xffADADAD), fontFamily: "OpenMed"),
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide.none),
+                      focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide.none),
                     ),
-                    hintStyle: const TextStyle(
-                        color: Color(0xffADADAD), fontFamily: "OpenMed"),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide.none),
-                    focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide.none),
                   ),
                 ),
               ),

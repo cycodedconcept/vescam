@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating/flutter_rating.dart';
 import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
 import 'package:iconsax/iconsax.dart';
@@ -11,7 +12,6 @@ class MechanicProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffF8FAFB),
       appBar: AppBar(
         backgroundColor: Colors.white,
         leading: InkWell(
@@ -206,6 +206,13 @@ class MechanicProfileScreen extends StatelessWidget {
                             padding: const EdgeInsets.all(20),
                             decoration: BoxDecoration(
                               color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(
+                                    color: Colors.black.withOpacity(0.05),
+                                    offset: const Offset(0, 0),
+                                    blurRadius: 30,
+                                    spreadRadius: 0)
+                              ],
                               borderRadius: BorderRadius.circular(12),
                             ),
                             child: Row(
@@ -385,6 +392,36 @@ class MechanicProfileScreen extends StatelessWidget {
                           const SizedBox(
                             height: 30,
                           ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Text(
+                                "All Reviews",
+                                style: TextStyle(
+                                  fontFamily: "OpenMed",
+                                  color: Color(0xff030206),
+                                  fontSize: 12,
+                                ),
+                              ),
+                              InkWell(
+                                  onTap: () {},
+                                  child: const Text(
+                                    "4.5 (32 Reviews)",
+                                    style: TextStyle(
+                                        color: Color(0xff00BFFF),
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w600),
+                                  ))
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          Column(
+                            children: List.generate(5, (index) {
+                              return _tiles();
+                            }),
+                          ),
                           const SizedBox(
                             height: 30,
                           ),
@@ -406,6 +443,76 @@ class MechanicProfileScreen extends StatelessWidget {
                 ))
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _tiles() {
+    return Container(
+      padding: const EdgeInsets.all(10),
+      margin: const EdgeInsets.only(bottom: 20),
+      decoration: BoxDecoration(
+          color: const Color(0xffF8FAFB),
+          borderRadius: BorderRadius.circular(5)),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: Row(
+                  children: [
+                    Container(
+                      width: 35,
+                      height: 35,
+                      decoration: const BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage("assets/images/avatar.png")),
+                          color: Colors.grey,
+                          shape: BoxShape.circle),
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Engr. Hassan Bello",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontFamily: "OpenBold",
+                              fontSize: 14),
+                        ),
+                        SizedBox(
+                          height: 2,
+                        ),
+                        Text(
+                          "5 Min Ago",
+                          style:
+                              TextStyle(color: Color(0xff00BFFF), fontSize: 12),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              StarRating(
+                rating: 4,
+                allowHalfRating: false,
+                onRatingChanged: (rating) {},
+                borderColor: const Color(0xffFFD803),
+                color: const Color(0xffFFD803),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          const Text(
+            "AA Rescue Limited is a seasoned automobile engineer with over 8 years of experience in the automotive industry.",
+            style: TextStyle(color: Color(0xff7C797A), fontSize: 13),
+          )
+        ],
       ),
     );
   }

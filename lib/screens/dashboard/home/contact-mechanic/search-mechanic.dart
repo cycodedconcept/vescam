@@ -259,4 +259,5 @@ class SearchMechanicScreen extends StatelessWidget {
       ],
     );
   }
+
 }
