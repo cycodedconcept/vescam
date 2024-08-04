@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:qr_code_scanner/qr_code_scanner.dart';
+// import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:vescan/routes/app/app-route-names.dart';
 
 class ScanQRCodeScreen extends StatefulWidget {
@@ -16,8 +16,8 @@ class ScanQRCodeScreen extends StatefulWidget {
 }
 
 class _ScanQRCodeScreenState extends State<ScanQRCodeScreen> {
-  Barcode? result;
-  QRViewController? controller;
+  // Barcode? result;
+  // QRViewController? controller;
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
 
   // @override
@@ -91,11 +91,13 @@ class _ScanQRCodeScreenState extends State<ScanQRCodeScreen> {
                       const SizedBox(
                         height: 20,
                       ),
-                      SizedBox(
-                        height: 417,
-                        width: double.infinity,
-                        child: _buildQrView(context),
-                      ),
+                      // SizedBox(
+                      //   height: 417,
+                      //   width: double.infinity,
+                      //   child: 
+                      //   _buildQrView(context),
+                      // ),
+                      Image.asset("assets/images/qr-code.png"),
                       const SizedBox(
                         height: 40,
                       ),
@@ -144,50 +146,50 @@ class _ScanQRCodeScreenState extends State<ScanQRCodeScreen> {
     );
   }
 
-  Widget _buildQrView(BuildContext context) {
-    // For this example we check how width or tall the device is and change the scanArea and overlay accordingly.
-    var scanArea = (MediaQuery.of(context).size.width < 400 ||
-            MediaQuery.of(context).size.height < 400)
-        ? 150.0
-        : 300.0;
-    // To ensure the Scanner view is properly sizes after rotation
-    // we need to listen for Flutter SizeChanged notification and update controller
-    return QRView(
-      key: qrKey,
-      onQRViewCreated: _onQRViewCreated,
-      overlay: QrScannerOverlayShape(
-          borderColor: Colors.red,
-          borderRadius: 10,
-          borderLength: 30,
-          borderWidth: 10,
-          cutOutSize: scanArea),
-      onPermissionSet: (ctrl, p) => _onPermissionSet(context, ctrl, p),
-    );
-  }
+  // Widget _buildQrView(BuildContext context) {
+  //   // For this example we check how width or tall the device is and change the scanArea and overlay accordingly.
+  //   var scanArea = (MediaQuery.of(context).size.width < 400 ||
+  //           MediaQuery.of(context).size.height < 400)
+  //       ? 150.0
+  //       : 300.0;
+  //   // To ensure the Scanner view is properly sizes after rotation
+  //   // we need to listen for Flutter SizeChanged notification and update controller
+  //   return QRView(
+  //     key: qrKey,
+  //     onQRViewCreated: _onQRViewCreated,
+  //     overlay: QrScannerOverlayShape(
+  //         borderColor: Colors.red,
+  //         borderRadius: 10,
+  //         borderLength: 30,
+  //         borderWidth: 10,
+  //         cutOutSize: scanArea),
+  //     onPermissionSet: (ctrl, p) => _onPermissionSet(context, ctrl, p),
+  //   );
+  // }
 
-  void _onQRViewCreated(QRViewController controller) {
-    setState(() {
-      this.controller = controller;
-    });
-    controller.scannedDataStream.listen((scanData) {
-      setState(() {
-        result = scanData;
-      });
-    });
-  }
+  // void _onQRViewCreated(QRViewController controller) {
+  //   setState(() {
+  //     this.controller = controller;
+  //   });
+  //   controller.scannedDataStream.listen((scanData) {
+  //     setState(() {
+  //       result = scanData;
+  //     });
+  //   });
+  // }
 
-  void _onPermissionSet(BuildContext context, QRViewController ctrl, bool p) {
-    log('${DateTime.now().toIso8601String()}_onPermissionSet $p');
-    if (!p) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('no Permission')),
-      );
-    }
-  }
+  // void _onPermissionSet(BuildContext context, QRViewController ctrl, bool p) {
+  //   log('${DateTime.now().toIso8601String()}_onPermissionSet $p');
+  //   if (!p) {
+  //     ScaffoldMessenger.of(context).showSnackBar(
+  //       const SnackBar(content: Text('no Permission')),
+  //     );
+  //   }
+  // }
 
-  @override
-  void dispose() {
-    controller?.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   controller?.dispose();
+  //   super.dispose();
+  // }
 }
