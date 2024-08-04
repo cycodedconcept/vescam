@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:vescan/widgets/buttons/buttons.dart';
 
 class InspectionFeeSheet {
-  show() {
+  show(action) {
     Get.bottomSheet(
         Container(
           width: double.infinity,
@@ -11,10 +12,11 @@ class InspectionFeeSheet {
           decoration: const BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(10),
-                topRight: Radius.circular(10),
+                topLeft: Radius.circular(12),
+                topRight: Radius.circular(12),
               )),
           child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               const Text(
                 "Inspection Fee",
@@ -25,6 +27,7 @@ class InspectionFeeSheet {
                 height: 20,
               ),
               Container(
+                padding: EdgeInsets.symmetric(vertical: 10),
                 decoration: BoxDecoration(
                     border: Border.all(color: const Color(0xffE2E2E4))),
                 child: const Column(
@@ -116,7 +119,22 @@ class InspectionFeeSheet {
                     ),
                   ],
                 ),
-              )
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const Text(
+                "N:B: Inspection fee is not refundable except if you use the service of our mechanic from the app. *",
+                style: TextStyle(color: Color(0xff7C797A), fontSize: 11),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              Buttons()
+                  .authButtons(title: "Proceed to Payment", action: action),
+              const SizedBox(
+                height: 20,
+              ),
             ],
           ),
         ),

@@ -5,6 +5,9 @@ import 'package:iconly/iconly.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:vescan/routes/app/app-route-names.dart';
 import 'package:vescan/widgets/buttons/buttons.dart';
+import 'package:vescan/widgets/pop-up/confirm-payment.dart';
+
+import '../../../../widgets/bottom-sheets/inspection-fee-sheet.dart';
 
 class MechanicProfileScreen extends StatelessWidget {
   const MechanicProfileScreen({super.key});
@@ -438,7 +441,13 @@ class MechanicProfileScreen extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Center(
                     child: Buttons().authButtons(
-                        title: "Proceed to Pay Inspection Fee", action: () {}),
+                        title: "Proceed to Pay Inspection Fee",
+                        action: () {
+                          InspectionFeeSheet().show(() {
+                            Get.back();
+                            ConfirmPayment().show(context, () {});
+                          });
+                        }),
                   ),
                 ))
           ],

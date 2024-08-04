@@ -62,6 +62,27 @@ class Buttons {
     );
   }
 
+  Widget borderButton({title, action}) {
+    return SizedBox(
+      height: 48,
+      width: double.infinity,
+      child: ElevatedButton(
+          onPressed: action,
+          style: ElevatedButton.styleFrom(
+              elevation: 0,
+              side: const BorderSide(
+                color: const Color(0xff001F3F)
+              ),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10))),
+          child: Text(
+            title,
+            style: const TextStyle(
+                color:const Color(0xff001F3F), fontSize: 16, fontWeight: FontWeight.w600),
+          )),
+    );
+  }
+
   Widget alternativeButtons({title, action}) {
     return InkWell(
       onTap: action,
