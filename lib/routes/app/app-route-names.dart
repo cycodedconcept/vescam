@@ -49,7 +49,8 @@ String fundWalletScreen = "/fundWalletScreen";
 String bankUssdScreen = "/bankUssdScreen";
 String dialUssdCodeScreen = "/dialUssdCodeScreen";
 String bankTransferScreen = "/bankTransferScreen";
-
+String transferLoadingScreen = "/transferLoadingScreen";
+String transferConfirmScreen = "/transferConfirmScreen";
 String transferMoneyScreen = "/transferMoneyScreen";
 
 String productDetailsScreen = "/productDetailsScreen";
@@ -95,3 +96,4 @@ String mechanicBookingLoading = "/mechanicBookingLoading";
 String towBookingLoading = "/towBookingLoading";
 String mechanicBookingSuccess = "/mechanicBookingSuccess";
 String towBookingSuccess = "/towBookingSuccess";
+

@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
 import 'package:iconly/iconly.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:vescan/controller/wallet/wallet-state-controller.dart';
 import 'package:vescan/routes/app/app-route-names.dart';
 import 'package:vescan/widgets/bottom-sheets/fund-wallet-info.dart';
 
 class WalletView extends StatelessWidget {
-  const WalletView({super.key});
+  WalletView({super.key});
+
+  final WalletStateController _walletStateController =
+      Get.put(WalletStateController());
 
   @override
   Widget build(BuildContext context) {
