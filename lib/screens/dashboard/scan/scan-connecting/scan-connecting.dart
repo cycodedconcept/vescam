@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
+import 'package:iconsax/iconsax.dart';
+import 'package:vescan/routes/app/app-route-names.dart';
 
 class ScanConnectingScreen extends StatefulWidget {
   const ScanConnectingScreen({super.key});
@@ -10,6 +13,14 @@ class ScanConnectingScreen extends StatefulWidget {
 }
 
 class _ScanConnectingScreenState extends State<ScanConnectingScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(const Duration(seconds: 3), () {
+      Get.toNamed(obdScanningScreen);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,18 +34,27 @@ class _ScanConnectingScreenState extends State<ScanConnectingScreen> {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
               color: Colors.white,
-              child: const Row(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SizedBox(),
-                  Text(
+                  InkWell(
+                    onTap: () {
+                      Get.back();
+                    },
+                    child: const Icon(
+                      Iconsax.arrow_left_2,
+                      color: Colors.black,
+                      size: 24,
+                    ),
+                  ),
+                  const Text(
                     "Scan Connecting",
                     style: TextStyle(
                         color: Colors.black,
                         fontFamily: "OpenMed",
                         fontSize: 16),
                   ),
-                  Icon(
+                  const Icon(
                     IconlyLight.notification,
                     color: Colors.black,
                   )
