@@ -157,7 +157,7 @@ class FundWalletScreen extends StatelessWidget {
                       _actionsTile(
                           title: "Top-Up with Card/Account",
                           action: () {
-                            // Get.toNamed(bankTransferScreen);
+                            Get.toNamed(topUpAmountScreen);
                           },
                           subtitle:
                               "Fund your account directly with your card/account",

@@ -64,6 +64,8 @@ import 'package:vescan/screens/dashboard/settings/other-settings/privacy-securit
 import 'package:vescan/screens/dashboard/settings/set-pid-threshold/set-pid-threshold-screen.dart';
 import 'package:vescan/screens/dashboard/settings/support/support-help.dart';
 import 'package:vescan/screens/dashboard/settings/vehicle-info/vehicle-info.dart';
+import 'package:vescan/screens/dashboard/wallet/card-top-up/top-up-card-amount.dart';
+import 'package:vescan/screens/dashboard/wallet/card-top-up/top-up-loading.dart';
 import 'package:vescan/screens/dashboard/wallet/transactions/transaction-screen.dart';
 import 'package:vescan/screens/dashboard/wallet/transfer/bank-transfer.dart';
 import 'package:vescan/screens/dashboard/wallet/transfer/screens/transfer-loading.dart';
@@ -76,391 +78,321 @@ import 'package:vescan/screens/onboarding/onboarding-screen.dart';
 import 'package:vescan/screens/splash/splash-screen.dart';
 
 List<GetPage> getPage = [
-
   // ========== APP ROUTES ===========
 
   GetPage(
-    name: splash, 
-    page: ()=> SplashScreen(),
-    transition: Transition.cupertino
-  ),
+      name: splash,
+      page: () => SplashScreen(),
+      transition: Transition.cupertino),
 
   GetPage(
-    name: onboarding, 
-    page: ()=> OnboardingScreen(),
-    transition: Transition.cupertino
-  ),
+      name: onboarding,
+      page: () => OnboardingScreen(),
+      transition: Transition.cupertino),
 
   GetPage(
-    name: login, 
-    page: ()=> LoginScreen(),
-    transition: Transition.cupertino
-  ),
-    GetPage(
-    name: loginLoading, 
-    page: ()=> LoginLoadingScreen(),
-    transition: Transition.cupertino
-  ),
-    GetPage(
-    name: signup, 
-    page: ()=> SignUpScreen(),
-    transition: Transition.cupertino
-  ),
-    GetPage(
-    name: signupLoading, 
-    page: ()=> SignUpLoading(),
-    transition: Transition.cupertino
-  ),
-    GetPage(
-    name: signUpVerify, 
-    page: ()=> SignUpVerifyEmail(),
-    transition: Transition.cupertino
-  ),
-    GetPage(
-    name: signUpSuccess, 
-    page: ()=> SignUpSuccessScreen(),
-    transition: Transition.cupertino
-  ),
-    GetPage(
-    name: forgotPassword, 
-    page: ()=> ForgotPassword(),
-    transition: Transition.cupertino
-  ),
-    GetPage(
-    name: forgotPasswordVerify, 
-    page: ()=> ForgotPasswordVerifyEmail(),
-    transition: Transition.cupertino
-  ),
+      name: login, page: () => LoginScreen(), transition: Transition.cupertino),
   GetPage(
-    name: pinLogin, 
-    page: ()=> PinLoginScreen(),
-    transition: Transition.cupertino
-  ),
+      name: loginLoading,
+      page: () => LoginLoadingScreen(),
+      transition: Transition.cupertino),
+  GetPage(
+      name: signup,
+      page: () => SignUpScreen(),
+      transition: Transition.cupertino),
+  GetPage(
+      name: signupLoading,
+      page: () => SignUpLoading(),
+      transition: Transition.cupertino),
+  GetPage(
+      name: signUpVerify,
+      page: () => SignUpVerifyEmail(),
+      transition: Transition.cupertino),
+  GetPage(
+      name: signUpSuccess,
+      page: () => SignUpSuccessScreen(),
+      transition: Transition.cupertino),
+  GetPage(
+      name: forgotPassword,
+      page: () => ForgotPassword(),
+      transition: Transition.cupertino),
+  GetPage(
+      name: forgotPasswordVerify,
+      page: () => ForgotPasswordVerifyEmail(),
+      transition: Transition.cupertino),
+  GetPage(
+      name: pinLogin,
+      page: () => PinLoginScreen(),
+      transition: Transition.cupertino),
 
   GetPage(
-    name: dashboard, 
-    page: ()=> Dashboard(),
-    transition: Transition.cupertino
-  ),
+      name: dashboard,
+      page: () => Dashboard(),
+      transition: Transition.cupertino),
 
   GetPage(
-    name: vehicleInfoScreen, 
-    page: ()=> VehicleInfoScreen(),
-    transition: Transition.cupertino
-  ),
+      name: vehicleInfoScreen,
+      page: () => VehicleInfoScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: notificationSettingsScreen, 
-    page: ()=> NotificationSettings(),
-    transition: Transition.cupertino
-  ),
+      name: notificationSettingsScreen,
+      page: () => NotificationSettings(),
+      transition: Transition.cupertino),
   GetPage(
-    name: otherSettingsScreen, 
-    page: ()=> OtherSettingsScreen(),
-    transition: Transition.cupertino
-  ),
+      name: otherSettingsScreen,
+      page: () => OtherSettingsScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: supportScreen, 
-    page: ()=> SupportAndHelpScreen(),
-    transition: Transition.cupertino
-  ),
+      name: supportScreen,
+      page: () => SupportAndHelpScreen(),
+      transition: Transition.cupertino),
 
   GetPage(
-    name: aboutScreen, 
-    page: ()=> AboutScreen(),
-    transition: Transition.cupertino
-  ),
+      name: aboutScreen,
+      page: () => AboutScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: appVersionScreen, 
-    page: ()=> AppVersionScreen(),
-    transition: Transition.cupertino
-  ),
+      name: appVersionScreen,
+      page: () => AppVersionScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: releaseNotesScreen, 
-    page: ()=> ReleaseVersionScreen(),
-    transition: Transition.cupertino
-  ),
+      name: releaseNotesScreen,
+      page: () => ReleaseVersionScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: developerInfoScreen, 
-    page: ()=> DeveloperInformationScreen(),
-    transition: Transition.cupertino
-  ),
+      name: developerInfoScreen,
+      page: () => DeveloperInformationScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: legalScreen, 
-    page: ()=> LegalScreen(),
-    transition: Transition.cupertino
-  ),
+      name: legalScreen,
+      page: () => LegalScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: privacySecuityScreen, 
-    page: ()=> PrivacyAndSecurityScreen(),
-    transition: Transition.cupertino
-  ),
+      name: privacySecuityScreen,
+      page: () => PrivacyAndSecurityScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: privacySettings, 
-    page: ()=> PrivacySettingScreen(),
-    transition: Transition.cupertino
-  ),
+      name: privacySettings,
+      page: () => PrivacySettingScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: twoFactorAuthScreen, 
-    page: ()=> TwoFactorAuthScreen(),
-    transition: Transition.cupertino
-  ),
+      name: twoFactorAuthScreen,
+      page: () => TwoFactorAuthScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: themeSettingsScreen, 
-    page: ()=> ThemeSettingsScreen(),
-    transition: Transition.cupertino
-  ),
+      name: themeSettingsScreen,
+      page: () => ThemeSettingsScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: languageSettingsScreen, 
-    page: ()=> LanguageSettingsScreen(),
-    transition: Transition.cupertino
-  ),
+      name: languageSettingsScreen,
+      page: () => LanguageSettingsScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: addLanguageScreen, 
-    page: ()=> AddLanguageScreen(),
-    transition: Transition.cupertino
-  ),
+      name: addLanguageScreen,
+      page: () => AddLanguageScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: appPreferenceScreen, 
-    page: ()=> AppPreferenceScreen(),
-    transition: Transition.cupertino
-  ),
+      name: appPreferenceScreen,
+      page: () => AppPreferenceScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: setPidThresholdsScreen, 
-    page: ()=> SetPidThresholdScreen(),
-    transition: Transition.cupertino
-  ),
+      name: setPidThresholdsScreen,
+      page: () => SetPidThresholdScreen(),
+      transition: Transition.cupertino),
 
   GetPage(
-    name: profileInformationScreen, 
-    page: ()=> ProfileInformationScreen(),
-    transition: Transition.cupertino
-  ),
+      name: profileInformationScreen,
+      page: () => ProfileInformationScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: linkedAccountScreen, 
-    page: ()=> LinkedAccountScreen(),
-    transition: Transition.cupertino
-  ),
+      name: linkedAccountScreen,
+      page: () => LinkedAccountScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: changePasswordScreen, 
-    page: ()=> ChangePasswordScreen(),
-    transition: Transition.cupertino
-  ),
+      name: changePasswordScreen,
+      page: () => ChangePasswordScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: accountSettingsScreen, 
-    page: ()=> AccountSettingsScreen(),
-    transition: Transition.cupertino
-  ),
+      name: accountSettingsScreen,
+      page: () => AccountSettingsScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: passwordChangedSuccessScreen, 
-    page: ()=> ChangePasswordSuccessScreen(),
-    transition: Transition.cupertino
-  ),
+      name: passwordChangedSuccessScreen,
+      page: () => ChangePasswordSuccessScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: editSuccessfulScreen, 
-    page: ()=> EditSuccessScreen(),
-    transition: Transition.cupertino
-  ),
+      name: editSuccessfulScreen,
+      page: () => EditSuccessScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: changePasswordLoaderScreen, 
-    page: ()=> ChangePasswordLoadingScreen(),
-    transition: Transition.cupertino
-  ),
+      name: changePasswordLoaderScreen,
+      page: () => ChangePasswordLoadingScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: editLoaderScreen, 
-    page: ()=> EditLoadingScreen(),
-    transition: Transition.cupertino
-  ),
+      name: editLoaderScreen,
+      page: () => EditLoadingScreen(),
+      transition: Transition.cupertino),
 
   GetPage(
-    name: fundWalletScreen, 
-    page: ()=> FundWalletScreen(),
-    transition: Transition.cupertino
-  ),
+      name: fundWalletScreen,
+      page: () => FundWalletScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: bankUssdScreen, 
-    page: ()=> BankUssdScreen(),
-    transition: Transition.cupertino
-  ),
+      name: bankUssdScreen,
+      page: () => BankUssdScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: dialUssdCodeScreen, 
-    page: ()=> DialUssdCodeScreen(),
-    transition: Transition.cupertino
-  ),
+      name: dialUssdCodeScreen,
+      page: () => DialUssdCodeScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: bankTransferScreen, 
-    page: ()=> BankTransferScreen(),
-    transition: Transition.cupertino
-  ),
+      name: bankTransferScreen,
+      page: () => BankTransferScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: transferMoneyScreen, 
-    page: ()=> TransferMoneyScreen(),
-    transition: Transition.cupertino
-  ),
+      name: transferMoneyScreen,
+      page: () => TransferMoneyScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: transferLoadingScreen, 
-    page: ()=> TransferLoadingScreen(),
-    transition: Transition.cupertino
-  ),
+      name: transferLoadingScreen,
+      page: () => TransferLoadingScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: transferConfirmScreen, 
-    page: ()=> TransferConfirmScreen(),
-    transition: Transition.cupertino
-  ),
+      name: transferConfirmScreen,
+      page: () => TransferConfirmScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: transactionScreen, 
-    page: ()=> TransactionScreen(),
-    transition: Transition.cupertino
-  ),
+      name: transactionScreen,
+      page: () => TransactionScreen(),
+      transition: Transition.cupertino),
+  GetPage(
+      name: topUpAmountScreen,
+      page: () => TopUpAmountScreen(),
+      transition: Transition.cupertino),
+  GetPage(
+      name: transactionLoadingScreen,
+      page: () => TopUpLoadingScreen(),
+      transition: Transition.cupertino),
 
   GetPage(
-    name: productCartScreen, 
-    page: ()=> ProductCartScreen(),
-    transition: Transition.cupertino
-  ),
+      name: productCartScreen,
+      page: () => ProductCartScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: favoriteProductScreen, 
-    page: ()=> FavoritesViewScreen(),
-    transition: Transition.cupertino
-  ),
+      name: favoriteProductScreen,
+      page: () => FavoritesViewScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: productDetailsScreen, 
-    page: ()=> ProductViewScreen(),
-    transition: Transition.cupertino
-  ),
+      name: productDetailsScreen,
+      page: () => ProductViewScreen(),
+      transition: Transition.cupertino),
 
   GetPage(
-    name: notificationScreen, 
-    page: ()=> NotificationScreen(),
-    transition: Transition.cupertino
-  ),
+      name: notificationScreen,
+      page: () => NotificationScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: activityScreen, 
-    page: ()=> ActivityScreen(),
-    transition: Transition.cupertino
-  ),
+      name: activityScreen,
+      page: () => ActivityScreen(),
+      transition: Transition.cupertino),
 
   GetPage(
-    name: scanConnectingScreen, 
-    page: ()=> ScanConnectingScreen(),
-    transition: Transition.cupertino
-  ),
+      name: scanConnectingScreen,
+      page: () => ScanConnectingScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: scanCompletedScreen, 
-    page: ()=> ScanCompletedScreen(),
-    transition: Transition.cupertino
-  ),
+      name: scanCompletedScreen,
+      page: () => ScanCompletedScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: diagnosticScreen, 
-    page: ()=> DiagnosticReportScreen(),
-    transition: Transition.cupertino
-  ),
+      name: diagnosticScreen,
+      page: () => DiagnosticReportScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: obdScanningScreen, 
-    page: ()=> OBDScanningScreen(),
-    transition: Transition.cupertino
-  ),
+      name: obdScanningScreen,
+      page: () => OBDScanningScreen(),
+      transition: Transition.cupertino),
 
   GetPage(
-    name: addNewDeviceScreen, 
-    page: ()=> AddNewDeviceScreen(),
-    transition: Transition.cupertino
-  ),
+      name: addNewDeviceScreen,
+      page: () => AddNewDeviceScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: scanQRCodeScreen, 
-    page: ()=> ScanQRCodeScreen(),
-    transition: Transition.cupertino
-  ),
+      name: scanQRCodeScreen,
+      page: () => ScanQRCodeScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: deviceInformationScreen, 
-    page: ()=> DeviceInfoScreen(),
-    transition: Transition.cupertino
-  ),
+      name: deviceInformationScreen,
+      page: () => DeviceInfoScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: generatingOtherInfoScreen, 
-    page: ()=> GeneratingOtherInfoScreen(),
-    transition: Transition.cupertino
-  ),
+      name: generatingOtherInfoScreen,
+      page: () => GeneratingOtherInfoScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: deviceInformationScreen2, 
-    page: ()=> DeviceInfoScreen2(),
-    transition: Transition.cupertino
-  ),
+      name: deviceInformationScreen2,
+      page: () => DeviceInfoScreen2(),
+      transition: Transition.cupertino),
   GetPage(
-    name: addDeviceLoadingScreen, 
-    page: ()=> AddDeviceLoadingScreen(),
-    transition: Transition.cupertino
-  ),
+      name: addDeviceLoadingScreen,
+      page: () => AddDeviceLoadingScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: newDeviceAddedScreen, 
-    page: ()=> AddDeviceSuccessScreen(),
-    transition: Transition.cupertino
-  ),
+      name: newDeviceAddedScreen,
+      page: () => AddDeviceSuccessScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: vehicleInformationScreen, 
-    page: ()=> AddVehicleInformationScreen(),
-    transition: Transition.cupertino
-  ),
+      name: vehicleInformationScreen,
+      page: () => AddVehicleInformationScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: addVehicleLoadingScreen, 
-    page: ()=> AddVehicleInfoLoadingScreen(),
-    transition: Transition.cupertino
-  ),
+      name: addVehicleLoadingScreen,
+      page: () => AddVehicleInfoLoadingScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: newVehicleAddedScreen, 
-    page: ()=> AddVehicleSuccessScreen(),
-    transition: Transition.cupertino
-  ),
+      name: newVehicleAddedScreen,
+      page: () => AddVehicleSuccessScreen(),
+      transition: Transition.cupertino),
 
   GetPage(
-    name: contactMechanicScreen, 
-    page: ()=> ContactMechanicScreen(),
-    transition: Transition.cupertino
-  ),
+      name: contactMechanicScreen,
+      page: () => ContactMechanicScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: searchForMechanicScreen, 
-    page: ()=> SearchMechanicScreen(),
-    transition: Transition.cupertino
-  ),
+      name: searchForMechanicScreen,
+      page: () => SearchMechanicScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: searchMechanicLoadingScreen, 
-    page: ()=> SearchMechanicLoadingScreen(),
-    transition: Transition.cupertino
-  ),
+      name: searchMechanicLoadingScreen,
+      page: () => SearchMechanicLoadingScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: searchMechanicInputScreen, 
-    page: ()=> SearchMechanicInputScreen(),
-    transition: Transition.cupertino
-  ),
+      name: searchMechanicInputScreen,
+      page: () => SearchMechanicInputScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: mechanicProfileScreen, 
-    page: ()=> MechanicProfileScreen(),
-    transition: Transition.cupertino
-  ),
+      name: mechanicProfileScreen,
+      page: () => MechanicProfileScreen(),
+      transition: Transition.cupertino),
 
   GetPage(
-    name: bookATowScreen, 
-    page: ()=> BookTowMachineScreen(),
-    transition: Transition.cupertino
-  ),
+      name: bookATowScreen,
+      page: () => BookTowMachineScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: searchForTowScreen, 
-    page: ()=> SearchForTowCompanyScreen(),
-    transition: Transition.cupertino
-  ),
+      name: searchForTowScreen,
+      page: () => SearchForTowCompanyScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: searchTowInputScreen, 
-    page: ()=> SearchForTowCompanyInputScreen(),
-    transition: Transition.cupertino
-  ),
+      name: searchTowInputScreen,
+      page: () => SearchForTowCompanyInputScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: searchTowLoadingScreen, 
-    page: ()=> SearchForTowCompanyLoadingScreen(),
-    transition: Transition.cupertino
-  ),
+      name: searchTowLoadingScreen,
+      page: () => SearchForTowCompanyLoadingScreen(),
+      transition: Transition.cupertino),
   GetPage(
-    name: towCompanyProfileScreen, 
-    page: ()=> TowCompanyProfileScreen(),
-    transition: Transition.cupertino
-  ),
-
+      name: towCompanyProfileScreen,
+      page: () => TowCompanyProfileScreen(),
+      transition: Transition.cupertino),
 ];

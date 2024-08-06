@@ -53,6 +53,14 @@ String transferLoadingScreen = "/transferLoadingScreen";
 String transferConfirmScreen = "/transferConfirmScreen";
 String transferMoneyScreen = "/transferMoneyScreen";
 String transactionScreen = "/transactionScreen";
+String addBankDetailsScreen = "/addBankDetailsScreen";
+String selectBankScreen = "/selectBankScreen";
+String bankOtpVerificationScreen = "/bankOtpVerificationScreen";
+String topUpAmountScreen = "/topUpAmountScreen";
+String topUpAddDetailsScreen = "/topUpAddDetailsScreen";
+String transactionLoadingScreen = "/transactionLoadingScreen";
+String topUpSuccessScreen = "/topUpSuccessScreen";
+String topUpRecieptScreen = "/topUpRecieptScreen";
 
 String productDetailsScreen = "/productDetailsScreen";
 String productCartScreen = "/productCartScreen";
@@ -97,4 +105,3 @@ String mechanicBookingLoading = "/mechanicBookingLoading";
 String towBookingLoading = "/towBookingLoading";
 String mechanicBookingSuccess = "/mechanicBookingSuccess";
 String towBookingSuccess = "/towBookingSuccess";
-

@@ -75,7 +75,7 @@ class WalletView extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 30,
+              height: 20,
             ),
             Expanded(
               child: Padding(
