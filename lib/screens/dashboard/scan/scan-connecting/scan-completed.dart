@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:iconly/iconly.dart';
-import 'package:iconsax/iconsax.dart';
+import 'package:gif/gif.dart';
+import 'package:vescan/routes/app/app-route-names.dart';
 import 'package:vescan/widgets/buttons/buttons.dart';
 
 class ScanCompletedScreen extends StatelessWidget {
@@ -11,65 +10,66 @@ class ScanCompletedScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffF8FAFB),
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        child: SafeArea(
-            child: Column(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
-              color: Colors.white,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              height: 240,
+              width: 240,
+              child: Stack(
                 children: [
-                  InkWell(
-                    onTap: () {
-                      Get.back();
-                    },
-                    child: const Icon(
-                      Iconsax.arrow_left_2,
-                      color: Colors.black,
-                      size: 24,
-                    ),
-                  ),
-                  const Text(
-                    "Scan Connecting",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontFamily: "OpenMed",
-                        fontSize: 16),
-                  ),
-                  const Icon(
-                    IconlyLight.notification,
-                    color: Colors.black,
+                  Gif(
+                      autostart: Autostart.once,
+                      placeholder: (context) =>
+                          const Center(child: CircularProgressIndicator()),
+                      image: const AssetImage("assets/gif/confety.gif")),
+                  Positioned(
+                    left: 0,
+                    right: 0,
+                    top: 0,
+                    bottom: 0,
+                    child: Gif(
+                        autostart: Autostart.once,
+                        placeholder: (context) =>
+                            const Center(child: CircularProgressIndicator()),
+                        image: const AssetImage("assets/gif/checked.gif")),
                   )
                 ],
               ),
             ),
-            Expanded(
-                child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              color: const Color(0xff001F3F),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SvgPicture.asset(
-                    "assets/images/vehicle-diagnostic.svg",
-                    height: 453,
-                    width: 211,
-                  ),
-                  const SizedBox(
-                    height: 40,
-                  ),
-                  Buttons()
-                      .onboardingButtons(title: "Start Scanning", action: () {})
-                ],
-              ),
-            )),
+            const SizedBox(
+              height: 10,
+            ),
+            const Text(
+              "Scan Completed!",
+              style: TextStyle(
+                  color: Color(0xff001F3F),
+                  fontSize: 28,
+                  fontFamily: "OpenBold"),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Text(
+              "Your vehicle has been fully\nscanned.",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  color: Color(0xff7C797A), fontSize: 14, fontFamily: "Open"),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            Buttons().authButtons(
+                title: "View Scan Report",
+                action: () {
+                  Get.toNamed(diagnosticScreen);
+                }),
           ],
-        )),
+        ),
       ),
     );
   }

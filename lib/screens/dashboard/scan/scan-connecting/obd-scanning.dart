@@ -3,9 +3,23 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:vescan/routes/app/app-route-names.dart';
 
-class OBDScanningScreen extends StatelessWidget {
-  OBDScanningScreen({super.key});
+class OBDScanningScreen extends StatefulWidget {
+  const OBDScanningScreen({super.key});
+
+  @override
+  State<OBDScanningScreen> createState() => _OBDScanningScreenState();
+}
+
+class _OBDScanningScreenState extends State<OBDScanningScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(const Duration(seconds: 3), () {
+      Get.toNamed(scanCompletedScreen);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +54,7 @@ class OBDScanningScreen extends StatelessWidget {
                         fontFamily: "OpenMed",
                         fontSize: 16),
                   ),
-                  Icon(
+                  const Icon(
                     IconlyLight.notification,
                     color: Colors.black,
                   )
@@ -66,21 +80,36 @@ class OBDScanningScreen extends StatelessWidget {
                               shape: BoxShape.circle,
                               gradient: RadialGradient(
                                 colors: [
-                                  Color(0xff00BFFF).withOpacity(0),
-                                  Color(0xff00BFFF).withOpacity(0.03),
-                                  Color(0xff00BFFF).withOpacity(0.2),
+                                  const Color(0xff00BFFF).withOpacity(0),
+                                  const Color(0xff00BFFF).withOpacity(0.03),
+                                  const Color(0xff00BFFF).withOpacity(0.2),
                                 ],
                               )),
                         ),
-                        const Positioned(
+                        Positioned(
                           left: 0,
                           right: 0,
-                          child: Text(
-                            "OBD Scanning",
-                            style: TextStyle(
-                                color: Color(0xff00BFFF),
-                                fontFamily: "OpenMed",
-                                fontSize: 12),
+                          top: 0,
+                          bottom: 0,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              RotatedBox(
+                                quarterTurns: -45,
+                                child: SvgPicture.asset(
+                                  "assets/images/vehicle-diagnostic.svg",
+                                  height: 453,
+                                  width: 211,
+                                ),
+                              ),
+                              const Text(
+                                "OBD Scanning",
+                                style: TextStyle(
+                                    color: Color(0xff00BFFF),
+                                    fontFamily: "OpenMed",
+                                    fontSize: 12),
+                              ),
+                            ],
                           ),
                         )
                       ],
@@ -114,7 +143,7 @@ class OBDScanningScreen extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(bottom: 15),
       decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(12)),
+          color: Color(0xffF8FAFB), borderRadius: BorderRadius.circular(12)),
       child: ListTile(
         contentPadding: const EdgeInsets.symmetric(horizontal: 20),
         leading: Container(

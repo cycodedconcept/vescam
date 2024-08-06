@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
 import 'package:vescan/widgets/buttons/buttons.dart';
 
@@ -24,7 +25,7 @@ class DiagnosticReportScreen extends StatelessWidget {
                 children: [
                   SizedBox(),
                   Text(
-                    "Scan Connecting",
+                    "Diagnostic Report",
                     style: TextStyle(
                         color: Colors.black,
                         fontFamily: "OpenMed",
@@ -40,25 +41,93 @@ class DiagnosticReportScreen extends StatelessWidget {
             Expanded(
                 child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              color: const Color(0xff001F3F),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SvgPicture.asset(
-                    "assets/images/vehicle-diagnostic.svg",
-                    height: 453,
-                    width: 211,
-                  ),
-                  const SizedBox(
-                    height: 40,
-                  ),
-                  Buttons()
-                      .onboardingButtons(title: "Start Scanning", action: () {})
-                ],
+              color: const Color(0xffF8FAFB),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    const SizedBox(
+                      height: 40,
+                    ),
+                    const Row(
+                      children: [
+                        Icon(
+                          Icons.info_outline_rounded,
+                          color: Color(0xffFF0022),
+                          size: 40,
+                        ),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        Expanded(
+                          child: Text(
+                            "Diagnosis is completed, 5 OBD errors were found.",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontFamily: "OpenMed",
+                                fontSize: 16),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    _scanTile(
+                      title: "Engine System (Completed)",
+                      subtitle: "Scanned Items (32) - No error found",
+                    ),
+                    _scanTile(
+                      title: "Engine System (Completed)",
+                      subtitle: "Scanned Items (32) - No error found",
+                    ),
+                    _scanTile(
+                      title: "Engine System (Completed)",
+                      subtitle: "Scanned Items (32) - No error found",
+                    ),
+                    const SizedBox(
+                      height: 40,
+                    ),
+                    Buttons().authButtons(
+                        title: "View Error Details",
+                        action: () {
+                          // Get.toNamed(scanConnectingScreen);
+                        })
+                  ],
+                ),
               ),
             )),
           ],
         )),
+      ),
+    );
+  }
+
+  Container _scanTile({title, subtitle}) {
+    return Container(
+      margin: EdgeInsets.only(bottom: 15),
+      decoration: BoxDecoration(
+          color: Colors.white, borderRadius: BorderRadius.circular(12)),
+      child: ListTile(
+        contentPadding: const EdgeInsets.symmetric(horizontal: 20),
+        leading: Container(
+          padding: EdgeInsets.all(10),
+          decoration:
+              BoxDecoration(color: Color(0xffF8FAFB), shape: BoxShape.circle),
+          child: SvgPicture.asset("assets/images/engine.svg"),
+        ),
+        title: Text(
+          title,
+          style: const TextStyle(
+              color: Color(0xff030206), fontFamily: "OpenMed", fontSize: 14),
+        ),
+        subtitle: Text(
+          subtitle,
+          style: const TextStyle(color: Color(0xff00BFFF), fontSize: 10),
+        ),
+        trailing: const Icon(
+          Icons.check_circle_outline,
+          color: Color(0xff25D366),
+        ),
       ),
     );
   }

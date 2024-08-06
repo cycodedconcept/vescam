@@ -76,6 +76,8 @@ String scanConnectingScreen = "/scanConnectingScreen";
 String obdScanningScreen = "/obdScanningScreen";
 String scanCompletedScreen = "/scanCompletedScreen";
 String diagnosticScreen = "/diagnosticScreen";
+String errorDetailsScreen = "/errorDetailsScreen";
+String errorCodeDetailsScreen = "/errorCodeDetailsScreen";
 
 String addNewDeviceScreen = "/addNewDeviceScreen";
 String scanQRCodeScreen = "/scanQRCodeScreen";
