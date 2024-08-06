@@ -51,93 +51,29 @@ class SelectBankScreen extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            TextField(
-              textInputAction: TextInputAction.search,
-              decoration: InputDecoration(
-                hintText: "Search Bank Name",
-                suffixIcon: const Icon(
-                  Icons.search,
-                  color: Color(0xffADADAD),
-                ),
-                hintStyle: const TextStyle(
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: TextField(
+                textInputAction: TextInputAction.search,
+                decoration: InputDecoration(
+                  hintText: "Search Bank Name",
+                  suffixIcon: const Icon(
+                    Icons.search,
                     color: Color(0xffADADAD),
-                    fontFamily: "OpenMed"),
-                enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(
-                        color: Color(0xffF1F1F1), width: 1)),
-                focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(
-                        color: Color(0xffF1F1F1), width: 1)),
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        "Either your bank will send you an SMS with a one time code or you have to enter the code from your hardware token to verify the transaction",
-                        style:
-                            TextStyle(color: Color(0xff030206), fontSize: 16),
-                      ),
-                      const SizedBox(
-                        height: 30,
-                      ),
-                      SizedBox(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              "Code from SMS",
-                              style: TextStyle(
-                                  color: Color(0xff030206),
-                                  fontSize: 14,
-                                  fontFamily: "OpenMed"),
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            TextFormField(
-                              decoration: InputDecoration(
-                                hintText: "Enter OTP",
-                                hintStyle: const TextStyle(
-                                    color: Color(0xff7C797A),
-                                    fontFamily: "Open"),
-                                fillColor: const Color(0xffF8FAFB),
-                                filled: true,
-                                contentPadding: const EdgeInsets.symmetric(
-                                    horizontal: 20, vertical: 15),
-                                enabledBorder: InputBorder.none,
-                                focusedBorder: InputBorder.none,
-                                errorBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                    borderSide: const BorderSide(
-                                        color: Color(0xffFF0022), width: 1.5)),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 40,
-                      ),
-                      Buttons().authButtons(
-                          title: "Complete Verification",
-                          action: () {
-                            // Get.toNamed(topUpAddDetailsScreen);
-                          })
-                    ],
                   ),
+                  hintStyle: const TextStyle(
+                      color: Color(0xffADADAD), fontFamily: "OpenMed"),
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide:
+                          const BorderSide(color: Color(0xffF1F1F1), width: 1)),
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide:
+                          const BorderSide(color: Color(0xffF1F1F1), width: 1)),
                 ),
               ),
-            )
+            ),
           ],
         )),
       ),
