@@ -64,6 +64,7 @@ import 'package:vescan/screens/dashboard/settings/other-settings/privacy-securit
 import 'package:vescan/screens/dashboard/settings/set-pid-threshold/set-pid-threshold-screen.dart';
 import 'package:vescan/screens/dashboard/settings/support/support-help.dart';
 import 'package:vescan/screens/dashboard/settings/vehicle-info/vehicle-info.dart';
+import 'package:vescan/screens/dashboard/wallet/card-top-up/enter-details.dart';
 import 'package:vescan/screens/dashboard/wallet/card-top-up/top-up-card-amount.dart';
 import 'package:vescan/screens/dashboard/wallet/card-top-up/top-up-loading.dart';
 import 'package:vescan/screens/dashboard/wallet/transactions/transaction-screen.dart';
@@ -76,6 +77,8 @@ import 'package:vescan/screens/dashboard/wallet/ussd-flow/dial-ussd.dart';
 import 'package:vescan/screens/dashboard/wallet/fund-wallet.dart';
 import 'package:vescan/screens/onboarding/onboarding-screen.dart';
 import 'package:vescan/screens/splash/splash-screen.dart';
+
+import '../../screens/dashboard/wallet/card-top-up/top-up-success.dart';
 
 List<GetPage> getPage = [
   // ========== APP ROUTES ===========
@@ -272,6 +275,14 @@ List<GetPage> getPage = [
   GetPage(
       name: transactionLoadingScreen,
       page: () => TopUpLoadingScreen(),
+      transition: Transition.cupertino),
+  GetPage(
+      name: topUpAddDetailsScreen,
+      page: () => TopUpAddDetailsScreen(),
+      transition: Transition.cupertino),
+  GetPage(
+      name: topUpSuccessScreen,
+      page: () => TopUpSuccessScreen(),
       transition: Transition.cupertino),
 
   GetPage(

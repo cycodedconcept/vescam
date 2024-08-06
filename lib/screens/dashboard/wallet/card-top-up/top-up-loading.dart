@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../widgets/bottom-sheets/top-up-success.dart';
+import 'package:get/get.dart';
+import 'package:vescan/routes/app/app-route-names.dart';
 
 class TopUpLoadingScreen extends StatefulWidget {
   const TopUpLoadingScreen({super.key});
@@ -13,7 +14,7 @@ class _TopUpLoadingScreenState extends State<TopUpLoadingScreen> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 3), () {
-      TopUpSuccessScreen().show();
+      Get.toNamed(topUpSuccessScreen);
     });
   }
 
