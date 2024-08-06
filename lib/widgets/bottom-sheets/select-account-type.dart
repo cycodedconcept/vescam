@@ -92,22 +92,27 @@ class SelectAccountType {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Container(
-                    height: 48,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "Cancel",
-                        style: TextStyle(
-                            color: Color(0xff030206),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600),
+                child: InkWell(
+                  onTap: () {
+                    Get.back();
+                  },
+                  child: Container(
+                      height: 48,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
                       ),
-                    )),
+                      child: Center(
+                        child: Text(
+                          "Cancel",
+                          style: TextStyle(
+                              color: Color(0xff030206),
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600),
+                        ),
+                      )),
+                ),
               ),
               const SizedBox(
                 height: 20,

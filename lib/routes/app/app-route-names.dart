@@ -52,6 +52,7 @@ String bankTransferScreen = "/bankTransferScreen";
 String transferLoadingScreen = "/transferLoadingScreen";
 String transferConfirmScreen = "/transferConfirmScreen";
 String transferMoneyScreen = "/transferMoneyScreen";
+String transactionScreen = "/transactionScreen";
 
 String productDetailsScreen = "/productDetailsScreen";
 String productCartScreen = "/productCartScreen";

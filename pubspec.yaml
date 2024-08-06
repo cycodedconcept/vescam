@@ -50,6 +50,7 @@ dependencies:
   step_progress_indicator: ^1.0.2
   camera: ^0.11.0+1
   flutter_rating: ^2.0.2
+  dotted_dashed_line: ^0.0.3
 
 dev_dependencies:
   flutter_test:

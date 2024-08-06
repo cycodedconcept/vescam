@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/route_manager.dart';
 import 'package:gif/gif.dart';
 import 'package:vescan/routes/app/app-route-names.dart';
+import 'package:vescan/widgets/bottom-sheets/payment-recipet.dart';
 import 'package:vescan/widgets/buttons/buttons.dart';
 
 class TransferCompletedScreen {
@@ -99,11 +100,21 @@ class TransferCompletedScreen {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SvgPicture.asset("assets/images/view-reciepts.svg"),
+                  InkWell(
+                      onTap: () {
+                        PaymentRecieptSheet().show();
+                      },
+                      child:
+                          SvgPicture.asset("assets/images/view-reciepts.svg")),
                   const SizedBox(
                     width: 20,
                   ),
-                  SvgPicture.asset("assets/images/view-transaction.svg"),
+                  InkWell(
+                      onTap: () {
+                        Get.toNamed(transactionScreen);
+                      },
+                      child: SvgPicture.asset(
+                          "assets/images/view-transaction.svg")),
                 ],
               ),
               const SizedBox(

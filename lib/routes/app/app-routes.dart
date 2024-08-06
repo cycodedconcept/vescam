@@ -64,6 +64,7 @@ import 'package:vescan/screens/dashboard/settings/other-settings/privacy-securit
 import 'package:vescan/screens/dashboard/settings/set-pid-threshold/set-pid-threshold-screen.dart';
 import 'package:vescan/screens/dashboard/settings/support/support-help.dart';
 import 'package:vescan/screens/dashboard/settings/vehicle-info/vehicle-info.dart';
+import 'package:vescan/screens/dashboard/wallet/transactions/transaction-screen.dart';
 import 'package:vescan/screens/dashboard/wallet/transfer/bank-transfer.dart';
 import 'package:vescan/screens/dashboard/wallet/transfer/screens/transfer-loading.dart';
 import 'package:vescan/screens/dashboard/wallet/transfer/transfer-confirm-screen.dart';
@@ -303,6 +304,11 @@ List<GetPage> getPage = [
   GetPage(
     name: transferConfirmScreen, 
     page: ()=> TransferConfirmScreen(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: transactionScreen, 
+    page: ()=> TransactionScreen(),
     transition: Transition.cupertino
   ),
 
