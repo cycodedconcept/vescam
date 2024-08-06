@@ -64,6 +64,9 @@ import 'package:vescan/screens/dashboard/settings/other-settings/privacy-securit
 import 'package:vescan/screens/dashboard/settings/set-pid-threshold/set-pid-threshold-screen.dart';
 import 'package:vescan/screens/dashboard/settings/support/support-help.dart';
 import 'package:vescan/screens/dashboard/settings/vehicle-info/vehicle-info.dart';
+import 'package:vescan/screens/dashboard/wallet/add-card-details/add-card-details.dart';
+import 'package:vescan/screens/dashboard/wallet/add-card-details/bank-otp-verification.dart';
+import 'package:vescan/screens/dashboard/wallet/add-card-details/select-bank-screen.dart';
 import 'package:vescan/screens/dashboard/wallet/card-top-up/enter-details.dart';
 import 'package:vescan/screens/dashboard/wallet/card-top-up/top-up-card-amount.dart';
 import 'package:vescan/screens/dashboard/wallet/card-top-up/top-up-loading.dart';
@@ -283,6 +286,18 @@ List<GetPage> getPage = [
   GetPage(
       name: topUpSuccessScreen,
       page: () => TopUpSuccessScreen(),
+      transition: Transition.cupertino),
+  GetPage(
+      name: addBankDetailsScreen,
+      page: () => AddCardDetailsScreen(),
+      transition: Transition.cupertino),
+  GetPage(
+      name: bankOtpVerificationScreen,
+      page: () => BankOtpVerificationScreen(),
+      transition: Transition.cupertino),
+  GetPage(
+      name: selectBankScreen,
+      page: () => SelectBankScreen(),
       transition: Transition.cupertino),
 
   GetPage(

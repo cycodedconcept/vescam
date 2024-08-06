@@ -294,7 +294,9 @@ class WalletView extends StatelessWidget {
                               icon: IconlyLight.send),
                           _actionsTile(
                               title: "Add Account/Card",
-                              action: () {},
+                              action: () {
+                                Get.toNamed(addBankDetailsScreen);
+                              },
                               icon: Iconsax.direct_inbox),
                           _actionsTile(
                               title: "Pay Bills",
