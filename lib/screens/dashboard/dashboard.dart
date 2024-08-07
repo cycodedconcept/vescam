@@ -4,11 +4,13 @@ import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:vescan/controller/app/app-state-controller.dart';
+import 'package:vescan/controller/home/home-state-controller.dart';
 
 class Dashboard extends StatelessWidget {
   Dashboard({super.key});
 
   final AppStateController _appStateController = Get.put(AppStateController());
+  final HomeStateController _homeStateController = Get.put(HomeStateController());
 
   @override
   Widget build(BuildContext context) {
