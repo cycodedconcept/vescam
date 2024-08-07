@@ -36,6 +36,10 @@ import 'package:vescan/screens/dashboard/auto-parts/views/product-view.dart';
 import 'package:vescan/screens/dashboard/dashboard.dart';
 import 'package:vescan/screens/dashboard/notifications/notification-screen.dart';
 import 'package:vescan/screens/dashboard/scan/scan-connecting/diagnostic-report.dart';
+import 'package:vescan/screens/dashboard/scan/scan-connecting/error-details/error-cleared.dart';
+import 'package:vescan/screens/dashboard/scan/scan-connecting/error-details/error-clearing-loading.dart';
+import 'package:vescan/screens/dashboard/scan/scan-connecting/error-details/error-code-detail-screen.dart';
+import 'package:vescan/screens/dashboard/scan/scan-connecting/error-details/error-details-screen.dart';
 import 'package:vescan/screens/dashboard/scan/scan-connecting/obd-scanning.dart';
 import 'package:vescan/screens/dashboard/scan/scan-connecting/scan-completed.dart';
 import 'package:vescan/screens/dashboard/scan/scan-connecting/scan-connecting.dart';
@@ -338,6 +342,23 @@ List<GetPage> getPage = [
       name: obdScanningScreen,
       page: () => OBDScanningScreen(),
       transition: Transition.cupertino),
+  GetPage(
+      name: errorDetailsScreen,
+      page: () => ErrorDetailsScreen(),
+      transition: Transition.cupertino),
+  GetPage(
+      name: errorCodeDetailsScreen,
+      page: () => ErrorCodeDetailScreen(),
+      transition: Transition.cupertino),
+  GetPage(
+      name: errorClearLoadingScreen,
+      page: () => ErrorClearingLoadingScreen(),
+      transition: Transition.cupertino),
+  GetPage(
+      name: errorClearedScreen,
+      page: () => ErrorClearedScreen(),
+      transition: Transition.cupertino),
+  
 
   GetPage(
       name: addNewDeviceScreen,

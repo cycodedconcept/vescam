@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
+import 'package:iconsax/iconsax.dart';
+import 'package:vescan/routes/app/app-route-names.dart';
 import 'package:vescan/widgets/buttons/buttons.dart';
 
 class DiagnosticReportScreen extends StatelessWidget {
@@ -20,10 +22,19 @@ class DiagnosticReportScreen extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
               color: Colors.white,
-              child: const Row(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SizedBox(),
+                  InkWell(
+                    onTap: () {
+                      Get.back();
+                    },
+                    child: const Icon(
+                      Iconsax.arrow_left_2,
+                      color: Colors.black,
+                      size: 24,
+                    ),
+                  ),
                   Text(
                     "Diagnostic Report",
                     style: TextStyle(
@@ -90,7 +101,7 @@ class DiagnosticReportScreen extends StatelessWidget {
                     Buttons().authButtons(
                         title: "View Error Details",
                         action: () {
-                          // Get.toNamed(scanConnectingScreen);
+                          Get.toNamed(errorDetailsScreen);
                         })
                   ],
                 ),

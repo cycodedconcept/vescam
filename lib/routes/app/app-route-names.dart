@@ -78,6 +78,8 @@ String scanCompletedScreen = "/scanCompletedScreen";
 String diagnosticScreen = "/diagnosticScreen";
 String errorDetailsScreen = "/errorDetailsScreen";
 String errorCodeDetailsScreen = "/errorCodeDetailsScreen";
+String errorClearLoadingScreen = "/errorClearLoadingScreen";
+String errorClearedScreen = "/errorClearedScreen";
 
 String addNewDeviceScreen = "/addNewDeviceScreen";
 String scanQRCodeScreen = "/scanQRCodeScreen";

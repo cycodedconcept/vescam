@@ -175,14 +175,10 @@ class HomeView extends StatelessWidget {
                   )
                 ],
               ),
-              const SizedBox(
-                height: 20,
-              ),
-              Stack(
-                children: [
-                  SvgPicture.asset("assets/images/car-stand.svg"),
-                ],
-              ),
+              // const SizedBox(
+              //   height: 20,
+              // ),
+              Image.asset("assets/images/3d-car.png"),
               const SizedBox(
                 height: 20,
               ),
@@ -229,11 +225,7 @@ class HomeView extends StatelessWidget {
                           const SizedBox(
                             height: 5,
                           ),
-                          const Icon(
-                            Icons.speed_outlined,
-                            color: Colors.white,
-                            size: 40,
-                          )
+                          SvgPicture.asset("assets/images/speedometer1.svg")
                         ],
                       ),
                     ),
@@ -282,11 +274,7 @@ class HomeView extends StatelessWidget {
                           const SizedBox(
                             height: 5,
                           ),
-                          const Icon(
-                            Iconsax.speedometer,
-                            color: Colors.white,
-                            size: 40,
-                          )
+                          SvgPicture.asset("assets/images/speedometer2.svg")
                         ],
                       ),
                     ),
@@ -331,14 +319,12 @@ class HomeView extends StatelessWidget {
                                     decoration: const BoxDecoration(
                                         color: Colors.white,
                                         shape: BoxShape.circle),
-                                    child: const Column(
+                                    child: Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
-                                        Icon(
-                                          Icons.engineering,
-                                          color: Color(0xff001F3F),
-                                        ),
+                                        SvgPicture.asset(
+                                            "assets/images/engine.svg"),
                                         Text(
                                           "20%",
                                           style: TextStyle(
