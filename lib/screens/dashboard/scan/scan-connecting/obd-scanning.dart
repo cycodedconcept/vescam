@@ -55,7 +55,7 @@ class _OBDScanningScreenState extends State<OBDScanningScreen> {
                         fontSize: 16),
                   ),
                   const Icon(
-                    IconlyLight.notification,
+                    Iconsax.notification,
                     color: Colors.black,
                   )
                 ],

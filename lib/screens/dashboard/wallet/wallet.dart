@@ -67,7 +67,7 @@ class WalletView extends StatelessWidget {
                     decoration: const BoxDecoration(
                         color: Color(0xff001F3F), shape: BoxShape.circle),
                     child: const Icon(
-                      IconlyLight.notification,
+                      Iconsax.notification,
                       color: Colors.white,
                     ),
                   ),

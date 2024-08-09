@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:vescan/routes/app/app-route-names.dart';
 import 'package:vescan/widgets/bottom-sheets/inspection-fee-sheet.dart';
 import 'package:vescan/widgets/buttons/buttons.dart';
@@ -116,51 +117,63 @@ class TowCompanyProfileScreen extends StatelessWidget {
                           const SizedBox(
                             height: 15,
                           ),
-                          const Row(
+                          Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(
-                                    Iconsax.call,
-                                    color: Colors.white,
-                                    size: 20,
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Text(
-                                    "Call   |",
-                                    style: TextStyle(
-                                        fontSize: 14,
-                                        fontFamily: "OpenMed",
-                                        color: Colors.white),
-                                  ),
-                                ],
+                              InkWell(
+                                onTap: () async {
+                                  final Uri launchUri = Uri(
+                                      scheme: 'tel', path: "+2348134663411");
+                                  await launchUrl(launchUri);
+                                },
+                                child: const Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Iconsax.call,
+                                      color: Colors.white,
+                                      size: 20,
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text(
+                                      "Call   |",
+                                      style: TextStyle(
+                                          fontSize: 14,
+                                          fontFamily: "OpenMed",
+                                          color: Colors.white),
+                                    ),
+                                  ],
+                                ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(
-                                    Iconsax.message,
-                                    color: Colors.white,
-                                    size: 20,
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Text(
-                                    "Message",
-                                    style: TextStyle(
-                                        fontSize: 14,
-                                        fontFamily: "OpenMed",
-                                        color: Colors.white),
-                                  ),
-                                ],
+                              InkWell(
+                                onTap: () {
+                                  Get.toNamed(messageAMechanicScreen);
+                                },
+                                child: const Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Iconsax.message,
+                                      color: Colors.white,
+                                      size: 20,
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text(
+                                      "Message",
+                                      style: TextStyle(
+                                          fontSize: 14,
+                                          fontFamily: "OpenMed",
+                                          color: Colors.white),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ],
                           ),
@@ -425,7 +438,10 @@ class TowCompanyProfileScreen extends StatelessWidget {
                         action: () {
                           InspectionFeeSheet().show(() {
                             Get.back();
-                            ConfirmPayment().show(context, () {});
+                            ConfirmPayment().show(context, () {
+                              Get.back();
+                              Get.toNamed(inspectionPaymentLoading);
+                            });
                           });
                         }),
                   ),

@@ -26,9 +26,12 @@ import 'package:vescan/screens/dashboard/home/book-tow-machine/search-tow-input-
 import 'package:vescan/screens/dashboard/home/book-tow-machine/tow-company-profile.dart';
 import 'package:vescan/screens/dashboard/home/contact-mechanic/contact-mechanic-screen.dart';
 import 'package:vescan/screens/dashboard/home/contact-mechanic/mechanic-profile-screen.dart';
+import 'package:vescan/screens/dashboard/home/contact-mechanic/payment-loading-screen.dart';
+import 'package:vescan/screens/dashboard/home/contact-mechanic/payment-success-screen.dart';
 import 'package:vescan/screens/dashboard/home/contact-mechanic/search-mechanic.dart';
 import 'package:vescan/screens/dashboard/home/contact-mechanic/searchMechanicInput.dart';
 import 'package:vescan/screens/dashboard/home/contact-mechanic/searchMechanicLoading.dart';
+import 'package:vescan/screens/dashboard/home/message/message-mechanic.dart';
 import 'package:vescan/screens/dashboard/notifications/activity-screen.dart';
 import 'package:vescan/screens/dashboard/auto-parts/views/cart-screen.dart';
 import 'package:vescan/screens/dashboard/auto-parts/views/favorites-view.dart';
@@ -358,7 +361,6 @@ List<GetPage> getPage = [
       name: errorClearedScreen,
       page: () => ErrorClearedScreen(),
       transition: Transition.cupertino),
-  
 
   GetPage(
       name: addNewDeviceScreen,
@@ -421,6 +423,10 @@ List<GetPage> getPage = [
       name: mechanicProfileScreen,
       page: () => MechanicProfileScreen(),
       transition: Transition.cupertino),
+  GetPage(
+      name: messageAMechanicScreen,
+      page: () => MessageMechanicScreen(),
+      transition: Transition.cupertino),
 
   GetPage(
       name: bookATowScreen,
@@ -441,5 +447,13 @@ List<GetPage> getPage = [
   GetPage(
       name: towCompanyProfileScreen,
       page: () => TowCompanyProfileScreen(),
+      transition: Transition.cupertino),
+  GetPage(
+      name: inspectionPaymentLoading,
+      page: () => PaymentLoadingScreen(),
+      transition: Transition.cupertino),
+  GetPage(
+      name: inspectionSuccessScreen,
+      page: () => PaymentSuccessScreen(),
       transition: Transition.cupertino),
 ];

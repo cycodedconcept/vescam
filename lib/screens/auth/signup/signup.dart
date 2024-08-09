@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:heroicons/heroicons.dart';
 
 import '../../../routes/app/app-route-names.dart';
 import '../../../widgets/buttons/buttons.dart';
@@ -147,7 +146,7 @@ class SignUpScreen extends StatelessWidget {
                       ),
                       TextFormField(
                         decoration: InputDecoration(
-                          suffixIcon: const HeroIcon(HeroIcons.eye),
+                          suffixIcon: Icon(Icons.visibility),
                           hintText: "Enter Password",
                           hintStyle: const TextStyle(
                               color: Color(0xff7C797A), fontFamily: "OpenMed"),
@@ -190,7 +189,7 @@ class SignUpScreen extends StatelessWidget {
                       ),
                       TextFormField(
                         decoration: InputDecoration(
-                          suffixIcon: const HeroIcon(HeroIcons.eye),
+                          suffixIcon: Icon(Icons.visibility),
                           hintText: "Enter Password",
                           hintStyle: const TextStyle(
                               color: Color(0xff7C797A), fontFamily: "OpenMed"),

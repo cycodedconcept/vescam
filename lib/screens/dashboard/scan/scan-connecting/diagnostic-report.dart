@@ -43,7 +43,7 @@ class DiagnosticReportScreen extends StatelessWidget {
                         fontSize: 16),
                   ),
                   Icon(
-                    IconlyLight.notification,
+                    Iconsax.notification,
                     color: Colors.black,
                   )
                 ],

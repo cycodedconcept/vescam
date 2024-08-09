@@ -14,141 +14,162 @@ class ContactMechanicScreen extends StatelessWidget {
         height: double.infinity,
         width: double.infinity,
         child: SafeArea(
-          child: Column(
-            children: [
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-                color: Colors.white,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    InkWell(
-                        onTap: () {
-                          Get.back();
-                        },
-                        child: const Icon(
-                          Icons.arrow_back_ios,
-                          color: Colors.black,
-                          size: 20,
-                        )),
-                    const Text(
-                      "Contact a Mechanic",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontFamily: "OpenMed",
-                          fontSize: 16),
-                    ),
-                    Row(
-                      children: [
-                        InkWell(
-                            onTap: () {},
-                            child: const Icon(
-                              Iconsax.heart,
-                              color: Colors.black,
-                            )),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        InkWell(
-                            onTap: () {},
-                            child: const Icon(
-                              IconlyLight.notification,
-                              color: Colors.black,
-                            )),
-                      ],
-                    )
-                  ],
-                ),
+            child: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+              color: Colors.white,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  InkWell(
+                      onTap: () {
+                        Get.back();
+                      },
+                      child: const Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.black,
+                        size: 20,
+                      )),
+                  const Text(
+                    "Contact a Mechanic",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontFamily: "OpenMed",
+                        fontSize: 16),
+                  ),
+                  Row(
+                    children: [
+                      InkWell(
+                          onTap: () {},
+                          child: const Icon(
+                            Iconsax.heart,
+                            color: Colors.black,
+                          )),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      InkWell(
+                          onTap: () {},
+                          child: const Icon(
+                            Iconsax.notification,
+                            color: Colors.black,
+                          )),
+                    ],
+                  )
+                ],
               ),
-              const SizedBox(
-                height: 20,
-              ),
-              Expanded(
-                child: SingleChildScrollView(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text(
-                                "Your Current Location",
-                                style: TextStyle(
-                                  color: Color(0xff7C797A),
-                                  fontSize: 14,
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              TextFormField(
-                                decoration: InputDecoration(
-                                  hintText: "Enter current location",
-                                  prefixIcon: Icon(
-                                    Icons.my_location,
-                                    color: Colors.black,
-                                  ),
-                                  hintStyle: TextStyle(
-                                    color: Color(0xff7C797A),
-                                  ),
-                                  contentPadding: EdgeInsets.symmetric(
-                                      horizontal: 20, vertical: 0),
-                                  enabledBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(3),
-                                      borderSide: BorderSide(
-                                          color: Color(0xffE3E3F6), width: 1)),
-                                  focusedBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(3),
-                                      borderSide: BorderSide(
-                                          color: Color(0xffE3E3F6), width: 1)),
-                                  errorBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(3),
-                                      borderSide: BorderSide(
-                                          color: Color(0xffE3E3F6), width: 1)),
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        Row(
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Expanded(
-                              child: RichText(
-                                text: const TextSpan(
-                                    text: "Here are the list of ",
-                                    style: TextStyle(
-                                        fontFamily: "OpenMed",
-                                        fontSize: 16,
-                                        color: Colors.black),
-                                    children: [
-                                      TextSpan(
-                                        text: "Mechanics ",
-                                        style: TextStyle(
-                                            fontFamily: "OpenMed",
-                                            fontSize: 16,
-                                            color: Color(0xff00BFFF)),
-                                      ),
-                                      TextSpan(
-                                        text: "closer to you",
-                                        style: TextStyle(
-                                            fontFamily: "OpenMed",
-                                            fontSize: 16,
-                                            color: Colors.black),
-                                      ),
-                                    ]),
+                            const Text(
+                              "Your Current Location",
+                              style: TextStyle(
+                                color: Color(0xff7C797A),
+                                fontSize: 14,
                               ),
                             ),
                             const SizedBox(
-                              width: 20,
+                              height: 10,
                             ),
-                            Row(
-                              children: [
-                                Container(
+                            TextFormField(
+                              decoration: InputDecoration(
+                                hintText: "Enter current location",
+                                prefixIcon: Icon(
+                                  Icons.my_location,
+                                  color: Colors.black,
+                                ),
+                                hintStyle: TextStyle(
+                                  color: Color(0xff7C797A),
+                                ),
+                                contentPadding: EdgeInsets.symmetric(
+                                    horizontal: 20, vertical: 0),
+                                enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(3),
+                                    borderSide: BorderSide(
+                                        color: Color(0xffE3E3F6), width: 1)),
+                                focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(3),
+                                    borderSide: BorderSide(
+                                        color: Color(0xffE3E3F6), width: 1)),
+                                errorBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(3),
+                                    borderSide: BorderSide(
+                                        color: Color(0xffE3E3F6), width: 1)),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: RichText(
+                              text: const TextSpan(
+                                  text: "Here are the list of ",
+                                  style: TextStyle(
+                                      fontFamily: "OpenMed",
+                                      fontSize: 16,
+                                      color: Colors.black),
+                                  children: [
+                                    TextSpan(
+                                      text: "Mechanics ",
+                                      style: TextStyle(
+                                          fontFamily: "OpenMed",
+                                          fontSize: 16,
+                                          color: Color(0xff00BFFF)),
+                                    ),
+                                    TextSpan(
+                                      text: "closer to you",
+                                      style: TextStyle(
+                                          fontFamily: "OpenMed",
+                                          fontSize: 16,
+                                          color: Colors.black),
+                                    ),
+                                  ]),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                height: 32,
+                                width: 32,
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: const Color(0xffD9DDE2),
+                                    ),
+                                    shape: BoxShape.circle),
+                                child: const Icon(
+                                  Iconsax.filter,
+                                  size: 20,
+                                  color: Color(0xff7C797A),
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              InkWell(
+                                onTap: () {
+                                  Get.toNamed(searchForMechanicScreen);
+                                },
+                                child: Container(
                                   height: 32,
                                   width: 32,
                                   decoration: BoxDecoration(
@@ -157,61 +178,82 @@ class ContactMechanicScreen extends StatelessWidget {
                                       ),
                                       shape: BoxShape.circle),
                                   child: const Icon(
-                                    Iconsax.filter,
+                                    Iconsax.search_normal_1,
                                     size: 20,
                                     color: Color(0xff7C797A),
                                   ),
                                 ),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                InkWell(
-                                  onTap: () {
-                                    Get.toNamed(searchForMechanicScreen);
-                                  },
-                                  child: Container(
-                                    height: 32,
-                                    width: 32,
-                                    decoration: BoxDecoration(
-                                        border: Border.all(
-                                          color: const Color(0xffD9DDE2),
-                                        ),
-                                        shape: BoxShape.circle),
-                                    child: const Icon(
-                                      Iconsax.search_normal_1,
-                                      size: 20,
-                                      color: Color(0xff7C797A),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        Column(
-                          children: List.generate(5, (index) {
-                            return Container(
-                              margin: EdgeInsets.only(bottom: 20),
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 20, vertical: 15),
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(12),
-                                  border: Border.all(color: Color(0xffD6D5D6))),
-                              child: _tiles(),
-                            );
-                          }),
-                        )
-                      ],
-                    ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Column(
+                        children: List.generate(5, (index) {
+                          return Container(
+                            margin: const EdgeInsets.only(bottom: 20),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 20, vertical: 15),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(12),
+                                border:
+                                    Border.all(color: const Color(0xffD6D5D6))),
+                            child: _tiles(),
+                          );
+                        }),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Recommended",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontFamily: "OpenMed",
+                              fontSize: 16,
+                            ),
+                          ),
+                          Text(
+                            "See all",
+                            style: TextStyle(
+                              color: Color(0xffADADAD),
+                              fontSize: 14,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      Column(
+                        children: List.generate(5, (index) {
+                          return Container(
+                            margin: EdgeInsets.only(bottom: 20),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 20, vertical: 15),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(12),
+                                border: Border.all(color: Color(0xffD6D5D6))),
+                            child: _tiles(),
+                          );
+                        }),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      )
+                    ],
                   ),
                 ),
               ),
-            ],
-          )
-        ),
+            ),
+          ],
+        )),
       ),
     );
   }

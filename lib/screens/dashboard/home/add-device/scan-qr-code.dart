@@ -63,7 +63,7 @@ class _ScanQRCodeScreenState extends State<ScanQRCodeScreen> {
                         fontSize: 16),
                   ),
                   const Icon(
-                    IconlyLight.notification,
+                    Iconsax.notification,
                     color: Colors.black,
                   )
                 ],
@@ -94,7 +94,7 @@ class _ScanQRCodeScreenState extends State<ScanQRCodeScreen> {
                       // SizedBox(
                       //   height: 417,
                       //   width: double.infinity,
-                      //   child: 
+                      //   child:
                       //   _buildQrView(context),
                       // ),
                       Image.asset("assets/images/qr-code.png"),

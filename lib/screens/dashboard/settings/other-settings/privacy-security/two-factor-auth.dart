@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:heroicons/heroicons.dart';
+
 import 'package:iconly/iconly.dart';
 
 class TwoFactorAuthScreen extends StatelessWidget {

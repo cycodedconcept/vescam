@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:heroicons/heroicons.dart';
+
 import 'package:vescan/routes/app/app-route-names.dart';
 import 'package:vescan/widgets/buttons/buttons.dart';
 
@@ -58,7 +58,7 @@ class ChangePasswordScreen extends StatelessWidget {
                             ),
                             TextFormField(
                               decoration: InputDecoration(
-                                suffixIcon: const HeroIcon(HeroIcons.eye),
+                                suffixIcon: Icon(Icons.visibility),
                                 hintText: "Enter Current Password",
                                 hintStyle: const TextStyle(
                                     color: Color(0xff7C797A),
@@ -102,7 +102,7 @@ class ChangePasswordScreen extends StatelessWidget {
                             ),
                             TextFormField(
                               decoration: InputDecoration(
-                                suffixIcon: const HeroIcon(HeroIcons.eye),
+                                suffixIcon: Icon(Icons.visibility),
                                 hintText: "Enter New Password",
                                 hintStyle: const TextStyle(
                                     color: Color(0xff7C797A),
@@ -146,7 +146,7 @@ class ChangePasswordScreen extends StatelessWidget {
                             ),
                             TextFormField(
                               decoration: InputDecoration(
-                                suffixIcon: const HeroIcon(HeroIcons.eye),
+                                suffixIcon: Icon(Icons.visibility),
                                 hintText: "Enter New Password",
                                 hintStyle: const TextStyle(
                                     color: Color(0xff7C797A),

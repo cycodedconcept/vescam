@@ -41,7 +41,7 @@ class BankTransferScreen extends StatelessWidget {
                         fontSize: 16),
                   ),
                   const Icon(
-                    IconlyLight.notification,
+                    Iconsax.notification,
                     color: Colors.black,
                   ),
                 ],

@@ -53,7 +53,7 @@ class SearchMechanicScreen extends StatelessWidget {
                       InkWell(
                           onTap: () {},
                           child: const Icon(
-                            IconlyLight.notification,
+                            Iconsax.notification,
                             color: Colors.black,
                           )),
                     ],
@@ -259,5 +259,4 @@ class SearchMechanicScreen extends StatelessWidget {
       ],
     );
   }
-
 }

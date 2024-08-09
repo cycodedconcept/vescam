@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:heroicons/heroicons.dart';
+
 import 'package:vescan/routes/app/app-route-names.dart';
 
 import '../../../widgets/buttons/buttons.dart';
