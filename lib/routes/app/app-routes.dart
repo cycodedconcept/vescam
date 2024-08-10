@@ -9,6 +9,9 @@ import 'package:vescan/screens/auth/signup/signup-success.dart';
 import 'package:vescan/screens/auth/signup/signup.dart';
 import 'package:vescan/screens/auth/verification/forgot-password-verify.dart';
 import 'package:vescan/screens/auth/verification/signup-verify.dart';
+import 'package:vescan/screens/dashboard/auto-parts/views/cart/add-card-screen.dart';
+import 'package:vescan/screens/dashboard/auto-parts/views/checkout-loading.dart';
+import 'package:vescan/screens/dashboard/auto-parts/views/checkout-success.dart';
 import 'package:vescan/screens/dashboard/home/add-device/add-device-info-loading.dart';
 import 'package:vescan/screens/dashboard/home/add-device/add-device-success.dart';
 import 'package:vescan/screens/dashboard/home/add-device/add-new-device.dart';
@@ -326,6 +329,18 @@ List<GetPage> getPage = [
   GetPage(
       name: productDetailsScreen,
       page: () => ProductViewScreen(),
+      transition: Transition.cupertino),
+  GetPage(
+      name: addCardScreen,
+      page: () => AddCardScreen(),
+      transition: Transition.cupertino),
+  GetPage(
+      name: checkoutLoadingScreen,
+      page: () => CheckoutLoadingScreen(),
+      transition: Transition.cupertino),
+  GetPage(
+      name: checkoutSuccessScreen,
+      page: () => CheckoutSuccessScreen(),
       transition: Transition.cupertino),
 
   GetPage(

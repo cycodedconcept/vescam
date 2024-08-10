@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:vescan/controller/ecommerce/ecommerce-state-controller.dart';
+import 'package:vescan/widgets/bottom-sheets/checkout/checkout-sheet.dart';
 import 'package:vescan/widgets/buttons/buttons.dart';
 
 class ProductCartView extends StatelessWidget {
@@ -456,7 +457,11 @@ class ProductCartView extends StatelessWidget {
           const SizedBox(
             height: 40,
           ),
-          Buttons().authButtons(title: "Checkout (N 20,550)", action: () {}),
+          Buttons().authButtons(
+              title: "Checkout (N 20,550)",
+              action: () {
+                CheckoutSheet().show();
+              }),
           const SizedBox(
             height: 50,
           ),

@@ -46,13 +46,20 @@ class EcommerceStateController extends GetxController {
       "rating": "4.5",
     },
   ];
+  String _selectedPaymentMethod = "";
 
   // GETTERS
   List get parts => _parts;
+  String get selectedPaymentMethod => _selectedPaymentMethod;
 
   // SETTERS
   updateParts(value) {
     _parts = value;
+    update();
+  }
+
+  updatePaymentMethod(value) {
+    _selectedPaymentMethod = value;
     update();
   }
 }

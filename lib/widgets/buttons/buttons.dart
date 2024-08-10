@@ -70,15 +70,16 @@ class Buttons {
           onPressed: action,
           style: ElevatedButton.styleFrom(
               elevation: 0,
-              side: const BorderSide(
-                color: const Color(0xff001F3F)
-              ),
+              backgroundColor: Colors.white,
+              side: const BorderSide(color: const Color(0xff001F3F)),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10))),
           child: Text(
             title,
             style: const TextStyle(
-                color:const Color(0xff001F3F), fontSize: 16, fontWeight: FontWeight.w600),
+                color: const Color(0xff001F3F),
+                fontSize: 16,
+                fontWeight: FontWeight.w600),
           )),
     );
   }
@@ -92,7 +93,7 @@ class Buttons {
         decoration: BoxDecoration(
             color: const Color(0xff004359),
             borderRadius: BorderRadius.circular(12)),
-        child:const Center(
+        child: const Center(
           child: Text(
             "Next",
             style: TextStyle(
