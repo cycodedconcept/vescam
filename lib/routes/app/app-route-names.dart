@@ -80,6 +80,7 @@ String errorDetailsScreen = "/errorDetailsScreen";
 String errorCodeDetailsScreen = "/errorCodeDetailsScreen";
 String errorClearLoadingScreen = "/errorClearLoadingScreen";
 String errorClearedScreen = "/errorClearedScreen";
+String uploadFilesForMechanic = "/uploadFilesForMechanic";
 
 String addNewDeviceScreen = "/addNewDeviceScreen";
 String scanQRCodeScreen = "/scanQRCodeScreen";
@@ -103,7 +104,6 @@ String searchTowInputScreen = "/searchTowInputScreen";
 String mechanicProfileScreen = "/mechanicProfileScreen";
 String towCompanyProfileScreen = "/towCompanyProfileScreen";
 String messageAMechanicScreen = "/messageAMechanicScreen";
-String uploadFilesForMechanic = "/uploadFilesForMechanic";
 String uploadFilesForTow = "/uploadFilesForTow";
 String mechanicBookingLoading = "/mechanicBookingLoading";
 String towBookingLoading = "/towBookingLoading";

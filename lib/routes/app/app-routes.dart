@@ -25,6 +25,8 @@ import 'package:vescan/screens/dashboard/home/book-tow-machine/search-for-tow-ma
 import 'package:vescan/screens/dashboard/home/book-tow-machine/search-tow-input-screen.dart';
 import 'package:vescan/screens/dashboard/home/book-tow-machine/tow-company-profile.dart';
 import 'package:vescan/screens/dashboard/home/contact-mechanic/contact-mechanic-screen.dart';
+import 'package:vescan/screens/dashboard/home/contact-mechanic/mechanic-booking-loading.dart';
+import 'package:vescan/screens/dashboard/home/contact-mechanic/mechanic-booking-success.dart';
 import 'package:vescan/screens/dashboard/home/contact-mechanic/mechanic-profile-screen.dart';
 import 'package:vescan/screens/dashboard/home/contact-mechanic/payment-loading-screen.dart';
 import 'package:vescan/screens/dashboard/home/contact-mechanic/payment-success-screen.dart';
@@ -43,6 +45,7 @@ import 'package:vescan/screens/dashboard/scan/scan-connecting/error-details/erro
 import 'package:vescan/screens/dashboard/scan/scan-connecting/error-details/error-clearing-loading.dart';
 import 'package:vescan/screens/dashboard/scan/scan-connecting/error-details/error-code-detail-screen.dart';
 import 'package:vescan/screens/dashboard/scan/scan-connecting/error-details/error-details-screen.dart';
+import 'package:vescan/screens/dashboard/scan/scan-connecting/error-details/upload-files-for-mechanic.dart';
 import 'package:vescan/screens/dashboard/scan/scan-connecting/obd-scanning.dart';
 import 'package:vescan/screens/dashboard/scan/scan-connecting/scan-completed.dart';
 import 'package:vescan/screens/dashboard/scan/scan-connecting/scan-connecting.dart';
@@ -366,6 +369,10 @@ List<GetPage> getPage = [
       name: errorClearedScreen,
       page: () => ErrorClearedScreen(),
       transition: Transition.cupertino),
+  GetPage(
+      name: uploadFilesForMechanic,
+      page: () => UploadFilesForMechanicScreen(),
+      transition: Transition.cupertino),
 
   GetPage(
       name: addNewDeviceScreen,
@@ -461,4 +468,13 @@ List<GetPage> getPage = [
       name: inspectionSuccessScreen,
       page: () => PaymentSuccessScreen(),
       transition: Transition.cupertino),
+  GetPage(
+    name: mechanicBookingLoading,
+    page: () => MechanicBookingLoading(),
+    transition: Transition.cupertino),
+  GetPage(
+    name: mechanicBookingSuccess,
+    page: () => MechanicBookingSuccess(),
+    transition: Transition.cupertino),
+
 ];

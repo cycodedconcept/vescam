@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:vescan/routes/app/app-route-names.dart';
+import 'package:vescan/widgets/bottom-sheets/share-error-details.dart';
 import 'package:vescan/widgets/buttons/buttons.dart';
 import 'package:vescan/widgets/pop-up/clear-errors.dart';
 
@@ -90,7 +91,9 @@ class ErrorDetailsScreen extends StatelessWidget {
                               width: 10,
                             ),
                             InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                ShareErrorDetailsScreen().show();
+                              },
                               child: const Icon(
                                 IconlyLight.send,
                                 color: Color(0xff7C797A),

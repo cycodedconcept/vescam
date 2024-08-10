@@ -192,26 +192,25 @@ Reduced Engine Performance: Decrease in power and acceleration.
                           height: 48,
                           width: double.infinity,
                           child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Get.toNamed(uploadFilesForMechanic);
+                              },
                               style: ElevatedButton.styleFrom(
                                   elevation: 0,
                                   backgroundColor: const Color(0xff001F3F),
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(10))),
-                              child: const Row(
+                              child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Icon(
-                                    Icons.share_rounded,
-                                    color: Colors.white,
-                                    size: 17,
-                                  ),
-                                  SizedBox(
+                                  SvgPicture.asset(
+                                      "assets/images/Share circle.svg"),
+                                  const SizedBox(
                                     width: 10,
                                   ),
-                                  Text(
+                                  const Text(
                                     "Share",
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 16,
                                         fontWeight: FontWeight.w600),
