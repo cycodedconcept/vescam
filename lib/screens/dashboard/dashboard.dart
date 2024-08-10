@@ -37,7 +37,11 @@ class Dashboard extends StatelessWidget {
                       icon: IconlyLight.wallet,
                       title: 'Wallet',
                       activeIcon: IconlyBold.wallet),
-                  const TabItem(icon: SolarIconsBold.objectScan, title: 'Add'),
+                  TabItem(
+                      icon: Center(
+                          child:
+                              SvgPicture.asset("assets/images/ScanLogo.svg")),
+                      title: 'Add'),
                   TabItem(
                       icon: SvgPicture.asset("assets/images/auto-part.svg"),
                       title: 'Auto-Parts',

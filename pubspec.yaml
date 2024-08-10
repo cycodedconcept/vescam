@@ -54,6 +54,7 @@ dependencies:
   iconify_flutter: ^0.0.5
   solar_icons: ^0.0.5
   url_launcher: ^6.3.0
+  slide_countdown: ^1.6.1
 
 dev_dependencies:
   flutter_test:

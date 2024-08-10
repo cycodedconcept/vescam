@@ -62,13 +62,18 @@ class WalletView extends StatelessWidget {
                           ]))
                     ],
                   ),
-                  Container(
-                    padding: const EdgeInsets.all(10),
-                    decoration: const BoxDecoration(
-                        color: Color(0xff001F3F), shape: BoxShape.circle),
-                    child: const Icon(
-                      Iconsax.notification,
-                      color: Colors.white,
+                  InkWell(
+                    onTap: () {
+                      Get.toNamed(notificationScreen);
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(10),
+                      decoration: const BoxDecoration(
+                          color: Color(0xff001F3F), shape: BoxShape.circle),
+                      child: const Icon(
+                        Iconsax.notification,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ],

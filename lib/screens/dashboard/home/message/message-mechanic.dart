@@ -77,7 +77,8 @@ class MessageMechanicScreen extends StatelessWidget {
                             decoration: InputDecoration(
                               hintText: "Message...",
                               hintStyle: TextStyle(color: Colors.black),
-                              contentPadding: EdgeInsets.zero,
+                              contentPadding:
+                                  EdgeInsets.symmetric(horizontal: 20),
                               enabledBorder: InputBorder.none,
                               focusedBorder: InputBorder.none,
                               errorBorder: InputBorder.none,

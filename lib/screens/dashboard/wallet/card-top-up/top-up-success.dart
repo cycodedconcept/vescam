@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gif/gif.dart';
+import 'package:vescan/controller/home/home-state-controller.dart';
 
 import '../../../../routes/app/app-route-names.dart';
 import '../../../../widgets/bottom-sheets/top-up-reciept.dart';
 import '../../../../widgets/buttons/buttons.dart';
 
 class TopUpSuccessScreen extends StatelessWidget {
-  const TopUpSuccessScreen({super.key});
+  TopUpSuccessScreen({super.key});
+
+  final HomeStateController _homeStateController =
+      Get.find<HomeStateController>();
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +77,8 @@ class TopUpSuccessScreen extends StatelessWidget {
             Buttons().authButtons(
                 title: "Back to Wallet",
                 action: () {
-                  Get.offAllNamed(dashboard);
+                  _homeStateController.updateCurrentIndex(1);
+                  Get.toNamed(dashboard);
                 }),
             const SizedBox(
               height: 20,

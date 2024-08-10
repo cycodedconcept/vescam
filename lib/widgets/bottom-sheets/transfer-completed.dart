@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:get/route_manager.dart';
+import 'package:get/get.dart';
 import 'package:gif/gif.dart';
 import 'package:vescan/routes/app/app-route-names.dart';
 import 'package:vescan/widgets/bottom-sheets/payment-recipet.dart';
 import 'package:vescan/widgets/buttons/buttons.dart';
 
+import '../../controller/home/home-state-controller.dart';
+
 class TransferCompletedScreen {
   show(action) {
+    final HomeStateController _homeStateController =
+        Get.find<HomeStateController>();
+
     Get.bottomSheet(
         Container(
           width: double.infinity,
@@ -123,7 +128,8 @@ class TransferCompletedScreen {
               Buttons().authButtons(
                   title: "Done",
                   action: () {
-                    Get.offAllNamed(dashboard);
+                    _homeStateController.updateCurrentIndex(1);
+                    Get.toNamed(dashboard);
                   }),
               const SizedBox(
                 height: 20,

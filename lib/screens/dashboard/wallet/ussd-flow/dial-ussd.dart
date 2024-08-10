@@ -3,6 +3,7 @@ import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:get/route_manager.dart';
 import 'package:iconly/iconly.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:slide_countdown/slide_countdown.dart';
 import 'package:vescan/routes/app/app-route-names.dart';
 import 'package:vescan/widgets/buttons/buttons.dart';
 
@@ -115,7 +116,16 @@ class DialUssdCodeScreen extends StatelessWidget {
                                   fontFamily: "Open"),
                             ),
                             SizedBox(
-                              height: 30,
+                              height: 20,
+                            ),
+                            SlideCountdownSeparated(
+                              padding: EdgeInsets.all(10),
+                              duration: Duration(minutes: 6),
+                              decoration: BoxDecoration(color: Colors.white),
+                              style: TextStyle(color: Color(0xff030206)),
+                            ),
+                            SizedBox(
+                              height: 20,
                             ),
                           ],
                         ),

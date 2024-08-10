@@ -43,9 +43,14 @@ class ErrorDetailsScreen extends StatelessWidget {
                         fontFamily: "OpenMed",
                         fontSize: 16),
                   ),
-                  const Icon(
-                    Iconsax.notification,
-                    color: Colors.black,
+                  InkWell(
+                    onTap: () {
+                      Get.toNamed(notificationScreen);
+                    },
+                    child: const Icon(
+                      Iconsax.notification,
+                      color: Colors.black,
+                    ),
                   )
                 ],
               ),
@@ -138,7 +143,7 @@ class ErrorDetailsScreen extends StatelessWidget {
                     Buttons().authButtons(
                         title: "Hire a Mechanic",
                         action: () {
-                          Get.toNamed(errorDetailsScreen);
+                          Get.toNamed(contactMechanicScreen);
                         })
                   ],
                 ),

@@ -77,6 +77,7 @@ import 'package:vescan/screens/dashboard/wallet/add-card-details/select-bank-scr
 import 'package:vescan/screens/dashboard/wallet/card-top-up/enter-details.dart';
 import 'package:vescan/screens/dashboard/wallet/card-top-up/top-up-card-amount.dart';
 import 'package:vescan/screens/dashboard/wallet/card-top-up/top-up-loading.dart';
+import 'package:vescan/screens/dashboard/wallet/card-top-up/top-up-recipet.dart';
 import 'package:vescan/screens/dashboard/wallet/transactions/transaction-screen.dart';
 import 'package:vescan/screens/dashboard/wallet/transfer/bank-transfer.dart';
 import 'package:vescan/screens/dashboard/wallet/transfer/screens/transfer-loading.dart';
@@ -293,6 +294,10 @@ List<GetPage> getPage = [
   GetPage(
       name: topUpSuccessScreen,
       page: () => TopUpSuccessScreen(),
+      transition: Transition.cupertino),
+  GetPage(
+      name: topUpRecieptScreen,
+      page: () => TopUpRecieptScreen(),
       transition: Transition.cupertino),
   GetPage(
       name: addBankDetailsScreen,
