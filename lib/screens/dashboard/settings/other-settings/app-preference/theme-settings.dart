@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
 
 class ThemeSettingsScreen extends StatelessWidget {
   const ThemeSettingsScreen({super.key});
@@ -27,24 +29,87 @@ class ThemeSettingsScreen extends StatelessWidget {
         height: double.infinity,
         width: double.infinity,
         padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: const SingleChildScrollView(
+        child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                height: 20,
+              const SizedBox(
+                height: 30,
               ),
-              Text(
+              const Text(
                 "Appearance",
                 style: TextStyle(fontSize: 16, fontFamily: "OpenBold"),
               ),
-              SizedBox(
-                height: 20,
+              const SizedBox(
+                height: 50,
               ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Column(
+                    children: [
+                      Image.asset("assets/images/light-screen.png"),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Radio(
+                          activeColor: Color(0xff0376FC),
+                          value: "light",
+                          groupValue: "light",
+                          onChanged: (value) {})
+                    ],
+                  ),
+                  const SizedBox(
+                    width: 50,
+                  ),
+                  Column(
+                    children: [
+                      Image.asset("assets/images/dark-screen.png"),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Radio(
+                          activeColor: const Color(0xff0376FC),
+                          value: "dark",
+                          groupValue: "light",
+                          onChanged: (value) {})
+                    ],
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              _settingTile(
+                  icon: "assets/images/glasses.svg", title: "Automatic")
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Container _settingTile({title, action, icon}) {
+    return Container(
+      decoration: BoxDecoration(
+          color: const Color(0xffF8FAFB),
+          borderRadius: BorderRadius.circular(12)),
+      child: ListTile(
+          contentPadding: const EdgeInsets.symmetric(horizontal: 20),
+          onTap: action,
+          leading: SvgPicture.asset(
+            icon,
+          ),
+          title: Text(
+            title,
+            style: const TextStyle(
+                color: Color(0xff2B2A2B), fontFamily: "OpenMed", fontSize: 14),
+          ),
+          trailing: Switch.adaptive(
+            value: false,
+            onChanged: (value) {},
+            activeColor: const Color(0xff00BFFF),
+          )),
     );
   }
 }
