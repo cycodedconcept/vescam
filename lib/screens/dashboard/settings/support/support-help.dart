@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
+import 'package:iconly/iconly.dart';
 import 'package:iconsax/iconsax.dart';
 
 class SupportAndHelpScreen extends StatelessWidget {
@@ -57,8 +58,8 @@ class SupportAndHelpScreen extends StatelessWidget {
                       decoration: InputDecoration(
                         fillColor: Colors.white,
                         filled: true,
-                        suffixIcon:
-                            const Icon(Icons.search, color: Color(0xffADADAD)),
+                        suffixIcon: const Icon(IconlyLight.search,
+                            color: Color(0xffADADAD)),
                         hintText: "Search",
                         hintStyle: const TextStyle(
                             color: Color(0xff9B9B9B), fontFamily: "OpenMed"),

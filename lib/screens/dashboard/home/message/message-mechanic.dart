@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:vescan/routes/app/app-route-names.dart';
 
 class MessageMechanicScreen extends StatelessWidget {
   const MessageMechanicScreen({super.key});
@@ -43,7 +44,9 @@ class MessageMechanicScreen extends StatelessWidget {
                     Row(
                       children: [
                         InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Get.toNamed(notificationScreen);
+                            },
                             child: const Icon(
                               Iconsax.notification,
                               color: Colors.black,

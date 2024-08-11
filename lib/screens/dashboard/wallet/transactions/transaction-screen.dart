@@ -64,7 +64,7 @@ class TransactionScreen extends StatelessWidget {
                           decoration: InputDecoration(
                             hintText: "Search Bank Name",
                             suffixIcon: const Icon(
-                              Icons.search,
+                              IconlyLight.search,
                               color: Color(0xffADADAD),
                             ),
                             hintStyle: const TextStyle(

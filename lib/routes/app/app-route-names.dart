@@ -111,3 +111,4 @@ String mechanicBookingSuccess = "/mechanicBookingSuccess";
 String towBookingSuccess = "/towBookingSuccess";
 String inspectionPaymentLoading = "/inspectionPaymentLoading";
 String inspectionSuccessScreen = "/inspectionSuccessScreen";
+String favoriteMechanicScreen = "/favoriteMechanicScreen";

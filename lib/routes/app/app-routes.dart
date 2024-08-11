@@ -28,6 +28,7 @@ import 'package:vescan/screens/dashboard/home/book-tow-machine/search-for-tow-ma
 import 'package:vescan/screens/dashboard/home/book-tow-machine/search-tow-input-screen.dart';
 import 'package:vescan/screens/dashboard/home/book-tow-machine/tow-company-profile.dart';
 import 'package:vescan/screens/dashboard/home/contact-mechanic/contact-mechanic-screen.dart';
+import 'package:vescan/screens/dashboard/home/contact-mechanic/favorite-mechanic.dart';
 import 'package:vescan/screens/dashboard/home/contact-mechanic/mechanic-booking-loading.dart';
 import 'package:vescan/screens/dashboard/home/contact-mechanic/mechanic-booking-success.dart';
 import 'package:vescan/screens/dashboard/home/contact-mechanic/mechanic-profile-screen.dart';
@@ -490,6 +491,10 @@ List<GetPage> getPage = [
   GetPage(
     name: mechanicBookingSuccess,
     page: () => MechanicBookingSuccess(),
+    transition: Transition.cupertino),
+  GetPage(
+    name: favoriteMechanicScreen,
+    page: () => FavoriteMechanicScreen(),
     transition: Transition.cupertino),
 
 ];

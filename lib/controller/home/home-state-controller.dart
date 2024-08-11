@@ -17,17 +17,26 @@ class HomeStateController extends GetxController {
     EcommerceView(),
     SettingsView()
   ];
+  bool _showSearchbar = false;
 
   // GETTERS
   bool get showDashboard => _showDashboard;
   int get currentIndex => _currentIndex;
   List get dashboardItems => _dashboardItems;
+  bool get showSearchbar => _showSearchbar;
+
 
   // SETTERS
   toggleShowDashboard() {
     _showDashboard = !_showDashboard;
     update();
   }
+
+  toggleShowSearchBar() {
+    _showSearchbar = !_showSearchbar;
+    update();
+  }
+
   updateCurrentIndex(value) {
     _currentIndex = value;
     update();

@@ -61,7 +61,7 @@ class SettingsView extends StatelessWidget {
                       ),
                     ],
                   ),
-                 const SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   Row(
@@ -140,7 +140,9 @@ class SettingsView extends StatelessWidget {
                         icon: Icons.history),
                     _settingTile(
                         title: "Favorite Mechanics/Towing Vehicles",
-                        action: () {},
+                        action: () {
+                          Get.toNamed(favoriteMechanicScreen);
+                        },
                         icon: Icons.favorite_outline),
                     _settingTile(
                         title: "Notifications",
@@ -202,6 +204,4 @@ class SettingsView extends StatelessWidget {
       ),
     );
   }
-
-
 }

@@ -105,7 +105,7 @@ class SearchMechanicInputScreen extends StatelessWidget {
                       fillColor: const Color(0xffF1F1F1),
                       hintText: "Search",
                       suffixIcon: const Icon(
-                        Icons.search,
+                        IconlyLight.search,
                         color: Color(0xffADADAD),
                       ),
                       hintStyle: const TextStyle(

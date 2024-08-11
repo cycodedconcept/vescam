@@ -103,7 +103,7 @@ class SearchForTowCompanyScreen extends StatelessWidget {
                             decoration: InputDecoration(
                               hintText: "Search",
                               suffixIcon: const Icon(
-                                Icons.search,
+                                IconlyLight.search,
                                 color: Color(0xffADADAD),
                               ),
                               hintStyle: const TextStyle(
