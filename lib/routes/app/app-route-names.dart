@@ -35,6 +35,7 @@ String themeSettingsScreen = "/themeSettingsScreen";
 String languageSettingsScreen = "/languageSettingsScreen";
 String addLanguageScreen = "/addLanguageScreen";
 String setPidThresholdsScreen = "/setPidThresholdsScreen";
+String paymentInformationScreen = "/paymentInformationScreen";
 
 String accountSettingsScreen = "/accountSettingsScreen";
 String profileInformationScreen = "/profileInformationScreen";

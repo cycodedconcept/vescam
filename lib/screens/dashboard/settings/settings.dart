@@ -179,7 +179,9 @@ class SettingsView extends StatelessWidget {
                         icon: Icons.notifications_active_outlined),
                     _settingTile(
                         title: "Payment Information",
-                        action: () {},
+                        action: () {
+                          Get.toNamed(paymentInformationScreen);
+                        },
                         icon: MingCuteIcons.mgc_version_line),
                     _settingTile(
                         title: "Other Settings",
