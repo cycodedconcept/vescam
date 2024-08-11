@@ -12,9 +12,7 @@ class ConfirmPayment {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12)),
               content: Container(
-                 width: MediaQuery.of(context)
-                    .size
-                    .width,
+                width: MediaQuery.of(context).size.width,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [

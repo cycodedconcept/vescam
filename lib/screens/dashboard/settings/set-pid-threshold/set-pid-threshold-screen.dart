@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:vescan/widgets/pop-up/set-pid-modal.dart';
 
 class SetPidThresholdScreen extends StatelessWidget {
   const SetPidThresholdScreen({super.key});
@@ -48,35 +50,62 @@ class SetPidThresholdScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              _settingsList(title: "Speed", action: () {}, icon: Icons.speed),
+              _settingsList(
+                  title: "Speed",
+                  action: () {
+                    SetPidModalSheet()
+                        .show(context, "Set Speed Threshold", "km/h");
+                  },
+                  icon: "speed-small"),
               _settingsList(
                   title: "Revolutions Per Minute (RPM)",
-                  action: () {},
-                  icon: Icons.speed_outlined),
+                  action: () {
+                    SetPidModalSheet()
+                        .show(context, "Set RPM Threshold", "RPM");
+                  },
+                  icon: "rpm"),
               _settingsList(
                   title: "Engine Load",
-                  action: () {},
-                  icon: Icons.car_repair_outlined),
+                  action: () {
+                    SetPidModalSheet()
+                        .show(context, "Set Speed Threshold", "%");
+                  },
+                  icon: "engine"),
               _settingsList(
                   title: "Battery Voltage",
-                  action: () {},
-                  icon: Iconsax.battery_3full),
+                  action: () {
+                    SetPidModalSheet()
+                        .show(context, "Set Battery Voltage Threshold", "V");
+                  },
+                  icon: "battery"),
               _settingsList(
                   title: "Coolant Temperature",
-                  action: () {},
-                  icon: Icons.thermostat_auto),
+                  action: () {
+                    SetPidModalSheet().show(
+                        context, "Set Coolant Temperature Threshold", "F");
+                  },
+                  icon: "cool-temp"),
               _settingsList(
                   title: "Intake Air Temperature",
-                  action: () {},
-                  icon: Icons.thermostat_outlined),
+                  action: () {
+                    SetPidModalSheet().show(
+                        context, "Set Intake Air Temperature Threshold", "F");
+                  },
+                  icon: "temperature"),
               _settingsList(
                   title: "Fuel Level",
-                  action: () {},
-                  icon: Iconsax.gas_station),
+                  action: () {
+                    SetPidModalSheet()
+                        .show(context, "Set Fuel Level Threshold", "%");
+                  },
+                  icon: "fuelpump"),
               _settingsList(
                   title: "Throttle",
-                  action: () {},
-                  icon: Icons.car_repair_outlined),
+                  action: () {
+                    SetPidModalSheet()
+                        .show(context, "Set Throttle Threshold", "%");
+                  },
+                  icon: "throttle_small"),
             ],
           ),
         ),
@@ -94,15 +123,13 @@ class SetPidThresholdScreen extends StatelessWidget {
         contentPadding: const EdgeInsets.symmetric(horizontal: 20),
         onTap: action,
         leading: Container(
-          height: 39,
-          width: 39,
-          decoration:
-              const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
-          child: Icon(
-            icon,
-            color: Colors.black,
-          ),
-        ),
+            height: 39,
+            width: 39,
+            decoration: const BoxDecoration(
+                color: Colors.white, shape: BoxShape.circle),
+            child: Center(
+              child: SvgPicture.asset("assets/images/$icon.svg"),
+            )),
         title: Text(
           title,
           style: const TextStyle(

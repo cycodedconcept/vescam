@@ -1,8 +1,15 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
 import 'package:get/route_manager.dart';
+import 'package:iconify_flutter/icons/majesticons.dart';
 import 'package:iconly/iconly.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:majesticons_flutter/majesticons_flutter.dart';
+import 'package:ming_cute_icons/ming_cute_icons.dart';
 import 'package:vescan/routes/app/app-route-names.dart';
 
 class SettingsView extends StatelessWidget {
@@ -122,16 +129,36 @@ class SettingsView extends StatelessWidget {
                     const SizedBox(
                       height: 20,
                     ),
-                    _settingTile(
-                        title: "Vehicle Information",
-                        action: () {
+                    Container(
+                      margin: const EdgeInsets.only(
+                          left: 20, right: 20, bottom: 15),
+                      decoration: BoxDecoration(
+                          color: const Color(0xffF8FAFB),
+                          borderRadius: BorderRadius.circular(12)),
+                      child: ListTile(
+                        contentPadding:
+                            const EdgeInsets.symmetric(horizontal: 20),
+                        onTap: () {
                           Get.toNamed(vehicleInfoScreen);
                         },
-                        icon: Icons.document_scanner_outlined),
+                        leading: SvgPicture.asset("assets/images/note.svg"),
+                        title: const Text(
+                          "Vehicle Information",
+                          style: TextStyle(
+                              color: Color(0xff2B2A2B),
+                              fontFamily: "OpenMed",
+                              fontSize: 14),
+                        ),
+                        trailing: const Icon(
+                          Iconsax.arrow_right_3,
+                          color: Color(0xff7C797A),
+                        ),
+                      ),
+                    ),
                     _settingTile(
                         title: "Registered Devices",
                         action: () {},
-                        icon: Icons.phone_android_outlined),
+                        icon: TablerIcons.device_mobile_vibration),
                     _settingTile(
                         title: "Set PIDs Threshold",
                         action: () {
@@ -153,7 +180,7 @@ class SettingsView extends StatelessWidget {
                     _settingTile(
                         title: "Payment Information",
                         action: () {},
-                        icon: Iconsax.information),
+                        icon: MingCuteIcons.mgc_version_line),
                     _settingTile(
                         title: "Other Settings",
                         action: () {
