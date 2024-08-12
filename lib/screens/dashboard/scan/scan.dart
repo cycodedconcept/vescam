@@ -27,8 +27,8 @@ class ScanView extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SizedBox(),
-                  Text(
+                  const SizedBox(),
+                  const Text(
                     "Vehicle Diagnostic",
                     style: TextStyle(
                         color: Colors.black,
@@ -39,7 +39,7 @@ class ScanView extends StatelessWidget {
                     onTap: () {
                       Get.toNamed(notificationScreen);
                     },
-                    child: Icon(
+                    child: const Icon(
                       Iconsax.notification,
                       color: Colors.black,
                     ),

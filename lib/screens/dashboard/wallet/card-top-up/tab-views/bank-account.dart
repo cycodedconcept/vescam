@@ -48,6 +48,10 @@ class BankAccount extends StatelessWidget {
                         height: 15,
                       ),
                       TextFormField(
+                        onTap: () {
+                          FocusScope.of(context).requestFocus(FocusNode());
+                          Get.toNamed(selectBankScreen);
+                        },
                         decoration: InputDecoration(
                           hintText: "Select Bank",
                           fillColor: Colors.white,
