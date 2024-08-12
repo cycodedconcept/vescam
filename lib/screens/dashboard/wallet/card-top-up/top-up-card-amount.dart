@@ -41,9 +41,14 @@ class TopUpAmountScreen extends StatelessWidget {
                         fontFamily: "OpenMed",
                         fontSize: 16),
                   ),
-                  Icon(
-                    Iconsax.notification,
-                    color: Colors.black,
+                  InkWell(
+                    onTap: () {
+                      Get.toNamed(notificationScreen);
+                    },
+                    child: Icon(
+                      Iconsax.notification,
+                      color: Colors.black,
+                    ),
                   ),
                 ],
               ),

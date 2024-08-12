@@ -41,9 +41,14 @@ class DeviceInfoScreen extends StatelessWidget {
                         fontFamily: "OpenMed",
                         fontSize: 16),
                   ),
-                  const Icon(
-                    Iconsax.notification,
-                    color: Colors.black,
+                  InkWell(
+                    onTap: () {
+                      Get.toNamed(notificationScreen);
+                    },
+                    child: const Icon(
+                      Iconsax.notification,
+                      color: Colors.black,
+                    ),
                   )
                 ],
               ),

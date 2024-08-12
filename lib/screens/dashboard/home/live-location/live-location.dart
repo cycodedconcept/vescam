@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/route_manager.dart';
+import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 class LiveLocationTracker extends StatelessWidget {
   const LiveLocationTracker({super.key});
@@ -107,8 +108,41 @@ class LiveLocationTracker extends StatelessWidget {
                                 fontFamily: "OpenMed"),
                           ),
                           SizedBox(
-                            height: 5,
+                            height: 10,
                           ),
+                          Row(
+                            children: [
+                              Text(
+                                "2 Km",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 12,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              StepProgressIndicator(
+                                totalSteps: 100,
+                                currentStep: 50,
+                                size: 5,
+                                padding: 0,
+                                selectedColor: Color(0xff001F3F),
+                                unselectedColor: Colors.white,
+                                roundedEdges: Radius.circular(10),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                "3 min",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 12,
+                                    fontFamily: "OpenMed"),
+                              ),
+                            ],
+                          )
                         ],
                       ),
                     ),

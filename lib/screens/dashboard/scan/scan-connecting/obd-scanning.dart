@@ -54,9 +54,14 @@ class _OBDScanningScreenState extends State<OBDScanningScreen> {
                         fontFamily: "OpenMed",
                         fontSize: 16),
                   ),
-                  const Icon(
-                    Iconsax.notification,
-                    color: Colors.black,
+                  InkWell(
+                    onTap: () {
+                      Get.toNamed(notificationScreen);
+                    },
+                    child: const Icon(
+                      Iconsax.notification,
+                      color: Colors.black,
+                    ),
                   )
                 ],
               ),
@@ -94,13 +99,11 @@ class _OBDScanningScreenState extends State<OBDScanningScreen> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              RotatedBox(
-                                quarterTurns: -45,
-                                child: SvgPicture.asset(
-                                  "assets/images/vehicle-diagnostic.svg",
-                                  height: 453,
-                                  width: 211,
-                                ),
+                              SvgPicture.asset(
+                                "assets/images/Top.svg",
+                              ),
+                              const SizedBox(
+                                height: 30,
                               ),
                               const Text(
                                 "OBD Scanning",

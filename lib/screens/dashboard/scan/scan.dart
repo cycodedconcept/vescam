@@ -24,7 +24,7 @@ class ScanView extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
               color: Colors.white,
-              child: const Row(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   SizedBox(),
@@ -35,9 +35,14 @@ class ScanView extends StatelessWidget {
                         fontFamily: "OpenMed",
                         fontSize: 16),
                   ),
-                  Icon(
-                    Iconsax.notification,
-                    color: Colors.black,
+                  InkWell(
+                    onTap: () {
+                      Get.toNamed(notificationScreen);
+                    },
+                    child: Icon(
+                      Iconsax.notification,
+                      color: Colors.black,
+                    ),
                   )
                 ],
               ),
