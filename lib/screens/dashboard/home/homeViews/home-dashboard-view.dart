@@ -28,21 +28,26 @@ class HomeDashboardView extends StatelessWidget {
                 onChanged: (value) {
                   controller.toggleShowDashboard();
                 }),
-            Container(
-              height: 37,
-              width: 37,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.white,
-              ),
-              child: Gif(
-                autostart: Autostart.loop,
-                placeholder: (context) =>
-                    const Center(child: CircularProgressIndicator()),
-                image: const AssetImage("assets/gif/navigation-symbol.gif"),
-                height: 30,
-                width: 30,
-                fit: BoxFit.cover,
+            InkWell(
+              onTap: () {
+                Get.toNamed(liveLocationScreen);
+              },
+              child: Container(
+                height: 37,
+                width: 37,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.white,
+                ),
+                child: Gif(
+                  autostart: Autostart.loop,
+                  placeholder: (context) =>
+                      const Center(child: CircularProgressIndicator()),
+                  image: const AssetImage("assets/gif/navigation-symbol.gif"),
+                  height: 30,
+                  width: 30,
+                  fit: BoxFit.cover,
+                ),
               ),
             )
           ],

@@ -37,6 +37,7 @@ import 'package:vescan/screens/dashboard/home/contact-mechanic/payment-success-s
 import 'package:vescan/screens/dashboard/home/contact-mechanic/search-mechanic.dart';
 import 'package:vescan/screens/dashboard/home/contact-mechanic/searchMechanicInput.dart';
 import 'package:vescan/screens/dashboard/home/contact-mechanic/searchMechanicLoading.dart';
+import 'package:vescan/screens/dashboard/home/live-location/live-location.dart';
 import 'package:vescan/screens/dashboard/home/message/message-mechanic.dart';
 import 'package:vescan/screens/dashboard/notifications/activity-screen.dart';
 import 'package:vescan/screens/dashboard/auto-parts/views/cart-screen.dart';
@@ -500,6 +501,11 @@ List<GetPage> getPage = [
   GetPage(
     name: favoriteMechanicScreen,
     page: () => FavoriteMechanicScreen(),
+    transition: Transition.cupertino),
+
+  GetPage(
+    name: liveLocationScreen,
+    page: () => LiveLocationTracker(),
     transition: Transition.cupertino),
 
 ];
