@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/route_manager.dart';
 import 'package:iconly/iconly.dart';
 import 'package:iconsax/iconsax.dart';
@@ -235,10 +235,10 @@ class TransferScreen2 extends StatelessWidget {
                       height: 100,
                     ),
                     Buttons().authButtons(
-                      title: "Send Payment",
-                      action: () {
-                        Get.toNamed(transferConfirmScreen);
-                      }),
+                        title: "Send Payment",
+                        action: () {
+                          Get.toNamed(transferConfirmScreen);
+                        }),
                     const SizedBox(
                       height: 20,
                     ),

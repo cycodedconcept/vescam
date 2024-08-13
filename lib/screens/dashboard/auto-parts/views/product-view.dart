@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
 import 'package:iconsax/iconsax.dart';
@@ -357,9 +357,7 @@ class ProductViewScreen extends StatelessWidget {
                         height: 20,
                       ),
                       InkWell(
-                        onTap: () {
-                          
-                        },
+                        onTap: () {},
                         child: const Row(
                           children: [
                             Text(
@@ -367,10 +365,9 @@ class ProductViewScreen extends StatelessWidget {
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
-                                color: Color(0xff00BFFF),
-                                fontSize: 14,
-                                fontFamily: "OpenMed"
-                              ),
+                                  color: Color(0xff00BFFF),
+                                  fontSize: 14,
+                                  fontFamily: "OpenMed"),
                             ),
                             Icon(
                               Iconsax.arrow_right_3,
@@ -382,10 +379,8 @@ class ProductViewScreen extends StatelessWidget {
                       const SizedBox(
                         height: 30,
                       ),
-                      Buttons().authButtons(
-                        title: "Add to Cart",
-                        action: (){}
-                      ),
+                      Buttons()
+                          .authButtons(title: "Add to Cart", action: () {}),
                       const SizedBox(
                         height: 50,
                       ),

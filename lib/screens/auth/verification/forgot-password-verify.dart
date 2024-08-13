@@ -9,11 +9,11 @@ class ForgotPasswordVerifyEmail extends StatefulWidget {
   const ForgotPasswordVerifyEmail({super.key});
 
   @override
-  State<ForgotPasswordVerifyEmail> createState() => _ForgotPasswordVerifyEmailState();
+  State<ForgotPasswordVerifyEmail> createState() =>
+      _ForgotPasswordVerifyEmailState();
 }
 
 class _ForgotPasswordVerifyEmailState extends State<ForgotPasswordVerifyEmail> {
-  
   bool _isComplete = false;
 
   @override
@@ -40,15 +40,15 @@ class _ForgotPasswordVerifyEmailState extends State<ForgotPasswordVerifyEmail> {
               const SizedBox(
                 height: 100,
               ),
-              (_isComplete)?
-              Center(
-                child: Gif(
-                  autostart: Autostart.once,
-                  placeholder: (context) =>
-                      const Center(child: CircularProgressIndicator()),
-                  image: const AssetImage("assets/gif/checked.gif")),
-              ):
-              SvgPicture.asset("assets/images/phone-verification.svg"),
+              (_isComplete)
+                  ? Center(
+                      child: Gif(
+                          autostart: Autostart.once,
+                          placeholder: (context) =>
+                              const Center(child: CircularProgressIndicator()),
+                          image: const AssetImage("assets/gif/checked.gif")),
+                    )
+                  : SvgPicture.asset("assets/images/phone-verification.svg"),
               const SizedBox(
                 height: 10,
               ),
@@ -111,8 +111,7 @@ class _ForgotPasswordVerifyEmailState extends State<ForgotPasswordVerifyEmail> {
                             onCompleted: (value) {
                               setState(() {
                                 _isComplete = true;
-                                Future.delayed(const Duration(seconds: 2),
-                                (){
+                                Future.delayed(const Duration(seconds: 2), () {
                                   Get.toNamed(login);
                                 });
                               });

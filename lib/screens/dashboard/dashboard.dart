@@ -2,11 +2,9 @@ import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:iconify_flutter/icons/icon_park_solid.dart';
 import 'package:iconly/iconly.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:remixicon/remixicon.dart';
-import 'package:solar_icons/solar_icons.dart';
 import 'package:vescan/controller/home/home-state-controller.dart';
 
 class Dashboard extends StatelessWidget {

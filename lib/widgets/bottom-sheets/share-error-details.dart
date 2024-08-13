@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/route_manager.dart';
 
 class ShareErrorDetailsScreen {
@@ -55,9 +55,7 @@ class ShareErrorDetailsScreen {
                     child: Column(
                       children: [
                         ListTile(
-                          onTap: () {
-                            
-                          },
+                          onTap: () {},
                           leading: SvgPicture.asset(
                               "assets/images/share-mechanic.svg"),
                           title: const Text(
