@@ -119,6 +119,14 @@ class AuthStateController extends GetxController {
     } else {
       updateIsLoading(false);
 
+      toastification.show(
+        style: ToastificationStyle.fillColored,
+        type: ToastificationType.error,
+        title: const Text("Error"),
+        description: Text(responseData["message"].toS),
+        autoCloseDuration: const Duration(seconds: 3),
+      );
+
       Get.back();
     }
   }
@@ -147,6 +155,7 @@ class AuthStateController extends GetxController {
       await LocalStorage().storeUserToken(responseData["token"]);
 
       Get.offAllNamed(signUpVerify);
+      
     } else {
       updateIsLoading(false);
 
