@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
@@ -21,7 +22,9 @@ class AuthStateController extends GetxController {
   String _deviceId = "";
   bool _showPassword = false;
   bool _isRememberMe = false;
+  bool _isTermsChecked = false;
   bool _isLoading = false;
+  bool _showSuccessGif = false;
 
   // GETTERS
   String get name => _name;
@@ -34,7 +37,9 @@ class AuthStateController extends GetxController {
   String get deviceId => _deviceId;
   bool get showPassword => _showPassword;
   bool get isRememberMe => _isRememberMe;
+  bool get isTermsChecked => _isTermsChecked;
   bool get isLoading => _isLoading;
+  bool get showSuccessGif => _showSuccessGif;
 
   // SETTERS
   updateName(value) {
@@ -92,6 +97,16 @@ class AuthStateController extends GetxController {
     update();
   }
 
+  toggleIsTermsChecked() {
+    _isTermsChecked = !_isTermsChecked;
+    update();
+  }
+
+  toggleShowSuccessGif() {
+    _showSuccessGif = !_showSuccessGif;
+    update();
+  }
+
   // API CALLS
   Future loginUser() async {
     updateIsLoading(true);
@@ -107,14 +122,6 @@ class AuthStateController extends GetxController {
 
       await LocalStorage().storeUserToken(responseData['token']);
 
-      toastification.show(
-        style: ToastificationStyle.fillColored,
-        type: ToastificationType.success,
-        title: const Text("Success"),
-        description: Text(responseData["message"]),
-        autoCloseDuration: const Duration(seconds: 3),
-      );
-
       Get.offAllNamed(dashboard);
     } else {
       updateIsLoading(false);
@@ -123,7 +130,7 @@ class AuthStateController extends GetxController {
         style: ToastificationStyle.fillColored,
         type: ToastificationType.error,
         title: const Text("Error"),
-        description: Text(responseData["message"].toS),
+        description: const Text("Login failed"),
         autoCloseDuration: const Duration(seconds: 3),
       );
 
@@ -134,10 +141,13 @@ class AuthStateController extends GetxController {
   Future registerUser() async {
     updateIsLoading(true);
 
+    String encodedData = await LocalStorage().fetchLocationData();
+    Map<String, dynamic> decodedData = jsonDecode(encodedData);
+
     var data = {
       "name": _name,
       "email": _email,
-      "country": _country,
+      "country": decodedData["country"],
       "phone_number": _phoneNumber,
       "password": _password,
       "password_confirmation": _confirmPassword,
@@ -153,9 +163,9 @@ class AuthStateController extends GetxController {
       updateIsLoading(false);
 
       await LocalStorage().storeUserToken(responseData["token"]);
+      await LocalStorage().storeEmail(responseData["user"]["email"]);
 
-      Get.offAllNamed(signUpVerify);
-      
+      Get.offAllNamed(signUpSuccess);
     } else {
       updateIsLoading(false);
 
@@ -163,7 +173,7 @@ class AuthStateController extends GetxController {
         style: ToastificationStyle.fillColored,
         type: ToastificationType.error,
         title: const Text("Error"),
-        description: Text(responseData["message"]),
+        description: const Text("Please fill in the required fields correctly"),
         autoCloseDuration: const Duration(seconds: 3),
       );
 
@@ -174,8 +184,10 @@ class AuthStateController extends GetxController {
   Future verifyOtp() async {
     updateIsLoading(true);
 
+    String email = await LocalStorage().fetchEmail();
+
     var data = {
-      "email": _email,
+      "email": email,
       "otp": _otpCode,
     };
 
@@ -188,7 +200,12 @@ class AuthStateController extends GetxController {
     if (response.statusCode == 200 || response.statusCode == 201) {
       updateIsLoading(false);
 
-      Get.offAndToNamed(login);
+      toggleShowSuccessGif();
+
+      Future.delayed(const Duration(seconds: 3), () {
+        _showSuccessGif = false;
+        Get.offAllNamed(login);
+      });
     } else {
       updateIsLoading(false);
 
@@ -196,10 +213,12 @@ class AuthStateController extends GetxController {
         style: ToastificationStyle.fillColored,
         type: ToastificationType.error,
         title: const Text("Error"),
-        description: Text(responseData["message"]),
+        description: const Text("Email verification failed!"),
         autoCloseDuration: const Duration(seconds: 3),
       );
     }
+
+    update();
   }
 
   Future resetPassword() async {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
-import 'package:vescan/routes/app/app-route-names.dart';
+import 'package:get/get.dart';
+
+import '../../../controller/auth/auth-state-controller.dart';
 
 class SignUpLoading extends StatefulWidget {
   const SignUpLoading({super.key});
@@ -10,12 +11,13 @@ class SignUpLoading extends StatefulWidget {
 }
 
 class _SignUpLoadingState extends State<SignUpLoading> {
+  final AuthStateController _authStateController =
+      Get.find<AuthStateController>();
+
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 3), () {
-      Get.toNamed(signUpSuccess);
-    });
+    _authStateController.registerUser();
   }
 
   @override

@@ -87,7 +87,7 @@ class SignUpSuccessScreen extends StatelessWidget {
             Buttons().authButtons(
                 title: "Continue",
                 action: () {
-                  Get.toNamed(signUpVerify);
+                  Get.offAllNamed(signUpVerify);
                 })
           ],
         ),

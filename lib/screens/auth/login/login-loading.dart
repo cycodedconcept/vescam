@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
-import 'package:vescan/routes/app/app-route-names.dart';
+import 'package:get/get.dart';
+import 'package:vescan/controller/auth/auth-state-controller.dart';
 
 class LoginLoadingScreen extends StatefulWidget {
   const LoginLoadingScreen({super.key});
@@ -10,13 +10,6 @@ class LoginLoadingScreen extends StatefulWidget {
 }
 
 class _LoginLoadingScreenState extends State<LoginLoadingScreen> {
-  @override
-  void initState() {
-    super.initState();
-    Future.delayed(const Duration(seconds: 3), () {
-      Get.toNamed(pinLogin);
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
