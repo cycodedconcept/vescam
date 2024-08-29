@@ -254,8 +254,8 @@ class AuthServices {
       var response = await _dio.post(url,
           data: formData,
           options: Options(headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json",
+            "Content-Type": "multipart/form-data",
+            "Accept": "*/*",
             "Authorization": "Bearer $token"
           }));
       return response;

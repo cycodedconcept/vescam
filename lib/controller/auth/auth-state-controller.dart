@@ -19,6 +19,7 @@ class AuthStateController extends GetxController {
   String _phoneNumber = "";
   String _password = "";
   String _confirmPassword = "";
+  String _newPassword = "";
   String _otpCode = "";
   String _deviceId = "";
   bool _showPassword = false;
@@ -35,6 +36,7 @@ class AuthStateController extends GetxController {
   String get phoneNumber => _phoneNumber;
   String get password => _password;
   String get confirmPassword => _confirmPassword;
+  String get newPassword => _newPassword;
   String get otpCode => _otpCode;
   String get deviceId => _deviceId;
   bool get showPassword => _showPassword;
@@ -67,6 +69,11 @@ class AuthStateController extends GetxController {
 
   updatePassword(value) {
     _password = value;
+    update();
+  }
+
+  updateNewPassword(value) {
+    _newPassword = value;
     update();
   }
 
@@ -274,6 +281,43 @@ class AuthStateController extends GetxController {
 
     if (response.statusCode == 200 || response.statusCode == 201) {
     } else {}
+  }
+
+  Future changePassword() async {
+    updateIsLoading(true);
+
+    var data = {
+      "password": _newPassword,
+      "password_confirmation": _confirmPassword,
+      "oldPassword": _password,
+    };
+
+    var response = await AuthServices().changePasswordService(data);
+    var responseData = response!.data;
+    log(responseData.toString());
+
+    if (response.statusCode == 200 || response.statusCode == 201) {
+      updateIsLoading(false);
+
+      Get.offAndToNamed(passwordChangedSuccessScreen);
+
+    } else {
+      updateIsLoading(false);
+
+      toastification.show(
+        style: ToastificationStyle.fillColored,
+        type: ToastificationType.error,
+        showProgressBar: false,
+        showIcon: true,
+        title: const Text("Error"),
+        description: Text(responseData['message'].toString()),
+        autoCloseDuration: const Duration(seconds: 3),
+      );
+
+      Get.back();
+    }
+
+    update();
   }
 
 }
