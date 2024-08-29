@@ -6,15 +6,22 @@ import 'package:iconly/iconly.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:vescan/controller/home/home-state-controller.dart';
+import 'package:vescan/controller/profile/profile-state-controller.dart';
 
 class Dashboard extends StatelessWidget {
   Dashboard({super.key});
 
   final HomeStateController _homeStateController =
       Get.put(HomeStateController());
+  final ProfileStateController _profileStateController =
+      Get.put(ProfileStateController());
 
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((time) {
+      _profileStateController.getUserDashboard();
+    });
+
     return GetBuilder<HomeStateController>(builder: (controller) {
       return Scaffold(
         body: controller.dashboardItems[controller.currentIndex],
