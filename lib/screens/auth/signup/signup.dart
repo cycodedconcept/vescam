@@ -163,6 +163,57 @@ class SignUpScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Text(
+                            "Phone Number",
+                            style: TextStyle(
+                                color: Color(0xff030206),
+                                fontSize: 14,
+                                fontFamily: "OpenMed"),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          TextFormField(
+                            onChanged: (value) {
+                              controller.updatePhoneNumber(value);
+                            },
+                            validator: ValidationBuilder().build(),
+                            keyboardType: TextInputType.number,
+                            decoration: InputDecoration(
+                              hintText: "Enter Phone Number",
+                              hintStyle: const TextStyle(
+                                  color: Color(0xff7C797A),
+                                  fontFamily: "OpenMed"),
+                              contentPadding: EdgeInsets.symmetric(
+                                  horizontal: 20, vertical: 0),
+                              enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                      color: Color(0xff7C797A), width: 1.5)),
+                              focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                      color: Color(0xff001F3F), width: 1.5)),
+                              errorBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                      color: Color(0xffFF0022), width: 1.5)),
+                              focusedErrorBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                      color: Color(0xffFF0022), width: 1.5)),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 25,
+                    ),
+                    SizedBox(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
                             "Password",
                             style: TextStyle(
                                 color: Color(0xff030206),
@@ -236,8 +287,14 @@ class SignUpScreen extends StatelessWidget {
                             },
                             validator: ValidationBuilder().build(),
                             decoration: InputDecoration(
-                              suffixIcon: Icon(Icons.visibility),
-                              hintText: "Enter ConfirmPassword",
+                              suffixIcon: IconButton(
+                                  onPressed: () {
+                                    controller.toggleShowPassword();
+                                  },
+                                  icon: Icon(controller.showPassword
+                                      ? Icons.visibility_off
+                                      : Icons.visibility)),
+                              hintText: "Enter Confirm Password",
                               hintStyle: const TextStyle(
                                   color: Color(0xff7C797A),
                                   fontFamily: "OpenMed"),
@@ -260,7 +317,7 @@ class SignUpScreen extends StatelessWidget {
                                   borderSide: BorderSide(
                                       color: Color(0xffFF0022), width: 1.5)),
                             ),
-                            obscureText: true,
+                            obscureText: !controller.showPassword,
                           )
                         ],
                       ),
@@ -272,9 +329,9 @@ class SignUpScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Checkbox.adaptive(
-                          value: controller.isRememberMe,
+                          value: controller.isTermsChecked,
                           onChanged: (value) {
-                            controller.toggleIsRememberMe();
+                            controller.toggleIsTermsChecked();
                           },
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(5),
@@ -294,7 +351,13 @@ class SignUpScreen extends StatelessWidget {
                     ),
                     Buttons().authButtons(
                         action: () {
-                          Get.toNamed(signupLoading);
+                          if (_formKey.currentState!.validate() &&
+                              controller.isTermsChecked) {
+                            controller.registerUser();
+                            Get.toNamed(signupLoading);
+                          } else {
+                            AutovalidateMode.disabled;
+                          }
                         },
                         title: "Sign Up"),
                     const SizedBox(
@@ -351,7 +414,10 @@ class SignUpScreen extends StatelessWidget {
                                       )))
                             ]),
                       ),
-                    )
+                    ),
+                    const SizedBox(
+                      height: 40,
+                    ),
                   ],
                 ),
               ),

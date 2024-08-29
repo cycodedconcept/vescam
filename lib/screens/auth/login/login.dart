@@ -216,9 +216,12 @@ class LoginScreen extends StatelessWidget {
                     ),
                     Buttons().authButtons(
                         action: () {
-                          _formKey.currentState!.validate()
-                              ? Get.toNamed(loginLoading)
-                              : AutovalidateMode.disabled;
+                          if (_formKey.currentState!.validate()) {
+                            controller.loginUser();
+                            Get.toNamed(loginLoading);
+                          } else {
+                            AutovalidateMode.disabled;
+                          }
                         },
                         title: "Login"),
                     const SizedBox(

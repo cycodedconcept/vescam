@@ -121,6 +121,7 @@ class AuthStateController extends GetxController {
       updateIsLoading(false);
 
       await LocalStorage().storeUserToken(responseData['token']);
+      await LocalStorage().storeEmail(responseData["user"]["email"]);
 
       Get.offAllNamed(dashboard);
     } else {
@@ -129,8 +130,10 @@ class AuthStateController extends GetxController {
       toastification.show(
         style: ToastificationStyle.fillColored,
         type: ToastificationType.error,
+        showProgressBar: false,
+        showIcon: true,
         title: const Text("Error"),
-        description: const Text("Login failed"),
+        description: Text(responseData['error'].toString()),
         autoCloseDuration: const Duration(seconds: 3),
       );
 
@@ -147,7 +150,7 @@ class AuthStateController extends GetxController {
     var data = {
       "name": _name,
       "email": _email,
-      "country": decodedData["country"],
+      "country": "Nigeria",
       "phone_number": _phoneNumber,
       "password": _password,
       "password_confirmation": _confirmPassword,
@@ -172,8 +175,10 @@ class AuthStateController extends GetxController {
       toastification.show(
         style: ToastificationStyle.fillColored,
         type: ToastificationType.error,
+        showProgressBar: false,
+        showIcon: true,
         title: const Text("Error"),
-        description: const Text("Please fill in the required fields correctly"),
+        description: Text(responseData['error'].toString()),
         autoCloseDuration: const Duration(seconds: 3),
       );
 
@@ -212,8 +217,10 @@ class AuthStateController extends GetxController {
       toastification.show(
         style: ToastificationStyle.fillColored,
         type: ToastificationType.error,
+        showProgressBar: false,
+        showIcon: true,
         title: const Text("Error"),
-        description: const Text("Email verification failed!"),
+        description: Text(responseData['error'].toString()),
         autoCloseDuration: const Duration(seconds: 3),
       );
     }

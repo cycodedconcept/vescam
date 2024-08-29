@@ -1,6 +1,6 @@
 // ==================== API ROUTES ======================
 
-String baseUrl = "https://pluralcodesandbox.com/obd_final_apis/api/";
+String baseUrl = "https://pluralcodesandbox.com/obd_final_apis/api";
 
 // ========== AUTH ==========
 String registerUser = "/register_user";
