@@ -4,6 +4,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:toastification/toastification.dart';
+import 'package:vescan/models/user/user-model.dart';
 import 'package:vescan/storage/local-storage.dart';
 
 import '../../routes/app/app-route-names.dart';
@@ -25,6 +26,7 @@ class AuthStateController extends GetxController {
   bool _isTermsChecked = false;
   bool _isLoading = false;
   bool _showSuccessGif = false;
+  User _user = User();
 
   // GETTERS
   String get name => _name;
@@ -40,6 +42,7 @@ class AuthStateController extends GetxController {
   bool get isTermsChecked => _isTermsChecked;
   bool get isLoading => _isLoading;
   bool get showSuccessGif => _showSuccessGif;
+  User get user => _user;
 
   // SETTERS
   updateName(value) {
@@ -123,6 +126,8 @@ class AuthStateController extends GetxController {
       await LocalStorage().storeUserToken(responseData['token']);
       await LocalStorage().storeEmail(responseData["user"]["email"]);
 
+      _user = User.fromMap(responseData["user"]);
+
       Get.offAllNamed(dashboard);
     } else {
       updateIsLoading(false);
@@ -139,6 +144,8 @@ class AuthStateController extends GetxController {
 
       Get.back();
     }
+
+    update();
   }
 
   Future registerUser() async {
